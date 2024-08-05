@@ -11,10 +11,11 @@ const settings = {
   dots: false, // Desactiva los puntos de navegación
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 4, // mostrar 4 a la vez
   slidesToScroll: 1,
   arrows: true, // Habilita las flechas
-  centerMode: true, // Si quieres usar el modo centrado
+  centerMode: false, // Si quieres usar el modo centrado true
+  initialSlide: 0, // Comienza en la primera diapositiva
 };
 
 export const Carrusel = () => {
