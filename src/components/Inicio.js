@@ -12,7 +12,10 @@ export const Inicio = () => {
         </div>
       </header>
 
-      <Carrusel/>  
+      <Carrusel/> 
+
+      
+
      
            
     </div>
