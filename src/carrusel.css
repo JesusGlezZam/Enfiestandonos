@@ -1,0 +1,48 @@
+/* styles.css */
+.swiper-container {
+    width: 100%;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px 0; /* Espacio vertical alrededor del slider */
+  }
+  
+  /* Estilos para cada slide */
+  .swiper-slide {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 20px; /* Espacio interno de cada slide */
+  }
+  
+  /* Estilos para la tarjeta de características */
+  .feature {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Ancho máximo de cada tarjeta */
+  }
+  
+  /* Estilos para el contenedor del icono */
+  .icon-container {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+  }
+  
+  /* Estilos para el título de cada característica */
+  .feature h2 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+    color: #ff6f61;
+  }
+  
+  /* Estilos para el párrafo de cada característica */
+  .feature p {
+    font-size: 16px;
+    color: #333;
+  }
+  

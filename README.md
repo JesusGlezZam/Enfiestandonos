@@ -73,7 +73,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 npm install react-icons
 
+npm install react-slick slick-carousel
+
+npm install react-alice-carousel
+
 npm install swiper
 
 npm install swiper@latest
+
+
 

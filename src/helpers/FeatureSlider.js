@@ -3,8 +3,8 @@ import { FaTree, FaBirthdayCake, FaConciergeBell, FaHome, FaSun } from 'react-ic
 
 export const FeatureSlider = () => {
   return (
-    <div>
-          <div className="feature">
+    <section className="features">
+        <div className="feature">
           <div className="icon-container">
             <FaTree size={80} color="#ff6f61" />
           </div>
@@ -39,6 +39,8 @@ export const FeatureSlider = () => {
           <h2>Terrazas</h2>
          {/*  <p>Terrazas con vistas espectaculares, ideales para eventos al aire libre y reuniones sociales. Disfruta de una experiencia única en un ambiente relajado.</p> */}
         </div>
-    </div>
+    </section>
   )
 }
+
+
