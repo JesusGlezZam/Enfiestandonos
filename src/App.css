@@ -63,7 +63,7 @@ body {
 
 /*               Sección de contenido             */
 .content {
-  width: 65%; /* Ocupa el 60% del ancho de la pantalla */
+  width: 75%; /* Ocupa el 60% del ancho de la pantalla */
   margin: 0 auto; /* Centra horizontalmente */
   padding: 20px;
 

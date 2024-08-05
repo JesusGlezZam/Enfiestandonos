@@ -19,7 +19,7 @@ export const AppRouter = () => {
                 </div>
             </nav>
         </div>
-
+    
         <section className='content'>
             <Routes>
                 <Route path="/" element={<Inicio/>}/>
