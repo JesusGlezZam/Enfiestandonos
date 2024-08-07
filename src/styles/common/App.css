@@ -1,0 +1,112 @@
+/*                   Estilos globales    */
+html, body {
+  height: 116%;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+
+/* Encabezado (Header) */
+.header {
+  background-color: #ff6f61;
+  padding: 30px;
+  color: white;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.header .logo, .welcome-message {
+  height: 55px;
+  
+}
+ /* Termina Encabezado (Header) */
+
+
+ 
+/*               Sección de contenido   Apptouter secion routes          */
+.content {
+  flex: 1;
+  padding: 20px;
+  width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+  margin: 0 auto; /* Centra horizontalmente */
+  height: 80%;
+  min-height: 90vh; /* Asegura que la altura mínima sea 90% de la altura de la ventana gráfica */
+}
+
+
+
+
+/* Pie de página (Footer) */
+footer {
+  background-color: #333;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  margin-top: 10px;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav ul li {
+  margin: 0 10px;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* styles.css */
+.custom-hr {
+  width: 80%;
+  border: none;
+  border-top: 1px solid #af9d9d;
+}
+
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .content {
+    width: 90%; /* Ocupa el 80% del ancho de la pantalla */
+    padding: 5px;
+  }
+
+  .custom-hr {
+  width: 80%;
+  border: none;
+  border-top: 1px solid #af9d9d;
+ }
+
+  .footer{
+    font-size: 0.8em;
+    flex-direction: row; /* Cambiar a columna */
+  }
+
+  footer nav ul {
+    flex-direction: row; /* Cambiar a columna */
+    align-items: center; /* Centra los elementos */
+  }
+
+  footer nav ul li {
+    margin: auto 7px; /* Margen vertical entre los elementos */
+  }
+
+}
+
