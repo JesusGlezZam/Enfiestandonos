@@ -26,9 +26,11 @@ export const AppRouter = () => {
                                             <h1>ERROR ESTA PAGINA NO EXISTE</h1>
                                         </div>)} /> 
             </Routes>
+
+
         </section>
                     
-        {/*<Footer/> */}
+        <Footer/> 
     </BrowserRouter>
   )
 }

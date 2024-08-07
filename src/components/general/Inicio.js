@@ -2,6 +2,8 @@ import React from 'react';
 import { CarruselServices } from '../shared/CarruselServices';
 import { CarruselItems } from '../shared/CarruselItems';
 import '../../styles/general/inicio.css';
+import { SectionCarousel } from '../shared/SectionCarousel';
+import { jardines } from '../../helpers/datosdummyJardin.js';
 
 export const Inicio = () => {
   return (
@@ -25,6 +27,8 @@ export const Inicio = () => {
         <p>Este es el espacio para la publicidad.</p>
         <img src="ruta/a/tu/publicidad.jpg" alt="Publicidad" />
       </div>
+
+      <SectionCarousel title="Jardines" items={jardines}/>
 
 
     </div>
