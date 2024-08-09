@@ -1,0 +1,104 @@
+/* Estilos generales tarjetas */
+.events {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Contenedores de tarjetas */
+  .jardin-cards-container,
+  .infantil-cards-container,
+  .salon-cards-container,
+  .hacienda-cards-container,
+  .terraza-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Tarjetas */
+  .jardin-card,
+  .infantil-card,
+  .salon-card,
+  .hacienda-card,
+  .terraza-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Imágenes */
+  .jardin-image,
+  .infantil-image,
+  .salon-image,
+  .hacienda-image,
+  .terraza-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Información dentro de la tarjeta */
+  .jardin-info,
+  .infantil-info,
+  .salon-info,
+  .hacienda-info,
+  .terraza-info {
+    padding: 20px;
+  }
+  
+  /* Títulos */
+  .jardin-info h2,
+  .infantil-info h2,
+  .salon-info h2,
+  .hacienda-info h2,
+  .terraza-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  /* Párrafos */
+  .jardin-info p,
+  .infantil-info p,
+  .salon-info p,
+  .hacienda-info p,
+  .terraza-info p {
+    margin: 10px 0 0;
+    color: #555;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .jardin-cards-container,
+    .infantil-cards-container,
+    .salon-cards-container,
+    .hacienda-cards-container,
+    .terraza-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .jardin-cards-container,
+    .infantil-cards-container,
+    .salon-cards-container,
+    .hacienda-cards-container,
+    .terraza-cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /******************** Esto es todo sobre  las tarjetas  ***********/
+  
+
+  /****     Botones  *****/
+  .pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0 30px;
+}

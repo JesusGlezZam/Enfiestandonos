@@ -38,7 +38,7 @@
 
 @media (max-width: 1200px) {
   .carousel-container-view {
-    width: 80%; /* Ancho más amplio en pantallas medianas */
+    width: 91%; /* Ancho más amplio en pantallas medianas */
     padding: 0px; /* Menos padding */
     padding-bottom: 20px; /* Menos espacio en la parte inferior */
     border-radius: 30px; /* Esquinas menos redondeadas */
@@ -55,10 +55,8 @@
   .header-garden h2, .header-garden h3 {
     font-size: .8em; /* Ajuste del tamaño de fuente para pantallas medianas */
     padding: 0 10px; /* Más padding interno */
+
   }
-
-
-
 }
 
 

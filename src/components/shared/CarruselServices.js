@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../styles/general/carruselservices.css';// Asegúrate de ajustar la ruta a tu archivo CSS
 import { FaTree, FaBirthdayCake, FaConciergeBell, FaHome, FaSun } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { services } from  '../../helpers/services';
 
 // Configuración del carrusel
 const settings = {
@@ -46,45 +48,30 @@ const settings = {
 };
 
 export const CarruselServices = () => {
+    const navigate = useNavigate();
+
+  const handleNavigation = (id) => {
+    navigate(`/espacios-para-tu-evento/${id}`);
+  };
+
   return (
     <div>
-    <section  className="carousel-container">
-      <Slider {...settings}>
-        <div className="feature">
-          <div className="icon-container">
-            <FaTree className="fa-icon" color="#ff6f61" /> {/* Aumenta el tamaño del icono */}
-          </div>
-          <h2 className="title-1">Jardines</h2>
-        </div>
-        <div className="feature">
-          <div className="icon-container">
-            <FaBirthdayCake className="fa-icon" color="#ff6f61" /> {/* Aumenta el tamaño del icono */}
-          </div>
-          <h2>
-            <span className="title-2-pink">Salones</span><br/> 
-            <span className="title-2-blue">Infantiles</span>
-          </h2>
-        </div>
-        <div className="feature">
-          <div className="icon-container">
-            <FaConciergeBell className="fa-icon" color="#ff6f61" /> {/* Aumenta el tamaño del icono */}
-          </div>
-          <h2 className="title-3">Salones</h2>
-        </div>
-        <div className="feature">
-          <div className="icon-container">
-            <FaHome className="fa-icon" color="#ff6f61" /> {/* Aumenta el tamaño del icono */}
-          </div>
-          <h2 className="title-4">Haciendas</h2>
-        </div>
-        <div className="feature">
-          <div className="icon-container">
-            <FaSun className="fa-icon" color="#ff6f61" /> {/* Aumenta el tamaño del icono */}
-          </div>
-          <h2 className="title-5">Terrazas</h2>
-        </div>
-      </Slider>
-      <p>Donde cada evento es una celebración</p>
+      <section className="carousel-container">
+        <Slider {...settings}>
+          {services.map((service) => (
+            <div key={service.id} className="feature" onClick={() => handleNavigation(service.id)}>
+              <div className="icon-container">
+                {service.id === "jardin" && <FaTree className="fa-icon" color="#ff6f61" />}
+                {service.id === "infantil" && <FaBirthdayCake className="fa-icon" color="#ff6f61" />}
+                {service.id === "salon" && <FaConciergeBell className="fa-icon" color="#ff6f61" />}
+                {service.id === "hacienda" && <FaHome className="fa-icon" color="#ff6f61" />}
+                {service.id === "terraza" && <FaSun className="fa-icon" color="#ff6f61" />}
+              </div>
+              <h2 className="title">{service.name}</h2>
+            </div>
+          ))}
+        </Slider>
+        <p>Donde cada evento es una celebración</p>
       </section>
     </div>
   );

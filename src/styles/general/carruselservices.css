@@ -88,15 +88,21 @@
   font-size: 1.5em;
   color: #333; /* Color inicial del texto */
   transition: color 0.3s ease; /* Transición suave para el cambio de color */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pase sobre el texto */
 }
 
-/* Hover Styles */
+.feature h2:hover {
+  font-size: 1.529em;
+  color: inherit; /* Hereda el color del h2 para que el enlace no cambie de color */
+}
+
+/* Hover Styles 
 .title-1:hover { color: #7ddf6f; }
 .title-2-blue:hover { color: #4b9cd3; }
 .title-2-pink:hover { color: #fa72d8; }
 .title-3:hover { color: #ff6b6b; }
 .title-4:hover { color: #4de1c1; }
-.title-5:hover { color: #144cc5; }
+.title-5:hover { color: #144cc5; } */
 
 /* Animación de pulso */
 @keyframes pulse {
@@ -128,7 +134,6 @@
   .feature {
     max-width: 100px; /* Ancho máximo de cada tarjeta en pantallas medianas */
     text-align: center;
-    padding: 0px; /* Espaciado interno */
     margin: 0 auto; /* Centra el contenido dentro del slide */
   }
 
@@ -170,13 +175,13 @@
     transition: color 0.3s ease; /* Transición suave para el cambio de color */
   }
   
-  /* Hover Styles */
+  /* Hover Styles 
   .title-1:hover { color: #7ddf6f; }
   .title-2-blue:hover { color: #4b9cd3; }
   .title-2-pink:hover { color: #fa72d8; }
   .title-3:hover { color: #ff6b6b; }
   .title-4:hover { color: #4de1c1; }
-  .title-5:hover { color: #144cc5; }
+  .title-5:hover { color: #144cc5; } */
 
 }
 

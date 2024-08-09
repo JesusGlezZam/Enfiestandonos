@@ -103,3 +103,91 @@
       width: 50%; 
     }
 }  
+
+
+.carousel-section {
+  width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+  margin: 30px auto; /* Margen superior e inferior para espacio entre secciones */
+  padding: 30px; /* Añade padding alrededor del contenido */
+  padding-bottom: 20px; /* Añade espacio adicional en la parte inferior */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 40px; /* Esquinas redondeadas */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  border: 0 solid transparent; /* Borde inicial transparente */
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.feature {
+  text-align: center;
+  padding: 10px; /* Espacio alrededor de cada imagen */
+   padding: 0; /* Elimina el padding alrededor de cada tarjeta */
+  margin: 0; /* Elimina el margen alrededor de cada tarjeta */
+  display: flex;
+  flex-direction: column;
+}
+
+.feature img {
+  width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+  height: 200px; /* Establece una altura fija */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  border-radius: 30px; /* Esquinas menos redondeadas */
+  display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+/*wdkjfskjsdf*/
+
+.carousel-section {
+  width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+  margin: 30px auto; /* Margen superior e inferior para espacio entre secciones */
+  padding: 30px; /* Añade padding alrededor del contenido */
+  padding-bottom: 20px; /* Añade espacio adicional en la parte inferior */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 40px; /* Esquinas redondeadas */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  border: 0 solid transparent; /* Borde inicial transparente */
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido al principio del contenedor */
+  width: 100%; /* Asegura que la tarjeta ocupe todo el ancho del slider */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+}
+
+.image-container {
+  width: 100%; /* Asegura que el contenedor de la imagen ocupe todo el ancho del contenedor de la tarjeta */
+  height: 200px; /* Establece una altura fija */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga del contenedor */
+}
+
+.image-container img {
+  width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+  height: 100%; /* Asegura que la imagen ocupe la altura del contenedor */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.text-container {
+  width: 100%; /* Asegura que el contenedor de texto ocupe todo el ancho del contenedor de la tarjeta */
+  padding: 10px; /* Añade espacio alrededor del texto */
+  text-align: center; /* Centra el texto */
+}
+
+.text-container h3, .text-container p {
+  margin: 10px 0; /* Añade margen arriba y abajo para separación */
+  font-size: 1rem; /* Ajusta el tamaño de fuente para mantener el texto visible */
+  color: #333; /* Color del texto */
+}
+
+
+
+
+
+

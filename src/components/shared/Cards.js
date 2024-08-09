@@ -1,25 +1,22 @@
 import React from 'react'
-import { space } from '../helpers/datosdummyJardin'
-import { Link } from 'react-router-dom'
 
-export const Cards = ({limite}) => {
+import { getImagePath } from './Images';
+
+export const Cards = ({ items, itemType }) => {
   return (
-    <div className="carousel-section">
-          <section className='events'>
-        {
-          space.slice(0,limite).map(trabajo => {
-          return (
-            <article key={trabajo.id} className='work-item'>
-              <div className='mask'>
-                <img src={"/images/"+trabajo.id+".png"} />
-              </div>
-              <span>{trabajo.categorias}</span>
-              <h2><Link to={"/proyecto/"+trabajo.id}>{trabajo.nombre}</Link></h2>
-              <h3>{trabajo.tecnologias}</h3>
-            </article>)
-          })
-      }
-      </section>
-    </div>
-  )
+    <section className='event-items'>
+      <h1><strong>{itemType}</strong> ideales para eventos.</h1>
+      <div className={`${itemType}-cards-container`}>
+        {items.map((item) => (
+          <div key={item.id} className={`${itemType}-card`}>
+            <img src={getImagePath(itemType, item.name)} alt={item.name} className={`${itemType}-image`} />
+            <div className={`${itemType}-info`}>
+              <h2>{item.name}</h2>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
