@@ -38,13 +38,17 @@ export const jardinesData = {
   export const infantilesData = {
     type: "infantil", 
   infantiles: [
-      { id: 1, name: "Santa Maria", description: 'Descripción del Infantil 1', image: getImagePath('infantil', 'Santa Maria') },
-      { id: 2, name: 'Los Cisnes', description: 'Descripción del Infantil 2', image: getImagePath('infantil', 'Los Cisnes') },
-      { id: 3, name: 'Rosalinda', description: 'Descripción del Infantil 3', image: getImagePath('infantil', 'Rosalinda') },
-      { id: 4, name: 'Casa Blanca', description: 'Descripción del Infantil 4', image: getImagePath('infantil', 'Casa Blanca') },
-      { id: 5, name: 'Oasis', description: 'Descripción del Infantil 5', image: getImagePath('infantil', 'Oasis') },
-      { id: 6, name: 'Kristal Jardin', description: 'Descripción del Infantil 6', image: getImagePath('infantil', 'Kristal Jardin') },
-      { id: 7, name: 'Green Party', description: 'Descripción del Infantil 7', image: getImagePath('infantil', 'Green Party') },
+      { id: 1, name: "Manchitas", description: 'Descripción del Infantil 1', image: getImagePath('infantil', 'Manchitas') },
+      { id: 2, name: 'Romano Kids', description: 'Descripción del Infantil 2', image: getImagePath('infantil', 'Romano Kids') },
+      { id: 3, name: 'Happy Sheep', description: 'Descripción del Infantil 3', image: getImagePath('infantil', 'Happy Sheep') },
+      { id: 4, name: 'Princesas y Dragones', description: 'Descripción del Infantil 4', image: getImagePath('infantil', 'Princesas y Dragones') },
+      { id: 5, name: 'Kids', description: 'Descripción del Infantil 5', image: getImagePath('infantil', 'Kids') },
+      { id: 6, name: 'Charly Land', description: 'Descripción del Infantil 6', image: getImagePath('infantil', 'Charly Land') },
+      { id: 7, name: 'Mayitos', description: 'Descripción del Infantil 7', image: getImagePath('infantil', 'Mayitos') },
+      { id: 8, name: 'Tanylandia', description: 'Descripción del Infantil 4', image: getImagePath('infantil', 'Tanylandia') },
+      { id: 9, name: 'El Grillo', description: 'Descripción del Infantil 5', image: getImagePath('infantil', 'El Grillo') },
+      { id: 10, name: 'Charly Land', description: 'Descripción del Infantil 6', image: getImagePath('infantil', 'Charly Land') },
+      { id: 11, name: 'Mayitos', description: 'Descripción del Infantil 7', image: getImagePath('infantil', 'Mayitos') },
     // ...
   ]
 };

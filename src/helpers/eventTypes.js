@@ -1,42 +1,4 @@
-// src/components/shared/Images.js
-
-export const getImagePath = (type, name) => {
-    return `/Enfiestandonos/events/${type}/${name.toLowerCase().replace(/\s+/g, '')}/${name.toLowerCase().replace(/\s+/g, '')}.png`;
-  };
-  
-
-
-  /**
-   * Para que esta apto: XV anos, bodas, etc
-   * Horario de atencion
-   * Capacidad  max
-   * precio aproximado
-   * 
-   * 
-   * En el detalle
-   * Recibidor
-   * Cambiador
-   * Area de cocina
-   * Pantalla para pyoyectar
-   * Estacionamiento  cap max
-   * Area de juejos o de brincolin
-   * Salida de Emergencia
-   * Acceso a discapacitados
-   * Tipo de pago tc, td, wifi
-   * 
-   * 
-   * Costo inicial
-   * min de personas o cubrir el paquete inicial
-   * Descripcion de que incluye en los paquetes en caso de ser XV anos o bodas, infantiles
-   * paquete 2
-   * Min mas adicionales 
-   * Paquete top 
-   * Adicionales
-   * DJ
-   * 
-   * 
-   * tipos de eventos********************************
-   * export const eventTypes = {
+export const eventTypes = {
     jardin: [
         "Bodas",
         "Quinceaños",
@@ -87,4 +49,3 @@ export const getImagePath = (type, name) => {
         "Eventos de networking",
     ],
 };
-   */

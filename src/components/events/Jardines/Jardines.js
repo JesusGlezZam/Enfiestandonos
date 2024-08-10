@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Cards } from '../../shared/Cards';
 import { paginateArray } from '../../../helpers/utils'; // Importa la función de paginado
 import { jardinesData } from '../../../helpers/datosdummy'
-import { SectionCarousel } from '../../shared/SectionCarousel';
 
 
 const pageSize = 12; // Número total de elementos por página
@@ -31,6 +30,11 @@ export const Jardines = () => {
     <div className='events'>
       {firstSection.length > 0 && <Cards items={firstSection} itemType="jardin" />}
       
+      <div className="pagination-controls">
+        <button onClick={prevPage} disabled={currentPage === 0}>Anterior</button>
+        <button onClick={nextPage} disabled={currentPage === paginatedJardines.length - 1}>Siguiente</button>
+      </div>
+      
       <div className="advertisement">
         <h2>Publicidad</h2>
         <p>Este es el espacio para la publicidad.</p>
@@ -44,7 +48,7 @@ export const Jardines = () => {
         <button onClick={prevPage} disabled={currentPage === 0}>Anterior</button>
         <button onClick={nextPage} disabled={currentPage === paginatedJardines.length - 1}>Siguiente</button>
       </div>
-      <SectionCarousel title="Jardines" items={jardinesData.jardines} />
+     
     </div>
   );
 }
