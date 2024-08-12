@@ -1,0 +1,65 @@
+/* carrusel.css  si funciona para pagina de*/
+.carousel-container {
+    width: 80%; /* Ajusta el ancho del contenedor al 90% del contenedor padre */
+    max-width: 90vw; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Margen superior e inferior para espacio entre secciones */
+    position: relative; /* Posiciona las flechas a los lados */
+  }
+  
+  .icon-container .fa-icon {
+    font-size: 100px; /* Tamaño por defecto */
+  }
+  
+  .slick-slide {
+    padding: 0 0px; /* Espacio entre los slides */
+  }
+  
+  .slick-slide > div {
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de cada slide */
+  }
+  
+  .slick-track {
+    display: flex; /* Asegura que los slides se distribuyan horizontalmente */
+  }
+  
+  .slick-prev, .slick-next {
+    width: 40px; /* Tamaño de las flechas */
+    height: 40px; /* Tamaño de las flechas */
+    background-color: #eee; /* Color de fondo de las flechas */
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%; /* Centra las flechas verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición vertical de las flechas */
+    transition: background-color 0.3s, opacity 0.3s; /* Transición para el color de fondo y opacidad */
+  }
+  
+  .slick-prev {
+    left: 10px; /* Ajusta la posición a la izquierda */
+  }
+  
+  .slick-next {
+    right: 10px; /* Ajusta la posición a la derecha */
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    font-size: 18px; /* Tamaño del icono de las flechas */
+    color: #333; /* Color del icono de las flechas */
+  }
+  
+  /* Estilos para las flechas desactivadas */
+  .slick-prev.slick-disabled, .slick-next.slick-disabled {
+    opacity: 0.5; /* Reducción de la opacidad para indicar que están desactivadas */
+    cursor: not-allowed; /* Cambia el cursor para mostrar que no se puede hacer clic */
+    pointer-events: none; /* Desactiva los eventos del puntero para que no se pueda hacer clic */
+    background-color: #f5f5f5; /* Color de fondo más claro para las flechas desactivadas */
+  }
+  
+  /* Ocultar la barra de puntos */
+  .slick-dots {
+    display: none !important;
+  }
+  

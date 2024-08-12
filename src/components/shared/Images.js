@@ -7,7 +7,7 @@ export const getImagePath = (type, name) => {
 
 
   /**
-   * Para que esta apto: XV anos, bodas, etc
+   * Para que esta apto: XV anos, bodas, etc Tipo de evento: 
    * Horario de atencion
    * Capacidad  max
    * precio aproximado

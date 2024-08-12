@@ -1,12 +1,13 @@
 import React from 'react';
-import { CarruselServices } from '../shared/CarruselServices';
-import '../../styles/general/inicio.css';
-import { infantilesData, jardinesData, salonesData } from '../../helpers/datosdummy.js';
-import { Carrusel2 } from '../shared/Carrusel2.js';
+import { CarruselServices } from '../shared/Inicio/CarruselServices.js';
+import { infantilesData, salonesData } from '../../helpers/datosdummy.js';
+import { jardinesData } from '../../helpers/datosdummy2.js';
+import { SectionCarrusel } from '../shared/Inicio/SectionCarrusel.js';
 import { EventTypesList } from '../shared/EventTypesList.js';
-
+import { Publish } from '../shared/Publish.js';
 
 export const Inicio = () => {
+
   return (
     <div className="home">
       <header className="header">
@@ -19,23 +20,18 @@ export const Inicio = () => {
 
       <CarruselServices/>
       <hr className="custom-hr" />
+      
+
+      <SectionCarrusel title="Jardines" items={jardinesData.jardines}  />
+      <SectionCarrusel title="Salones Infantiles" items={infantilesData.infantiles} />
+
+      <Publish imageKey="publicidad1" />
+
+      <SectionCarrusel title="Salones" items={salonesData.salones} />
+
       <EventTypesList spaceType="jardin" />
 
-      <Carrusel2 title="Jardines" items={jardinesData.jardines} />
 
-      <Carrusel2 title="Salones Infantiles" items={infantilesData.infantiles} />
-
-
-      {/* Sección de Publicidad */}
-      <div className="advertisement">
-        <h2>Publicidad</h2>
-        <p>Este es el espacio para la publicidad.</p>
-        <img src="ruta/a/tu/publicidad.jpg" alt="Publicidad" />
-      </div>
-
-      <Carrusel2 title="Salones" items={salonesData.salones} />
-
-      <Carrusel2 title="Salones Infantiles" items={infantilesData.infantiles} />
     </div>
 
     

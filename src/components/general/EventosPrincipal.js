@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Cards } from '../../shared/Cards';
-import { paginateArray } from '../../../helpers/utils'; // Importa la función de paginado
-import { jardinesData, infantilesData, salonesData } from '../../../helpers/datosdummy';
+import { Cards } from '../shared/Cards';
+import { paginateArray } from '../../helpers/utils'; // Importa la función de paginado
+import { infantilesData, salonesData } from '../../helpers/datosdummy';
+import { jardinesData} from '../../helpers/datosdummy2';
+import { Publish } from '../shared/Publish';
+
 
 const pageSize = 12; // Número total de elementos por página
 
@@ -52,11 +55,7 @@ export const EventosPrincipal = ({ eventType }) => {
         <button onClick={nextPage} disabled={currentPage === paginatedItems.length - 1}>Siguiente</button>
       </div>
       
-      <div className="advertisement">
-        <h2>Publicidad</h2>
-        <p>Este es el espacio para la publicidad.</p>
-        <img src="ruta/a/tu/publicidad.jpg" alt="Publicidad" />
-      </div>
+      <Publish imageKey="publicidad1" />
 
       {secondSection.length > 0 && <Cards items={secondSection} itemType={eventType} />}
       

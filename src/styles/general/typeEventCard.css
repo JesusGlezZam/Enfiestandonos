@@ -1,0 +1,217 @@
+/***************** Estilos generales tarjetas 
+Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ****************/
+/* Contenedor general de los ítems de evento */
+.event-items {
+  padding: 20px;
+}
+
+.event-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Ajusta el ancho máximo según sea necesario */
+}
+
+/* Contenedor para las tarjetas del evento */
+.event-items .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilo para cada tarjeta del evento */
+.event-items .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.event-items .card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen dentro de la tarjeta */
+.event-items .card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Información dentro de la tarjeta */
+.event-items .card-info {
+  padding: 15px;
+}
+
+/* Detalles adicionales de la tarjeta */
+.event-items .details {
+  margin-top: 15px;
+}
+
+.event-items .detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+
+.detail-icon {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.event-items .detail-icon {
+  margin-right: 8px;
+  color: #333;
+}
+
+/* Agrega estilos para los íconos */
+.event-items .detail-item span {
+  font-size: 14px;
+}
+
+.detail-item span {
+  white-space: nowrap;
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  
+}
+
+
+/* Estilos generales para los íconos en los detalles */
+.detail-icon {
+  margin-right: 8px;
+  color: #333; /* Color predeterminado */
+  transition: color 0.3s, transform 0.3s; /* Transición suave para cambios de color y tamaño */
+}
+
+/* Estilo cuando el ícono de celebración es hover */
+.detail-icon.celebration{
+  color: #ffcc00; /* Color de celebración */
+}
+
+/* Estilo cuando el ícono de reloj es hover */
+.detail-icon.available {
+  color: #28a745; /* Color verde para indicar disponibilidad */
+}
+
+/* Estilo cuando el ícono de user */
+.detail-icon.user {
+  color: #6c757d; /* Color verde para indicar disponibilidad */
+}
+
+/* Estilo cuando el ícono de reloj es hover */
+.detail-icon.maps {
+  color: #007bff; /* Color azul para el ícono de mapa */
+}
+
+/* Estilo para el ícono de mapa */
+.detail-icon.maps:hover  {
+  color: red; /* Color azul para el ícono de mapa */
+  transition: transform 0.3s; /* Transición suave para tamaño */
+}
+.maps:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del ícono de mapa al pasar el mouse */
+}
+
+
+
+  
+  /* Contenedores de tarjetas */
+  .jardin-cards-container,
+  .infantil-cards-container,
+  .salon-cards-container,
+  .hacienda-cards-container,
+  .terraza-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  
+  .jardin-info, .infantil-info,
+  .salon-info, .hacienda-info,
+  .terraza-info, h2{
+    padding-bottom: 10px;
+  }
+  
+  /* Tarjetas */
+  .jardin-card,
+  .infantil-card,
+  .salon-card,
+  .hacienda-card,
+  .terraza-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Imágenes */
+  .jardin-image,
+  .infantil-image,
+  .salon-image,
+  .hacienda-image,
+  .terraza-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Información dentro de la tarjeta */
+  .jardin-info,
+  .infantil-info,
+  .salon-info,
+  .hacienda-info,
+  .terraza-info {
+    padding: 15px;
+  }
+  
+  /* Títulos */
+  .jardin-info h2,
+  .infantil-info h2,
+  .salon-info h2,
+  .hacienda-info h2,
+  .terraza-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  /* Párrafos */
+  .jardin-info p,
+  .infantil-info p,
+  .salon-info p,
+  .hacienda-info p,
+  .terraza-info p {
+    margin: 10px 0 0;
+    color: #555;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .jardin-cards-container,
+    .infantil-cards-container,
+    .salon-cards-container,
+    .hacienda-cards-container,
+    .terraza-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .jardin-cards-container,
+    .infantil-cards-container,
+    .salon-cards-container,
+    .hacienda-cards-container,
+    .terraza-cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /******************** Esto es todo sobre  las tarjetas  ***********/

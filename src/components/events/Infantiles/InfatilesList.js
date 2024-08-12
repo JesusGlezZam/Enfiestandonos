@@ -1,13 +1,15 @@
 import React from 'react'
-import { Cards } from '../../shared/Cards'
-import { infantilesData } from '../../../helpers/datosdummy'
+import { EventosPrincipal } from '../../general/EventosPrincipal'
 
 
 export const InfatilesList = () => {
   return (
     <div className='events'>
-      <Cards items={infantilesData.infantiles} itemType="infantil" />;
-    {/*  <EventosPrincipal eventType="infantil" />  */}
-    </div>
+    <h2>¡Diversión y Magia en Cada Rincón!</h2>
+    <h3>Un espacio ideal para celebrar momentos únicos.</h3>
+    <p>Crea recuerdos inolvidables con nuestras áreas diseñadas especialmente para eventos infantiles. Disfruta de un entorno alegre y seguro donde los más pequeños pueden explorar, jugar y celebrar su día de manera mágica.</p>
+    <EventosPrincipal  eventType="infantil" />
+  
+ </div>
   )
 }

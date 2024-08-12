@@ -11,7 +11,7 @@ console.log(getImagePath('jardin', 'Rosalinda'));
 export const jardinesData = {
   type: "jardin",
   jardines: [
-    { id: 1, name: "Santa Maria", description: 'Descripción del Jardín 1', image: getImagePath('jardin', 'Santa Maria') },
+    { id: 1, name: "Santa Maria", description: 'Descripción del Jardín 1', image: getImagePath('jardin', 'Santa Maria'), },
     { id: 2, name: 'Los Cisnes', description: 'Descripción del Jardín 2', image: getImagePath('jardin', 'Los Cisnes') },
     { id: 3, name: 'Rosalinda', description: 'Descripción del Jardín 3', image: getImagePath('jardin', 'Rosalinda') },
     { id: 4, name: 'Casa Blanca', description: 'Descripción del Jardín 4', image: getImagePath('jardin', 'Casa Blanca') },
@@ -56,13 +56,13 @@ export const jardinesData = {
   export const salonesData  = {
     type: "salon", 
   salones: [
-    { id: 1, name: "sal santa maria", description: 'Descripción del Jardín 1', image: 'url1' },
-    { id: 2, name: 'sal los cisnes', description: 'Descripción del Jardín 2', image: 'url2' },
-    { id: 3, name: 'sal jardin de santiago', description: 'Descripción del Jardín 3', image: 'url3' },
-    { id: 4, name: 'sal dany garden', description: 'Descripción del Jardín 4', image: 'url4' },
-    { id: 5, name: 'sal oasis', description: 'Descripción del Jardín 5', image: 'url5' },
-    { id: 6, name: 'sal kristal jardin', description: 'Descripción del Jardín 6', image: 'url6' },
-    { id: 7, name: 'sal Green Party ', description: 'Descripción del Jardín 7', image: 'url7' },
+    { id: 1, name: "Eduardos", description: 'Descripción del Jardín 1', image: getImagePath('salon', 'Eduardos') },
+    { id: 2, name: 'Real del Valle', description: 'Descripción del Jardín 2', image: getImagePath('salon', 'Real del Valle')  },
+    { id: 3, name: 'Santa Teresa', description: 'Descripción del Jardín 3', image: getImagePath('salon', 'Santa Teresa')  },
+    { id: 4, name: 'San Diego II', description: 'Descripción del Jardín 4', image: getImagePath('salon', 'San Diego II') },
+    { id: 5, name: 'Santa Clara', description: 'Descripción del Jardín 5', image: getImagePath('salon', 'Santa Clara')  },
+    { id: 6, name: 'Bersach', description: 'Descripción del Jardín 6', image: getImagePath('salon', 'Bersach') },
+    { id: 7, name: 'Aries Premier Lounge', description: 'Descripción del Jardín 7', image: getImagePath('salon', 'Aries Premier Lounge') },
     // ...
     ] 
   };
