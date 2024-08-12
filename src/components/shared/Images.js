@@ -57,13 +57,13 @@ export const getImagePath = (type, name) => {
         "Talleres infantiles",
     ],
     salon: [
-        "Conferencias",
-        "Seminarios",
-        "Reuniones empresariales",
         "Bodas",
         "Quinceaños",
-        "Fiestas de fin de año",
         "Eventos sociales",
+        "Fiestas de fin de año",
+          "Reuniones empresariales",
+        "Conferencias",
+        "Seminarios",
         "Presentaciones de producto",
     ],
     hacienda: [

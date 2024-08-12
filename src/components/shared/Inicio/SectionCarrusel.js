@@ -73,7 +73,7 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                     <div className='detail-item'>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
-                                                <MdCelebration className='detail-icon celebration' size={20} />
+                                                <MdCelebration className='detail-icon celebration' size={30} />
                                                 <span className="event-text">
                                                     {(item.tipos_de_eventos || [])  
                                                         .filter(evento => evento.available)
@@ -93,6 +93,7 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                                 >
                                                     <FaMapMarkerAlt className='detail-icon maps' />
                                                 </a>
+                                                <span>{item.address}</span>
                                             </div>
                                         </div>
                                     </div>

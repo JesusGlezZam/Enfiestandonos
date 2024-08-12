@@ -24,7 +24,7 @@ export const jardinesData = {
           { "id": 9, "name": "Tipo de pago (TC, TD, WiFi)", "available": true }
         ],
         "tipos_de_eventos": [
-          { "id": 1, "name": "Bodas", "available": true },
+          { "id": 1, "name": "Bodas", "available": false },
           { "id": 2, "name": "Quinceaños", "available": true },
           { "id": 3, "name": "Bautizos", "available": true },
           { "id": 4, "name": "Cumpleaños", "available": true },

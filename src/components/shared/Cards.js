@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getImagePath } from './Images';
 import '../../styles/general/typeEventCard.css'
-import { FaBirthdayCake, FaClock, FaMapMarkerAlt, FaSun, FaUser,FaLeaf, FaBuilding, FaHome } from 'react-icons/fa';
+import { FaBirthdayCake, FaClock, FaMapMarkerAlt, FaSun, FaUser,FaLeaf, FaBuilding, FaHome, FaGlassCheers } from 'react-icons/fa';
 import { MdCelebration } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const getIconByType = (type) => {
     case 'infantil':
       return <FaBirthdayCake />;
     case 'salon':
-      return <FaBuilding />;
+      return <FaGlassCheers />;
     case 'hacienda':
       return <FaHome />;
     case 'terraza':
@@ -26,7 +26,7 @@ const getIconByType = (type) => {
 };
 export const Cards = ({ items, itemType }) => {
    return (
-    <section className='event-items'>
+    <section className='event-items-cards'>
       <div className={`${itemType}-cards-container`}>
         {items.map((item) => (
           <div key={item.id} className={`${itemType}-card`}>
@@ -63,11 +63,11 @@ export const Cards = ({ items, itemType }) => {
                   >
                     <FaMapMarkerAlt className='detail-icon maps' />
                   </Link>
+                  <span>{item.address}</span>
                 </div>
               </div>
             </div>
               
-        
               <div className='detail-item'>
                 <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', width: '48%', flex: '4' }}>
