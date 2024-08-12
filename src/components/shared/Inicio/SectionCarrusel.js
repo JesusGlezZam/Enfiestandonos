@@ -73,7 +73,7 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                     <div className='detail-item'>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
-                                                <MdCelebration className='detail-icon celebration' size={30} />
+                                                <MdCelebration className='detail-icon celebration' size={20} />
                                                 <span className="event-text">
                                                     {(item.tipos_de_eventos || [])  
                                                         .filter(evento => evento.available)

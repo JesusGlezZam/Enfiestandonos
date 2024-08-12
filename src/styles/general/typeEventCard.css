@@ -62,6 +62,9 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
 
 .detail-icon {
   margin-right: 8px; /* Espacio entre el ícono y el texto */
+  color: #333; /* Color predeterminado */
+  flex-shrink: 0; /* Evita que el ícono se reduzca */
+  transition: color 0.3s, transform 0.3s
 }
 
 .event-items .detail-icon {
