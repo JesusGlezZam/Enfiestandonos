@@ -21,13 +21,13 @@ export const Inicio = () => {
       <CarruselServices/>
       <hr className="custom-hr" />
       
-
-      <SectionCarrusel title="Jardines" items={jardinesData.jardines}  />
-      <SectionCarrusel title="Salones Infantiles" items={infantilesData.infantiles} />
+      <h2 className='welcome'>Estos espacios únicos son el lugar perfecto para tu evento.</h2>
+      <SectionCarrusel title="Jardines" type="jardin" items={jardinesData.jardines}  />
+      <SectionCarrusel title="Salones Infantiles" type="infantil" items={infantilesData.infantiles} />
 
       <Publish imageKey="publicidad1" />
 
-      <SectionCarrusel title="Salones" items={salonesData.salones} />
+      <SectionCarrusel title="Salones" type="salon" items={salonesData.salones} />
 
       <EventTypesList spaceType="jardin" />
 

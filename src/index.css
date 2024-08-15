@@ -1,228 +1,50 @@
- /* Inicio Carrusel se servicios Bienvenido aenfiestandonos */
- .home {
-  text-align: center;
-  padding: 10px 10px;
-  height: 80px;
-}
-
-.home .header{
-    background-color: #2b5d8b;
-}
-  
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5em;
-  line-height: 1.2; /* Ajuste de altura de línea */
-  height: 80px; /* Altura fija para el h1 */
-  display: flex;
-  align-items: center; /* Alinea verticalmente el texto dentro de h1 */
-}
-
-.header .search-bar {
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-}
-
-.header .search-bar input {
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  width: 300px;
-}
-
-.header .search-bar button {
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  border-radius: 0 5px 5px 0;
-}
-
-.header .search-bar button:hover {
-  background-color: #555;
-}
- /* Terminando pagina de inicio Bienvenido aenfiestandonos */
-
- @media (max-width: 1024px) {
-    .header {
-      padding: 10px;
-      font-size: 0.8em; /* Tamaño reducido del texto en el carrusel */
-    }
-  
-    .header .logo, .welcome-message{
-      font-size: 0.8em; /* Tamaño reducido del texto en el carrusel */
-      height: 20px;
-    }
-  
-    .header .welcome-message{
-      font-size: 0.6em; /* Tamaño reducido del texto en el carrusel */
-    }
-    
-    .header h1 {
-      font-size: 1.2em;
-    }
-  
-    .header .search-bar input,
-    .header .search-bar button {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    .header h1 {
-      font-size: 1em; /* Reducir el tamaño de fuente */
-      height: auto; /* Quitar la altura fija */
-      padding: 0px; /* Añadir padding */
-    }
-  
-    .header .search-bar input {
-      width: 100%; /* Ajustar el ancho al 100% */
-      font-size: 0.9em; /* Reducir el tamaño de fuente */
-    }
-  
-    .header .search-bar button {
-      font-size: 0.9em; /* Reducir el tamaño de fuente */
-    }
-  
-    .header .search-bar {
-      flex-direction: initial; /* Cambiar la dirección a columna */
-    }
-  
-    .header .search-bar input,
-    .header .search-bar button {
-      width: 100%; /* Ambos elementos ocupan el 100% del ancho */
-      border-radius: 5px; /* Añadir borde redondeado completo */
-      margin: 5px 0; /* Añadir margen entre los elementos */
-    }
-  
-    .header .search-bar button {
-      width: 50%; 
-    }
-}  
-
-
-/** feature y colores  */
-.features {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-
-
-.feature h2 {
-  padding: 5px;
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  color: #333; /* Color inicial del texto */
-  transition: color 0.3s ease; /* Transición suave para el cambio de color */
-  cursor: pointer; /* Cambia el cursor a una mano cuando se pase sobre el texto */
-}
-
-.feature h2:hover {
-  font-size: 1.529em;
-  color: inherit; /* Hereda el color del h2 para que el enlace no cambie de color */
-}
-
-/* Animación de pulso */
-@keyframes pulse {
-  0% { color: #ff6f61; } /* Rojo coral elegante */
-  50% { color: #ffcc00; } /* Amarillo dorado brillante */
-  100% { color: #1e3a8a; } /* Azul oscuro sofisticado */
-}
-
-.carousel-container p {
-  text-align: center;
-  font-size: 1.8em; /* Tamaño de texto grande */
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  line-height: 0.2;
-  animation: pulse 5s infinite; /* Animación pulsante durante 5 segundos */
-  /*animation: pulse 2s infinite;  Animación pulsante */
-}
-
-/* Media Queries para Responsividad */
-@media (max-width: 1024px) {
-  
-  .features {
-    justify-content: space-around;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra el contenido dentro de cada slide */
-  }
-
-  .feature {
-    max-width: 100px; /* Ancho máximo de cada tarjeta en pantallas medianas */
-    text-align: center;
-    margin: 0 auto; /* Centra el contenido dentro del slide */
-  }
-
-  .slick-prev, .slick-next {
-    width: 8px; /* Tamaño de las flechas en pantallas medianas */
-    height: 20px;
-  }
-
-  .slick-prev {
-    left: -20px; /* Ajusta la posición a la izquierda */
-  }
-  
-  .slick-next {
-    right: -10px; /* Ajusta la posición a la derecha */
-  }
-  
-  .slick-prev:before, .slick-next:before {
-    font-size: 16px; /* Tamaño del icono de las flechas en pantallas medianas */
-  }
-
-  .carousel-container p {
-    font-size: 1em; /* Tamaño de texto en pantallas medianas */
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: -20px;
-    line-height: 0.2;
-    animation: pulse 5s infinite; 
-  }
-  
-  .icon-container .fa-icon {
-      font-size: 50px; /* Tamaño para dispositivos móviles */
-  }
-  .carousel-container h2 {
-    font-size: .8em;
-  }
-
-  .feature h2 {
-    color: #333; /* Color inicial del texto */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
-  }
-
-}
- /**************************************/
-
-
 
 /****** Estilos de las tarjetas de la pagina de inicio  */
+h2.welcome {
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: -10px; /* Espacio abajo */
+}
 
 .custom-carousel-section {
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   background-color: #ffffff; /* Fondo blanco */
-  border-radius: 40px; /* Esquinas redondeadas */
+  border-radius: 25px; /* Esquinas redondeadas */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
   border: none; /* 0 solid transparent;  Borde inicial transparente */
-  margin: 0px 0px; /* Margen superior e inferior para espacio entre secciones */
+  margin: 10px auto; /* Margen superior e inferior para espacio entre secciones */
 }
 
-.custom-carousel-title {
-  margin-bottom: 20px;
-  font-size: 2em;
+.custom-carousel-title,
+.custom-carousel-link {
+  padding-left: 30px;
+  margin-bottom: 0px;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.custom-carousel-title-container {
+  display: flex;
+  justify-content: space-between; /* Alinea el contenido en los extremos */
+  align-items: center; /* Alinea verticalmente el contenido */
+  margin-bottom: 10px; /* Espacio inferior del contenedor */
+}
+
+.custom-carousel-link {
+  padding-right: 50px;
+  font-size: 1.6em; /* Tamaño del texto del enlace */
+  color: #007bff; /* Color del enlace (puedes ajustar según tus preferencias) */
+  text-decoration: none; /* Elimina subrayado del enlace */
+  transition: color 0.3s ease; /* Transición suave para el color del enlace */
+}
+
+.custom-carousel-link:hover {
+  color: #0056b3; /* Color del enlace en hover */
 }
 
 .custom-carousel-slider {
-  width: 80%; /* Ajuste del ancho del carrusel al 80% de la pantalla */
+  width: 100%; /* Ajuste del ancho del carrusel al 80% de la pantalla */
   margin: 0 auto; /* Centrar el carrusel */
 }
 
@@ -240,7 +62,7 @@
 }
 
 .custom-carousel-image {
-  width: 100%;
+  width: 98%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
@@ -253,6 +75,7 @@
 .custom-carousel-item-title {
   margin: 0;
   font-size: 1.5em;
+  padding-bottom: 5px;
 }
 
 .custom-carousel-item-description {
@@ -260,35 +83,117 @@
   color: #555;
 }
 
-.feature {
-  text-align: center;
-  padding: 0px; /* Espacio alrededor de cada imagen */ 
-  margin: 0; /* Elimina el margen alrededor de cada tarjeta */
-}
-/****************************          ***********************/
-
-
-
-/*** Estilos  para publicidad ***/
-.advertisement {
-  width: 80%; /* Ocupa el 100% del contenedor padre */
-  max-width: 1200px; /* Ancho máximo para pantallas grandes */
-  height: 150px; /* Permite que la altura se ajuste automáticamente */
-  aspect-ratio: 16 / 9; /* Relación de aspecto 16:9 para hacerla más ancha que larga */
-  margin: 20px auto; /* Centra el contenedor horizontalmente */
-  padding: 20px 0px;
-  border-radius: 58px;
-  background-color: #f9f9f9; /* Fondo claro para la sección */
+/* Estilos para la sección de detalles */
+.detail-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  flex-direction: column; /* Coloca los ítems en una columna */
+  width: 100%; /* Ancho completo del contenedor */
 }
 
-.advertisement img {
-  width: 100%;
-  height: auto; /* Ajusta la altura para mantener la proporción */
-  object-fit: scale-down; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
-  border-radius: 8px;
-  object-position: initial; /* Ajusta la posición de la imagen */
+/* Estilos para el contenedor de detalles */
+.detail-container {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las columnas */
+  width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Estilos para cada columna de detalles */
+.detail-info {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  width: 48%; /* Ancho de cada columna */
+  padding: 4px;
+}
+
+/* Estilos para los íconos dentro de los detalles */
+.detail-icon {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos para la capacidad */
+.capacity {
+  font-weight: bold; /* Estilo para el texto de la capacidad */
+}
+
+
+
+
+/* Consultas de medios para pantallas más pequeñas */
+@media (max-width: 600px) {
+  h2.welcome {
+    text-align: left;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: -15px;
+  }
+  
+
+  .custom-carousel-title {
+    padding-left: 5px;
+    font-size: 1em;
+    padding-bottom:20px;
+  }
+
+  .custom-carousel-link {
+    padding-right: 10px;
+    font-size: 1em;
+  }
+
+  .custom-carousel-item {
+    padding: 0px;
+    margin: 5px 0;
+  }
+
+  .custom-carousel-image {
+    height: 120px;
+  }
+
+  .custom-carousel-item-title {
+    font-size: 1em;
+  }
+
+  .custom-carousel-item-description {
+    font-size: 0.8em;
+  }
+  .custom-carousel-slider {
+    margin: 0px;
+  }
+   /* Ajustes para el contenedor de detalles */
+   .detail-container {
+    flex-direction: column;
+    font-size: .8em;/* Coloca las columnas una debajo de la otra en pantallas más pequeñas */
+  }
+
+  /* Ajustes para cada columna de detalles */
+  .detail-info {
+    width: 100%; /* Ancho completo en pantallas más pequeñas */
+    margin-bottom: 5px; /* Espacio inferior para separación */
+  }
+
+  /* Ajusta el espacio entre los íconos y el texto si es necesario */
+  .detail-icon {
+    margin-right: 6px; /* Menor espacio en pantallas pequeñas */
+  }
+}
+/****************************  Colores para los iconos de la pagina principal        ***********************/
+
+
+.icon-jardin{
+  color: #228B22;
+}
+
+.icon-infantil{
+  color: #E4002B; /*  E8B57 2E8B57 */ 
+}
+
+.icon-salon {
+  color:#8B0000;
+}
+
+.icon-hacienda{
+  color: #004d00;  /* 003366  002366 C8102E */
+}
+
+.icon-terraza{
+  color: #FFD700;
 }

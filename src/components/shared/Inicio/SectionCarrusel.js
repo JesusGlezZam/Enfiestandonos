@@ -2,20 +2,40 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaMapMarkerAlt, FaUser, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaUser, FaClock, FaLeaf, FaSun, FaGlassCheers, FaHome } from 'react-icons/fa';
 import { MdCelebration } from 'react-icons/md';
 import { paginateArray } from '../../../helpers/utils'; // Asegúrate de tener la función de paginado
+import { useNavigate } from 'react-router-dom';
+import { BsFillGiftFill } from 'react-icons/bs';
 
-export const SectionCarrusel = ({ title, items, itemType }) => {
+const getIconByType = (type) => {
+    switch (type) {
+      case 'jardin':
+        return <FaLeaf className='icon-jardin'/>;
+      case 'infantil':
+        return <BsFillGiftFill className='icon-infantil'/>;
+      case 'salon':
+        return <FaGlassCheers className='icon-salon'/>;
+      case 'hacienda':
+        return <FaHome className='icon-hacienda'/>;
+      case 'terraza':
+        return <FaSun />;
+      default:
+        return null;
+    }
+  };
+
+export const SectionCarrusel = ({ title, type, items, itemType }) => {
     const pageSize = 6; // Número de elementos por página
     const [currentPage, setCurrentPage] = useState(0);
+    const navigate = useNavigate();
 
     const paginatedItems = paginateArray(items, pageSize);
     console.log('Paginated Items:', paginatedItems); // Depura aquí
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -49,18 +69,19 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
     };
 
     const currentItems = paginatedItems[currentPage] || [];
-    console.log('Current Items:', currentItems); // Depura aquí
-    console.log('Paginated Items:', paginatedItems);
-    console.log('Items Prop:', items);
-
-
+    
+    const handleNavigation = (type) => {
+        navigate(`/espacios-para-tu-evento/${type}`, { state: { scrollToTop: true } });
+    };
+    
     return (
         <section className='custom-carousel-section'>
-            <h1 className='custom-carousel-title'><strong>{title}</strong> ideales para eventos.</h1>
+            <div className="custom-carousel-title-container">
+                <h2 className="custom-carousel-title" onClick={() => handleNavigation(type)}>{getIconByType(type)} {title}</h2>
+                <strong className="custom-carousel-link" onClick={() => handleNavigation(type)}>Ver todos</strong>
+            </div>
             <Slider {...settings} className="custom-carousel-slider">
                 {currentItems.length > 0 ? (
-                    
-
                     currentItems.map((item, index) => (
                         <div key={index} className="custom-carousel-item">
                             <div className="custom-carousel-image-container">
@@ -71,10 +92,10 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                 
                                 <section className={`${itemType}-details`}>
                                     <div className='detail-item'>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                                            <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
+                                        <div className='detail-container'>
+                                            <div className='detail-info'>
                                                 <MdCelebration className='detail-icon celebration' size={20} />
-                                                <span className="event-text">
+                                                <span>
                                                     {(item.tipos_de_eventos || [])  
                                                         .filter(evento => evento.available)
                                                         .slice(0, 3)
@@ -84,7 +105,7 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                                 </span>
                                             </div>
 
-                                            <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
+                                            <div className='detail-info'>
                                                 <a 
                                                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
                                                     target="_blank" 
@@ -96,18 +117,15 @@ export const SectionCarrusel = ({ title, items, itemType }) => {
                                                 <span>{item.address}</span>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className='detail-item'>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                                            <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
-                                                <FaUser className='detail-icon user' />
-                                                <span>Cap. máxima: <span className='capacity'>{item.capacity || 'No disponible'}</span></span>
-                                            </div>
-                                            <div style={{ display: 'flex', alignItems: 'center', width: '48%' }}>
-                                                <FaClock className='detail-icon available' />
-                                                <span>{item.hours || 'No disponible'}</span>
-                                            </div>
+                                    </div>              
+                                    <div className='detail-container'>
+                                        <div className='detail-info'>
+                                            <FaUser className='detail-icon user' />
+                                            <span>Cap. máxima: <span className='capacity'>{item.capacity || 'No disponible'}</span></span>
+                                        </div>
+                                        <div className='detail-info'>
+                                            <FaClock className='detail-icon available' />
+                                            <span>{item.hours || 'No disponible'}</span>
                                         </div>
                                     </div>
                                 </section>

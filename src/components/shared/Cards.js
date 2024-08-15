@@ -2,31 +2,32 @@ import React from 'react'
 
 import { getImagePath } from './Images';
 import '../../styles/general/typeEventCard.css'
-import { FaBirthdayCake, FaClock, FaMapMarkerAlt, FaSun, FaUser,FaLeaf, FaBuilding, FaHome, FaGlassCheers } from 'react-icons/fa';
+import { FaClock, FaMapMarkerAlt, FaSun, FaUser,FaLeaf, FaHome, FaGlassCheers } from 'react-icons/fa';
 import { MdCelebration } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { BsFillGiftFill } from 'react-icons/bs';
 
 
 
 const getIconByType = (type) => {
   switch (type) {
     case 'jardin':
-      return <FaLeaf />;
+      return <FaLeaf className="icon-jardin" />;
     case 'infantil':
-      return <FaBirthdayCake />;
+      return <BsFillGiftFill className="icon-infantil" />;
     case 'salon':
-      return <FaGlassCheers />;
+      return <FaGlassCheers className="icon-salon" />;
     case 'hacienda':
-      return <FaHome />;
+      return <FaHome className="icon-hacienda" />;
     case 'terraza':
-      return <FaSun />;
+      return <FaSun className="icon-terraza" />;
     default:
       return null;
   }
 };
+
 export const Cards = ({ items, itemType }) => {
    return (
-    <section className='event-items-cards'>
+    <section>
       <div className={`${itemType}-cards-container`}>
         {items.map((item) => (
           <div key={item.id} className={`${itemType}-card`}>
@@ -40,47 +41,44 @@ export const Cards = ({ items, itemType }) => {
               {getIconByType(itemType)} {item.name}
             </h2>
             <section className={`${itemType}-details`}>
-            <div className='detail-item'>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                <div style={{ display: 'flex', alignItems: 'center', width: '48%',flex: '4'}}>
-                  <MdCelebration className='detail-icon celebration' size={20} />
-                  <span className="event-text">
-                    {item.tipos_de_eventos
-                      .filter(evento => evento.available)
-                      .slice(0, 3)
-                      .map(evento => evento.name)
-                      .join(', ')
-                    }
-                  </span>
-                </div>
+                                    <div className='detail-item'>
+                                        <div className='detail-container'>
+                                            <div className='detail-info'>
+                                                <MdCelebration className='detail-icon celebration' size={20} />
+                                                <span>
+                                                    {(item.tipos_de_eventos || [])  
+                                                        .filter(evento => evento.available)
+                                                        .slice(0, 3)
+                                                        .map(evento => evento.name)
+                                                        .join(', ')
+                                                        || 'No hay eventos disponibles'}
+                                                </span>
+                                            </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', width: '48%', flex: '2' }}>
-                  <Link 
-                    to={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="maps-button"
-                  >
-                    <FaMapMarkerAlt className='detail-icon maps' />
-                  </Link>
-                  <span>{item.address}</span>
-                </div>
-              </div>
-            </div>
-              
-              <div className='detail-item'>
-                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', width: '48%', flex: '4' }}>
-                    <FaUser className='detail-icon user' />
-                    <span>Capacidad máxima: <span className='capacity'>{item.capacity}</span></span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', width: '48%', flex: '2' }}>
-                    <FaClock className='detail-icon available' />
-                    <span>{item.hours}</span>
-                  </div>
-                </div>
-            </div>
-            </section>
+                                            <div className='detail-info'>
+                                                <a 
+                                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="maps-button"
+                                                >
+                                                    <FaMapMarkerAlt className='detail-icon maps' />
+                                                </a>
+                                                <span>{item.address}</span>
+                                            </div>
+                                        </div>
+                                    </div>              
+                                    <div className='detail-container'>
+                                        <div className='detail-info'>
+                                            <FaUser className='detail-icon user' />
+                                            <span>Cap. máxima: <span className='capacity'>{item.capacity || 'No disponible'}</span></span>
+                                        </div>
+                                        <div className='detail-info'>
+                                            <FaClock className='detail-icon available' />
+                                            <span>{item.hours || 'No disponible'}</span>
+                                        </div>
+                                    </div>
+                                </section>
           </div>
         </div>
         ))}

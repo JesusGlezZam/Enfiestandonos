@@ -1,64 +1,148 @@
 /***************** Estilos generales tarjetas 
 Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ****************/
 /* Contenedor general de los ítems de evento */
-.event-items {
-  padding: 20px;
+/* Estilo para el título principal */
+.events {
+  padding: 20px; /* Espacio interno alrededor del contenido */
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+  margin: 20px auto; /* Espacio arriba y abajo, y centrado */
+  text-align: center; /* Centra el texto */
 }
 
-.event-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%; /* Ajusta el ancho máximo según sea necesario */
+.events-detail{
+  padding-top:40px;
 }
 
-/* Contenedor para las tarjetas del evento */
-.event-items .cards-container {
+.events h2 {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Estilo para cada tarjeta del evento */
-.event-items .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 300px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.event-items .card:hover {
-  transform: scale(1.05);
-}
-
-/* Imagen dentro de la tarjeta */
-.event-items .card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Información dentro de la tarjeta */
-.event-items .card-info {
-  padding: 15px;
-}
-
-/* Detalles adicionales de la tarjeta */
-.event-items .details {
-  margin-top: 15px;
-}
-
-.event-items .detail-item {
-  display: flex;
+  padding-left: 30px;
   align-items: center;
-  margin-bottom: 10px;
   justify-content: space-between;
+  font-size: 2em; /* Tamaño grande para el título */
+  margin-bottom: 10px; /* Espacio debajo del título */
+  color: #333; /* Color oscuro para contraste */
+  font-weight: bold; /* Negrita para el título */
 }
 
+.events h2 .fa-icon{
+  padding-right: 20px;
+}  
+
+/* Estilo para el subtítulo */
+.events h3 {
+  font-size: 1.5em; /* Tamaño mediano para el subtítulo */
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 15px; /* Espacio debajo del subtítulo */
+  font-weight: normal; /* Normal para el subtítulo */
+}
+
+/* Estilo para el párrafo */
+.events p {
+  font-size: 1.3em; /* Tamaño estándar para el texto */
+  line-height: 1.6; /* Espacio entre líneas para mayor legibilidad */
+  color: #494646; /* Color gris para el texto */
+  margin: 0 auto; /* Márgenes automáticos para centrar el párrafo */
+}
+
+@media (max-width: 768px) {
+
+  .events {
+    padding: 10px;
+  }
+
+  .events-detail{
+    padding-top:10px;
+  }
+
+  .events h2 {
+    text-align: center;
+    font-size: 1.17em;
+  }  
+
+  .events h3 {
+    text-align: right;
+    font-size: 1.1em; /* Tamaño mediano para el subtítulo */
+    padding-right: 0px;
+    margin-bottom: 10px; /* Espacio debajo del subtítulo */
+  }
+
+  .events p {
+    font-size: .88em; /* Tamaño estándar para el texto */
+    line-height: 1; /* Espacio entre líneas para mayor legibilidad */
+    text-align: justify;
+    color: #666; /* Color gris para el texto */
+    margin: 0 auto; /* Márgenes automáticos para centrar el párrafo */
+  }
+}
+/****************************    ***********/
+.pagination-controls{
+
+}
+
+
+
+
+/**********  General de Events jardines.js, infantiles,js  **/
+  
+/* Contenedores de tarjetas */
+  .jardin-cards-container,
+  .infantil-cards-container,
+  .salon-cards-container,
+  .hacienda-cards-container,
+  .terraza-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Tarjetas */
+  .jardin-card,
+  .infantil-card,
+  .salon-card,
+  .hacienda-card,
+  .terraza-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  /* Imágenes */
+  .jardin-image,
+  .infantil-image,
+  .salon-image,
+  .hacienda-image,
+  .terraza-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Títulos */
+  .jardin-info h2,
+  .infantil-info h2,
+  .salon-info h2,
+  .hacienda-info h2,
+  .terraza-info h2 {
+    display: contents;
+    align-items: center; /* Alinea verticalmente el icono y el texto */
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+  
+  /* Información dentro de la tarjeta */
+  .jardin-info,
+  .infantil-info,
+  .salon-info,
+  .hacienda-info,
+  .terraza-info {
+    padding: 15px;
+  } 
+  
+ 
 
 .detail-icon {
   margin-right: 8px; /* Espacio entre el ícono y el texto */
@@ -67,30 +151,12 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
   transition: color 0.3s, transform 0.3s
 }
 
-.event-items .detail-icon {
-  margin-right: 8px;
-  color: #333;
-}
-
-/* Agrega estilos para los íconos */
-.event-items .detail-item span {
-  font-size: 14px;
-}
-
 .detail-item span {
   white-space: nowrap;
   flex-wrap: wrap;
   text-overflow: ellipsis;
-  overflow: hidden;
-  
-}
-
-
-/* Estilos generales para los íconos en los detalles */
-.detail-icon {
-  margin-right: 8px;
-  color: #333; /* Color predeterminado */
-  transition: color 0.3s, transform 0.3s; /* Transición suave para cambios de color y tamaño */
+  overflow: hidden; 
+  padding-top:10px;
 }
 
 /* Estilo cuando el ícono de celebración es hover */
@@ -122,99 +188,34 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
   transform: scale(1.2); /* Aumenta el tamaño del ícono de mapa al pasar el mouse */
 }
 
+@media (max-width: 768px){
 
+  .detail-info {
+    padding: 0px;
+  }
 
+  .detail-item span {
+    padding-top:0px;
+  }
   
-  /* Contenedores de tarjetas */
   .jardin-cards-container,
   .infantil-cards-container,
   .salon-cards-container,
   .hacienda-cards-container,
   .terraza-cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding: 20px;
+    padding: 5px;
   }
 
-  
-  .jardin-info, .infantil-info,
-  .salon-info, .hacienda-info,
-  .terraza-info, h2{
+  .jardin-info h2, .infantil-info h2, .salon-info h2, .hacienda-info h2, .terraza-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
     padding-bottom: 10px;
   }
-  
-  /* Tarjetas */
-  .jardin-card,
-  .infantil-card,
-  .salon-card,
-  .hacienda-card,
-  .terraza-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  .jardin-info, .infantil-info, .salon-info, .hacienda-info, .terraza-info {
+    padding: 5px;
   }
-  
-  /* Imágenes */
-  .jardin-image,
-  .infantil-image,
-  .salon-image,
-  .hacienda-image,
-  .terraza-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Información dentro de la tarjeta */
-  .jardin-info,
-  .infantil-info,
-  .salon-info,
-  .hacienda-info,
-  .terraza-info {
-    padding: 15px;
-  }
-  
-  /* Títulos */
-  .jardin-info h2,
-  .infantil-info h2,
-  .salon-info h2,
-  .hacienda-info h2,
-  .terraza-info h2 {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  
-  /* Párrafos */
-  .jardin-info p,
-  .infantil-info p,
-  .salon-info p,
-  .hacienda-info p,
-  .terraza-info p {
-    margin: 10px 0 0;
-    color: #555;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .jardin-cards-container,
-    .infantil-cards-container,
-    .salon-cards-container,
-    .hacienda-cards-container,
-    .terraza-cards-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .jardin-cards-container,
-    .infantil-cards-container,
-    .salon-cards-container,
-    .hacienda-cards-container,
-    .terraza-cards-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /******************** Esto es todo sobre  las tarjetas  ***********/
+}

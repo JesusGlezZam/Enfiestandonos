@@ -1,9 +1,10 @@
 // Carrusel3.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaBirthdayCake, FaConciergeBell, FaHome, FaSun, FaLeaf } from 'react-icons/fa';
+import { FaConciergeBell, FaSun, FaLeaf, FaGlassCheers } from 'react-icons/fa';
+import { BsFillGiftFill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { services } from  '../../../helpers/services';
 import '../../../styles/general/carrucelServices.css';
@@ -48,11 +49,16 @@ const settings = {
 };
 
 export const CarruselServices = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleNavigation = (id) => {
-    navigate(`/espacios-para-tu-evento/${id}`);
+    navigate(`/espacios-para-tu-evento/${id}`, { state: { scrollToTop: true } });;
   };
+
+  useEffect(() => {
+    // Desplazarse al inicio de la página cuando el componente se monta
+    window.scrollTo(0, 0);
+}, []);
 
   return (
     <div>
@@ -60,12 +66,12 @@ export const CarruselServices = () => {
         <Slider {...settings}>
           {services.map((service) => (
             <div key={service.id} className="feature" onClick={() => handleNavigation(service.id)}>
-              <div className="icon-container">
-                {service.id === "jardin" && <FaLeaf className="fa-icon" color="#ff6f61" />}
-                {service.id === "infantil" && <FaBirthdayCake className="fa-icon" color="#ff6f61" />}
-                {service.id === "salon" && <FaConciergeBell className="fa-icon" color="#ff6f61" />}
-                {service.id === "hacienda" && <FaHome className="fa-icon" color="#ff6f61" />}
-                {service.id === "terraza" && <FaSun className="fa-icon" color="#ff6f61" />}
+              <div className="icon-container"onClick={() => handleNavigation(service.id)}>
+                {service.id === "jardin" && <FaLeaf className="fa-icon home-icon-jardin" />}
+                {service.id === "infantil" && <BsFillGiftFill className="fa-icon home-icon-infantil" />}
+                {service.id === "salon" && <FaGlassCheers className="fa-icon home-icon-salon" />}
+                {service.id === "hacienda" && <FaConciergeBell className="fa-icon home-icon-hacienda" />}
+                {service.id === "terraza" && <FaSun className="fa-icon home-icon-terraza" />}
               </div>
               <h2 className="title">{service.name}</h2>
             </div>

@@ -3,6 +3,7 @@ html, body {
   height: 116%;
   font-family: 'Arial', sans-serif;
   box-sizing: border-box;
+  background-color: #F5F5F5;
 }
 
 
@@ -22,6 +23,28 @@ html, body {
   height: 55px;
   
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 15px; /* Ajusta el padding para pantallas medianas */
+  }
+
+  .header .logo, .welcome-message {
+    height: auto;
+    max-height: 40px; /* Reduce la altura máxima en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+
+  .header .logo, .welcome-message {
+    max-height: 30px; /* Reduce aún más la altura máxima */
+  }
+}
  /* Termina Encabezado (Header) */
 
 
@@ -30,10 +53,25 @@ html, body {
 .content {
   flex: 1;
   padding: 20px;
-  width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+  width: 85%; /* Ocupa el 90% del ancho de la pantalla */
   margin: 0 auto; /* Centra horizontalmente */
-  height: 80%;
+  height: 90%;
   min-height: 90vh; /* Asegura que la altura mínima sea 90% de la altura de la ventana gráfica */
+}
+@media (max-width: 768px) {
+  .content {
+    width: 95%; /* Aumenta el ancho en pantallas más pequeñas */
+    padding: 15px; /* Ajusta el padding */
+    min-height: 75vh; /* Ajusta la altura mínima */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 10px; /* Ajusta el padding */
+    min-height: 70vh; /* Ajusta la altura mínima */
+  }
 }
 
 
@@ -84,7 +122,7 @@ footer nav ul li a:hover {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 1024px) {
   .content {
-    width: 90%; /* Ocupa el 80% del ancho de la pantalla */
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
     padding: 5px;
   }
 
@@ -111,3 +149,133 @@ footer nav ul li a:hover {
 }
 
 
+/****************     PAGINA PRINCIPAL   **************/
+ /* Inicio Carrusel se servicios Bienvenido aenfiestandonos */
+ .home {
+  text-align: center;
+  padding: 10px 10px;
+  height: 100px;
+}
+
+.home .header{
+    background-color: #2b5d8b;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1.2; /* Ajuste de altura de línea */
+  height: 80px; /* Altura fija para el h1 */
+  display: flex;
+  align-items: center; /* Alinea verticalmente el texto dentro de h1 */
+}
+
+.header .search-bar {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .search-bar input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+}
+
+.header .search-bar button {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.header .search-bar button:hover {
+  background-color: #555;
+}
+
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px;
+    font-size: 0.8em; /* Tamaño reducido del texto en el carrusel */
+  }
+
+  .header .logo, .welcome-message{
+    font-size: 0.8em; /* Tamaño reducido del texto en el carrusel */
+    height: 20px;
+  }
+
+  .header .welcome-message{
+    font-size: 0.6em; /* Tamaño reducido del texto en el carrusel */
+  }
+  
+  .header h1 {
+    font-size: 1.2em;
+  }
+
+  .header .search-bar input,
+  .header .search-bar button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header h1 {
+    font-size: 1em; /* Reducir el tamaño de fuente */
+    height: auto; /* Quitar la altura fija */
+    padding: 0px; /* Añadir padding */
+  }
+
+  .header .search-bar input {
+    width: 100%; /* Ajustar el ancho al 100% */
+    font-size: 0.9em; /* Reducir el tamaño de fuente */
+  }
+
+  .header .search-bar button {
+    font-size: 0.9em; /* Reducir el tamaño de fuente */
+  }
+
+  .header .search-bar {
+    flex-direction: initial; /* Cambiar la dirección a columna */
+  }
+
+  .header .search-bar input,
+  .header .search-bar button {
+    width: 100%; /* Ambos elementos ocupan el 100% del ancho */
+    border-radius: 5px; /* Añadir borde redondeado completo */
+    margin: 5px 0; /* Añadir margen entre los elementos */
+  }
+
+  .header .search-bar button {
+    width: 50%; 
+  }
+}  
+ /* Terminando pagina de inicio Bienvenido aenfiestandonos */
+
+ /*** Estilos  para publicidad ***/
+.advertisement {
+  width: 90%; /* Ocupa el 100% del contenedor padre */
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  height: 150px; /* Permite que la altura se ajuste automáticamente */
+  aspect-ratio: 16 / 9; /* Relación de aspecto 16:9 para hacerla más ancha que larga */
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+  padding: 20px 0px;
+  border-radius: 58px;
+  background-color: #f9f9f9; /* Fondo claro para la sección */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.advertisement img {
+  width: 100%;
+  height: auto; /* Ajusta la altura para mantener la proporción */
+  object-fit: scale-down; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+  border-radius: 8px;
+  object-position: initial; /* Ajusta la posición de la imagen */
+}
