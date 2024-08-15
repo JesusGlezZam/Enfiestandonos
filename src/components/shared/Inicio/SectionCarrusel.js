@@ -19,7 +19,7 @@ const getIconByType = (type) => {
       case 'hacienda':
         return <FaHome className='icon-hacienda'/>;
       case 'terraza':
-        return <FaSun />;
+        return <FaSun className='icon-terraza'/>;
       default:
         return null;
     }

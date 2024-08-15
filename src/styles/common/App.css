@@ -135,6 +135,7 @@ footer nav ul li a:hover {
   .footer{
     font-size: 0.8em;
     flex-direction: row; /* Cambiar a columna */
+    padding:0px;
   }
 
   footer nav ul {

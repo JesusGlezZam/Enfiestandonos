@@ -70,27 +70,111 @@ export const jardinesData = {
   export const haciendasData = {
     type: "hacienda", 
   haciendas: [
-    { id: 1, name: "hac santa maria", description: 'Descripción del Jardín 1', image: 'url1' },
-    { id: 2, name: 'hac los cisnes', description: 'Descripción del Jardín 2', image: 'url2' },
-    { id: 3, name: 'hac jardin de santiago', description: 'Descripción del Jardín 3', image: 'url3' },
-    { id: 4, name: 'hac dany garden', description: 'Descripción del Jardín 4', image: 'url4' },
-    { id: 5, name: 'hac oasis', description: 'Descripción del Jardín 5', image: 'url5' },
-    { id: 6, name: 'hac kristal jardin', description: 'Descripción del Jardín 6', image: 'url6' },
-    { id: 7, name: 'hac Green Party ', description: 'Descripción del Jardín 7', image: 'url7' },
-    // ...
+    {
+      id: 1,
+      name: "Manchitas",
+      description: "Descripción del Infantil 1",
+      image: getImagePath('hacienda', 'Manchitas'),
+      address: "Dirección de Manchitas",
+      hours: "9:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ],
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+    },
+    {
+      id: 2,
+      name: "Manchitas",
+      description: "Descripción del Infantil 2",
+      image: getImagePath('hacienda', 'Manchitas'),
+      address: "Dirección de Manchitas",
+      hours: "9:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ],
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+    },{
+      id: 3,
+      name: "Manchitas",
+      description: "Descripción del Infantil 3",
+      image: getImagePath('hacienda', 'Manchitas'),
+      address: "Dirección de Manchitas",
+      hours: "9:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ],
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+    },
+    {
+      id: 4,
+      name: "Manchitas",
+      description: "Descripción del Infantil 4",
+      image: getImagePath('hacienda', 'Manchitas'),
+      address: "Dirección de Manchitas",
+      hours: "9:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ],
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+    }
+   // ...
   ] 
   };
 
   export const terrazasData = {
     type: "terraza", 
   terrazas: [
-    { id: 1, name: "ter santa maria", description: 'Descripción del Jardín 1', image: 'url1' },
+   /* { id: 1, name: "ter santa maria", description: 'Descripción del Jardín 1', image: 'url1' },
     { id: 2, name: 'ter los cisnes', description: 'Descripción del Jardín 2', image: 'url2' },
     { id: 3, name: 'ter jardin de santiago', description: 'Descripción del Jardín 3', image: 'url3' },
     { id: 4, name: 'ter dany garden', description: 'Descripción del Jardín 4', image: 'url4' },
     { id: 5, name: 'ter oasis', description: 'Descripción del Jardín 5', image: 'url5' },
     { id: 6, name: 'ter kristal jardin', description: 'Descripción del Jardín 6', image: 'url6' },
-    { id: 7, name: 'ter Green Party ', description: 'Descripción del Jardín 7', image: 'url7' },
+    { id: 7, name: 'ter Green Party ', description: 'Descripción del Jardín 7', image: 'url7' },*/
     // ...
   ]
 };
@@ -305,7 +389,379 @@ export const infantilesData = {
         { "id": 3, "name": "Show de payasos o magos", "available": true },
         { "id": 4, "name": "Eventos escolares", "available": true }
       ]
+    },
+    {
+      id: 10,
+      name: "Manchitas",
+      description: "Descripción del Infantil 10",
+      image: getImagePath('infantil', 'Manchitas'),
+      address: "Dirección de Manchitas",
+      hours: "9:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ],
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+    },
+    {
+      id: 11,
+      name: "Romano Kids",
+      description: "Descripción del Infantil 11",
+      image: getImagePath('infantil', 'Romano Kids'),
+      address: "Dirección de Romano Kids",
+      hours: "10:00 - 19:00",
+      capacity: 120,
+      price: 900,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 12,
+      name: "Happy Sheep",
+      description: "Descripción del Infantil 12",
+      image: getImagePath('infantil', 'Happy Sheep'),
+      address: "Dirección de Happy Sheep",
+      hours: "9:00 - 20:00",
+      capacity: 150,
+      price: 1000,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+        "tipos_de_eventos": [
+          { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+          { "id": 2, "name": "Fiestas temáticas", "available": true },
+          { "id": 3, "name": "Show de payasos o magos", "available": true },
+          { "id": 4, "name": "Eventos escolares", "available": true }
+        ]
+
+    },
+    {
+      id: 13,
+      name: "Princesas y Dragones",
+      description: "Descripción del Infantil 13",
+      image: getImagePath('infantil', 'Princesas y Dragones'),
+      address: "Dirección de Princesas y Dragones",
+      hours: "9:00 - 18:00",
+      capacity: 80,
+      price: 750,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 14,
+      name: "Kids",
+      description: "Descripción del Infantil 14",
+      image: getImagePath('infantil', 'Kids'),
+      address: "Dirección de Kids",
+      hours: "10:00 - 19:00",
+      capacity: 110,
+      price: 850,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 15,
+      name: "Charly Land",
+      description: "Descripción del Infantil 15",
+      image: getImagePath('infantil', 'Charly Land'),
+      address: "Dirección de Charly Land",
+      hours: "9:00 - 20:00",
+      capacity: 130,
+      price: 950,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 16,
+      name: "Charly Land",
+      description: "Descripción del Infantil 16",
+      image: getImagePath('infantil', 'Charly Land'),
+      address: "Dirección de Charly Land",
+      hours: "9:00 - 20:00",
+      capacity: 130,
+      price: 950,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 17,
+      name: "Mayitos",
+      description: "Descripción del Infantil 17",
+      image: getImagePath('infantil', 'Mayitos'),
+      address: "Dirección de Mayitos",
+      hours: "10:00 - 18:00",
+      capacity: 90,
+      price: 700,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 18,
+      name: "Tanylandia",
+      description: "Descripción del Infantil 18",
+      image: getImagePath('infantil', 'Tanylandia'),
+      address: "Dirección de Tanylandia",
+      hours: "9:00 - 19:00",
+      capacity: 140,
+      price: 900,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 19,
+      name: "El Grillo",
+      description: "Descripción del Infantil 19",
+      image: getImagePath('infantil', 'El Grillo'),
+      address: "Dirección de El Grillo",
+      hours: "10:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 20,
+      name: "Charly Land",
+      description: "Descripción del Infantil 20",
+      image: getImagePath('infantil', 'Charly Land'),
+      address: "Dirección de Charly Land",
+      hours: "9:00 - 20:00",
+      capacity: 130,
+      price: 950,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 21,
+      name: "Mayitos",
+      description: "Descripción del Infantil 21",
+      image: getImagePath('infantil', 'Mayitos'),
+      address: "Dirección de Mayitos",
+      hours: "10:00 - 18:00",
+      capacity: 90,
+      price: 700,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 22,
+      name: "Tanylandia",
+      description: "Descripción del Infantil 22",
+      image: getImagePath('infantil', 'Tanylandia'),
+      address: "Dirección de Tanylandia",
+      hours: "9:00 - 19:00",
+      capacity: 140,
+      price: 900,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 23,
+      name: "El Grillo",
+      description: "Descripción del Infantil 23",
+      image: getImagePath('infantil', 'El Grillo'),
+      address: "Dirección de El Grillo",
+      hours: "10:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 24,
+      name: "El Grillo",
+      description: "Descripción del Infantil 24",
+      image: getImagePath('infantil', 'El Grillo'),
+      address: "Dirección de El Grillo",
+      hours: "10:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
+    },
+    {
+      id: 25,
+      name: "El Grillo",
+      description: "Descripción del Infantil 25",
+      image: getImagePath('infantil', 'El Grillo'),
+      address: "Dirección de El Grillo",
+      hours: "10:00 - 18:00",
+      capacity: 100,
+      price: 800,
+      amenidades: [
+        { id: 1, name: "Zona de juegos", available: true },
+        { id: 2, name: "Área de descanso", available: true },
+        { id: 3, name: "Catering para niños", available: true },
+        { id: 4, name: "Decoración temática", available: true },
+        { id: 5, name: "WiFi", available: true }
+      ] ,
+      "tipos_de_eventos": [
+        { "id": 1, "name": "Fiestas de cumpleaños infantiles", "available": true },
+        { "id": 2, "name": "Fiestas temáticas", "available": true },
+        { "id": 3, "name": "Show de payasos o magos", "available": true },
+        { "id": 4, "name": "Eventos escolares", "available": true }
+      ]
     }
+    
+    
+
   ]
 };
 
@@ -487,7 +943,11 @@ export const salonesData = {
         { "id": 5, "name": "Reuniones empresariales", "available": true },
         { "id": 6, "name": "Conferencias", "available": true }
       ]
-    }
+    },
+    
+
+    
+    
     // Agrega más salones según sea necesario
   ]
 };

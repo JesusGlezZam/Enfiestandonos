@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarruselServices } from '../shared/Inicio/CarruselServices.js';
-import { infantilesData, salonesData } from '../../helpers/datosdummy.js';
+import { haciendasData, infantilesData, salonesData, terrazasData } from '../../helpers/datosdummy.js';
 import { jardinesData } from '../../helpers/datosdummy2.js';
 import { SectionCarrusel } from '../shared/Inicio/SectionCarrusel.js';
 import { EventTypesList } from '../shared/EventTypesList.js';
@@ -29,8 +29,12 @@ export const Inicio = () => {
 
       <SectionCarrusel title="Salones" type="salon" items={salonesData.salones} />
 
-      <EventTypesList spaceType="jardin" />
+      <SectionCarrusel title="Haciendas" type="hacienda" items={haciendasData.haciendas} />
 
+      <SectionCarrusel title="Haciendas" type="terraza" items={terrazasData.terrazas} />
+
+       <EventTypesList spaceType="jardin" />
+ 
 
     </div>
 
