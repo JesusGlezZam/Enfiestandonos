@@ -10,7 +10,7 @@ export const Inicio = () => {
 
   return (
     <div className="home">
-      <header className="header">
+      <header className="header-home">
         <h1>Bienvenido a Enfiestándonos</h1>
         <div className="search-bar">
           <input type="text" placeholder="Busca tu espacio ideal..." />
@@ -33,9 +33,7 @@ export const Inicio = () => {
 
       <SectionCarrusel title="Haciendas" type="terraza" items={terrazasData.terrazas} />
 
-       <EventTypesList spaceType="jardin" />
- 
-
+       <EventTypesList spaceType="jardin" />      
     </div>
 
     

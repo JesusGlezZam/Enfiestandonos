@@ -119,7 +119,7 @@ h2.welcome {
 
 
 /* Consultas de medios para pantallas más pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   h2.welcome {
     text-align: left;
     font-size: 1em;
