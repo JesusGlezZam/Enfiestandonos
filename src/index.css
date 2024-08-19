@@ -1,39 +1,199 @@
-/* Inicio.css */
-.home {
-  height: 80px;
+
+/****** Estilos de las tarjetas de la pagina de inicio  */
+h2.welcome {
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: -10px; /* Espacio abajo */
 }
 
-/*    buscador     */
-.home .header{
-  background-color: #2b5d8b;
+.custom-carousel-section {
+  text-align: center;
+  padding: 5px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 25px; /* Esquinas redondeadas */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  border: none; /* 0 solid transparent;  Borde inicial transparente */
+  margin: 10px auto; /* Margen superior e inferior para espacio entre secciones */
 }
 
-
-.header .search-bar {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.header .search-bar input {
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  width: 300px;
-}
-
-.header .search-bar button {
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  background-color: #333;
-  color: white;
+.custom-carousel-title,
+.custom-carousel-link {
+  padding-left: 30px;
+  margin-bottom: 0px;
+  font-size: 1.6em;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
 }
 
-.header .search-bar button:hover {
-  background-color: #555;
+.custom-carousel-title-container {
+  display: flex;
+  justify-content: space-between; /* Alinea el contenido en los extremos */
+  align-items: center; /* Alinea verticalmente el contenido */
+  margin-bottom: 10px; /* Espacio inferior del contenedor */
 }
 
+.custom-carousel-link {
+  padding-right: 50px;
+  font-size: 1.6em; /* Tamaño del texto del enlace */
+  color: #007bff; /* Color del enlace (puedes ajustar según tus preferencias) */
+  text-decoration: none; /* Elimina subrayado del enlace */
+  transition: color 0.3s ease; /* Transición suave para el color del enlace */
+}
+
+.custom-carousel-link:hover {
+  color: #0056b3; /* Color del enlace en hover */
+}
+
+.custom-carousel-slider {
+  width: 100%; /* Ajuste del ancho del carrusel al 80% de la pantalla */
+  margin: 0 auto; /* Centrar el carrusel */
+}
+
+
+.custom-carousel-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 0 0px; /* Espacio entre elementos */
+}
+
+.custom-carousel-image-container {
+  overflow: hidden;
+}
+
+.custom-carousel-image {
+  width: 98%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.custom-carousel-info {
+  padding: 10px;
+}
+
+.custom-carousel-item-title {
+  margin: 0;
+  font-size: 1.5em;
+  padding-bottom: 5px;
+}
+
+.custom-carousel-item-description {
+  margin: 10px 0 0;
+  color: #555;
+}
+
+/* Estilos para la sección de detalles */
+.detail-item {
+  display: flex;
+  flex-direction: column; /* Coloca los ítems en una columna */
+  width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Estilos para el contenedor de detalles */
+.detail-container {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las columnas */
+  width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Estilos para cada columna de detalles */
+.detail-info {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  width: 48%; /* Ancho de cada columna */
+  padding: 4px;
+}
+
+/* Estilos para los íconos dentro de los detalles */
+.detail-icon {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos para la capacidad */
+.capacity {
+  font-weight: bold; /* Estilo para el texto de la capacidad */
+}
+
+
+
+
+/* Consultas de medios para pantallas más pequeñas */
+@media (max-width: 768px) {
+  h2.welcome {
+    text-align: left;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: -15px;
+  }
+  
+
+  .custom-carousel-title {
+    padding-left: 5px;
+    font-size: 1em;
+    padding-bottom:20px;
+  }
+
+  .custom-carousel-link {
+    padding-right: 10px;
+    font-size: 1em;
+  }
+
+  .custom-carousel-item {
+    padding: 0px;
+    margin: 5px 0;
+  }
+
+  .custom-carousel-image {
+    height: 120px;
+  }
+
+  .custom-carousel-item-title {
+    font-size: 1em;
+  }
+
+  .custom-carousel-item-description {
+    font-size: 0.8em;
+  }
+  .custom-carousel-slider {
+    margin: 0px;
+  }
+   /* Ajustes para el contenedor de detalles */
+   .detail-container {
+    flex-direction: column;
+    font-size: .8em;/* Coloca las columnas una debajo de la otra en pantallas más pequeñas */
+  }
+
+  /* Ajustes para cada columna de detalles */
+  .detail-info {
+    width: 100%; /* Ancho completo en pantallas más pequeñas */
+    margin-bottom: 5px; /* Espacio inferior para separación */
+  }
+
+  /* Ajusta el espacio entre los íconos y el texto si es necesario */
+  .detail-icon {
+    margin-right: 6px; /* Menor espacio en pantallas pequeñas */
+  }
+}
+/****************************  Colores para los iconos de la pagina principal        ***********************/
+
+
+.icon-jardin{
+  color: #228B22;
+}
+
+.icon-infantil{
+  color: #E4002B; /*  E8B57 2E8B57 */ 
+}
+
+.icon-salon {
+  color:#8B0000;
+}
+
+.icon-hacienda{
+  color: #004d00;  /* 003366  002366 C8102E */
+}
+
+.icon-terraza{
+  color: #FFD700;
+}

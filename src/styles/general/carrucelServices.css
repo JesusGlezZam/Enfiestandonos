@@ -1,0 +1,195 @@
+ 
+/** CarruselServices "carousel-container" */
+
+.carousel-container {
+  width: 80%; /* Ajusta el ancho del contenedor al 80% del contenedor padre */
+  max-width: 90vw; /* Ancho máximo del contenedor */
+  margin: 40px auto; /* Margen superior e inferior para espacio entre secciones */
+  position: relative; /* Posiciona las flechas a los lados */
+  padding: 0 10px; /* Agrega padding horizontal para evitar que el contenido se toque con los bordes */
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 90%; /* Ancho del contenedor para pantallas medianas */
+    margin: 15px auto; 
+    padding: 0 5px; /* Reduce el padding horizontal */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    margin: 10px auto; 
+    padding: 0; /* Elimina el padding horizontal en pantallas pequeñas */
+  }
+}
+
+
+.carousel-container p {
+  text-align: center;
+  font-size: 1.8em; /* Tamaño de texto grande */
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: -15px;
+  line-height: 0.2;
+  animation: pulse 5s infinite; /* Animación pulsante durante 5 segundos */
+  /*animation: pulse 2s infinite;  Animación pulsante */
+}
+/* Ajusta los estilos para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .carousel-container p {
+    font-size: 1.1em; /* Reduce el tamaño del texto en pantallas medianas */
+    margin-top: 0px; /* Ajusta el margen superior */
+    margin-bottom: 0px; /* Ajusta el margen inferior */
+    margin-top:10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container p {
+    font-size: 0.9em; /* Reduce el tamaño del texto en pantallas pequeñas */
+    margin-top: 0px; /* Ajusta el margen superior */
+    margin-bottom: 0px; /* Ajusta el margen inferior */
+  }
+}
+
+
+
+.title, .icon-container{
+  font-size: 1.5em; 
+  color:#ff6f61;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}  
+
+.title{
+  color: black;
+}
+
+.title:hover{
+  font-size: 1.6em; 
+  cursor: pointer;
+}
+
+.home-icon-jardin:hover {
+  color: #228B22; /* Verde Jardín oscuro al pasar el mouse */
+}
+
+.home-icon-infantil:hover {
+  color: #E4002B; /* Verde Jardín oscuro al pasar el mouse */
+}
+
+.home-icon-salon:hover {
+  color: #8B0000; /* Verde Jardín oscuro al pasar el mouse */
+}
+
+.home-icon-hacienda:hover {
+  color: #004d00; /* Verde Jardín oscuro al pasar el mouse */
+}
+
+.home-icon-terraza:hover{
+  color: #FFD700;
+}
+
+
+.icon-container .fa-icon {
+  font-size: 100px; /* Tamaño por defecto */
+}
+
+/* Ajusta los estilos para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .icon-container .fa-icon {
+    font-size: 50px; /* Tamaño por defecto */
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-container .fa-icon {
+    font-size: 30px; /* Tamaño por defecto */
+  }
+}
+
+
+.slick-slide {
+  padding: 0 0px; /* Espacio entre los slides */
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center; /* Centra el contenido dentro de cada slide */
+}
+
+.slick-track {
+  display: flex; /* Asegura que los slides se distribuyan horizontalmente */
+}
+
+.slick-prev, .slick-next {
+  width: 40px; /* Tamaño de las flechas */
+  height: 40px; /* Tamaño de las flechas */
+  background-color: #eee; /* Color de fondo de las flechas */
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Centra las flechas verticalmente */
+  transform: translateY(-50%); /* Ajusta la posición vertical de las flechas */
+  transition: background-color 0.3s, opacity 0.3s; /* Transición para el color de fondo y opacidad */
+}
+
+.slick-prev {
+  left: 10px; /* Ajusta la posición a la izquierda */
+}
+
+.slick-next {
+  right: 10px; /* Ajusta la posición a la derecha */
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 18px; /* Tamaño del icono de las flechas */
+  color: #333; /* Color del icono de las flechas */
+}
+
+/* Estilos para las flechas desactivadas */
+.slick-prev.slick-disabled, .slick-next.slick-disabled {
+  opacity: 0.5; /* Reducción de la opacidad para indicar que están desactivadas */
+  cursor: not-allowed; /* Cambia el cursor para mostrar que no se puede hacer clic */
+  pointer-events: none; /* Desactiva los eventos del puntero para que no se pueda hacer clic */
+  background-color: #f5f5f5; /* Color de fondo más claro para las flechas desactivadas */
+}
+
+/* Ocultar la barra de puntos */
+.slick-dots {
+  display: none !important;
+}
+
+
+/* Ajusta los estilos para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .feature h2 {
+    font-size: 1em; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+
+  .feature h2:hover{
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature {
+    padding: 5px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .feature h2 {
+    font-size: .9em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+  0% { color: #ff6f61; } /* Rojo coral elegante */
+  50% { color: #ffcc00; } /* Amarillo dorado brillante */
+  100% { color: #1e3a8a; } /* Azul oscuro sofisticado */
+}
+/**Terminando CarruselServices "carousel-container" */

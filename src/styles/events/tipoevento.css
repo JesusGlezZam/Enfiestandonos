@@ -1,0 +1,23 @@
+.event-types-list {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.event-types-list h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.event-types-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-types-list .event-type-item {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 5px;
+}
