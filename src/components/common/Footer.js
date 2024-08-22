@@ -14,6 +14,7 @@ export const Footer = () => {
           <li><NavLink to="/espacios-para-tu-evento">Espacios para tu evento</NavLink></li>
           <li><NavLink to="/reserva-tu-evento">Reserva tu evento</NavLink></li>
           <li><NavLink to="/galeria">Galeria</NavLink></li>
+          <li><NavLink to="/lugar/jardin">lugar</NavLink></li>
         </ul>
       </nav>
     </footer>

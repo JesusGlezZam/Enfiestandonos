@@ -6,3 +6,6 @@ export const paginateArray = (array, pageSize) => {
     }
     return result;
   };
+
+
+  
