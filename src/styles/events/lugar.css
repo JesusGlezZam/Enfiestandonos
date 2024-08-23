@@ -198,12 +198,16 @@ h1{
 
 .icon {
   color:gray;
-  font-size: 50px; /* Ajusta el tamaño del icono aquí */
+  font-size: 60px; /* Ajusta el tamaño del icono aquí */
   margin-bottom: 8px; /* Espacio entre el icono y el texto */
 }
 
+.menu-section .icon{
+  font-size: 75px; /* Ajusta el tamaño del icono aquí */
+}
+
 .item-text {
-  font-size: 24px; /* Tamaño de la fuente del texto */
+  font-size: 20px; /* Tamaño de la fuente del texto */
   color: #333; /* Color del texto */
 }
 
@@ -217,6 +221,65 @@ h1{
   max-width: 100%;
   margin: 0px; /* Centra el contenedor horizontalmente */
 }
+
+
+.menu-section ul {
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr); /* Ajusta el número de columnas */
+  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+  list-style: none; /* Elimina los íconos de lista predeterminados */
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
+}
+
+.menu-section ul {
+  text-transform: lowercase; /* Asegura que todo el texto sea minúscula */
+}
+
+.menu-section li {
+  flex-direction: row; /* Coloca el icono encima del texto */
+}
+/* Título de la sección */
+.section-title {
+  font-size: 23px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* Elemento de platillo */
+.platillo-item {
+  display: flex;
+  align-items: center; /* Alinea el checkbox y el texto verticalmente */
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Línea inferior para separación */
+}
+
+/* Checkbox */
+.checkbox-input {
+  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+/* Etiqueta del platillo */
+.platillo-label {
+  display: flex;
+  align-items: center; /* Alinea el checkbox y el texto verticalmente */
+ /* cursor: pointer;  Cambia el cursor al pasar sobre el texto */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+/* Texto del platillo */
+.platillo-text {
+  text-align: left; /* Alinea el texto a la izquierda dentro del elemento de la lista */
+}
+
+/* Estilo para el texto seleccionado */
+.platillo-text.selected {
+  font-weight: bold; /* Estilo opcional para el texto seleccionado */
+  color: #007bff; /* Color del texto cuando está seleccionado */
+}
+
 
 
 .menu-section h2 {

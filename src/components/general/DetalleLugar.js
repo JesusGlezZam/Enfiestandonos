@@ -99,7 +99,7 @@ export const DetalleLugar = () => {
 
     <div className="filtered-item-list menu-list">
             <Menu data={{ menu: itemDetails.menu }} />
-            <FilteredItemList className="menu-section"  type="Servicios adicionales" items={itemDetails.servicios_adicionales}  />
+            <FilteredItemList className="menu-section"  type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={4}/>
           </div>
     </div>
 

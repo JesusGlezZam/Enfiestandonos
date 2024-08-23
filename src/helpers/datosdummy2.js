@@ -17,10 +17,12 @@ export const jardinesData = {
           { "id": 2, "name": "Quinceaños", "available": true },
           { "id": 3, "name": "Bautizos", "available": true },
           { "id": 4, "name": "Cumpleaños", "available": true },
-          { "id": 5, "name": "Picnics corporativos", "available": true },
+          { "id": 5, "name": "Baby shower o Revelacion de genero", "available": true },
           { "id": 6, "name": "Eventos al aire libre", "available": true },
           { "id": 7, "name": "Fiestas de compromiso", "available": true },
-          { "id": 8, "name": "Reuniones familiares", "available": true }
+          { "id": 8, "name": "Reuniones familiares", "available": true },
+          { "id": 9, "name": "Picnics corporativos", "available": true },
+          { "id": 10, "name": "Cualquier otro tipo de evento", "available": true },
         ],
         "amenidades": [
           { "id": 1, "name": "Acceso a discapacitados", "available": true },
@@ -29,10 +31,11 @@ export const jardinesData = {
           { "id": 4, "name": "Área de cocina", "available": true },         
           { "id": 5, "name": "Estacionamiento", "available": true },
           { "id": 6, "name": "Área de juegos o brincolín", "available": true },
-          { "id": 7, "name": "WiFi", "available": true },
-          { "id": 8, "name": "Pantalla para proyectar", "available": true },
-          { "id": 9, "name": "Salida de emergencia", "available": true }, 
-          { "id": 10, "name": "Acepta pago (TC, TD)", "available": true }
+          { "id": 7, "name": "Área para fumar", "available": true },
+          { "id": 8, "name": "WiFi", "available": true },
+          { "id": 9, "name": "Pantalla para proyectar", "available": true },
+          { "id": 10, "name": "Salida de emergencia", "available": true }, 
+          { "id": 11, "name": "Acepta pago (TC, TD)", "available": true }
         ],"menu":[
           {
             "seccion": "Taquiza",
@@ -182,10 +185,18 @@ export const jardinesData = {
           { "id": 1, "name": "Coordinador de Eventos", "available": true },
           { "id": 2, "name": "Animador de Eventos", "available": true },
           { "id": 3, "name": "DJ", "available": true },
-          { "id": 4, "name": "Decoración temática", "available": true },
-          { "id": 5, "name": "Arreglos florales", "available": true },
-          { "id": 6, "name": "Música en vivo", "available": true },
-          { "id": 7, "name": "Música banda", "available": true },
+          { "id": 4, "name": "Barra libre", "available": true },
+          { "id": 5, "name": "Torna fiesta", "available": true },
+          { "id": 6, "name": "Arreglo de globos", "available": true },
+          { "id": 7, "name": "Decoración temática", "available": true },
+          { "id": 8, "name": "Mesa de dulces", "available": true },
+          { "id": 9, "name": "Arreglos florales", "available": true },
+          { "id": 10, "name": "Música versatil", "available": true },
+          { "id": 11, "name": "Música banda", "available": true },
+          { "id": 12, "name": "Mariachi", "available": true },
+          { "id": 13, "name": "Norteño", "available": true },
+          { "id": 14, "name": "Banda de rock", "available": true },
+          { "id": 15, "name": "Saxofon", "available": true },
         ]
       },
       {
