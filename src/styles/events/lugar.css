@@ -1,6 +1,5 @@
-/* lugar.css */
-
-/* Contenedor de la galería */
+/********** Contenedor de la galería  ***********/
+/*****src/components/shared/Lugar/Galery.js***/
 .gallery-container {
   min-height: 55vh; 
   height: 55vh; /* Ocupa el 60% de la altura de la ventana */
@@ -68,7 +67,9 @@
 
 /***************                 ******************/
 
-/* General Container Styles */
+
+/* components/general/DetalleLugar.js */
+/**************** Detalle de lugar de manera General **************/
 .master-container{
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
   padding:  25px;
@@ -95,14 +96,8 @@ h1{
   margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
 }
 
-.item-menu-list{
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
-  padding:  25px;
-}
-
 
 /****** Map Header Styles *******/
-
 .right-column {
   flex: 1; /* Ocupa la mitad del espacio comparado con la columna izquierda */
   padding: 20px;
@@ -147,9 +142,13 @@ h1{
   font-size: 1.5rem;
   color: #333;
 }
+/**************** left-column rigth-column     *****************/
 
 
-/**** FilteredItemList css  ****/
+
+/**************** FilteredItemList css Tipos de eventos ***********/
+/* src/components/shared/Lugar/FilteredItemList.js  */
+/* funciona para FilteredItemList type="eventos" type="amenidades" */
 .type-list {
   border: 1px solid #ccc; /* Borde del contenedor */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
@@ -211,18 +210,21 @@ h1{
   color: #333; /* Color del texto */
 }
 
-/**** FilteredItemList css  ****/
+/* funciona para FilteredItemList type="eventos" type="amenidades" */
 
 
 
 
-/**** Platilloslist css  ****/
-.menu-section{
+/**** Menu con servicios adicionales css  ****/
+.menu-section,
+.aditional-service{
   max-width: 100%;
   margin: 0px; /* Centra el contenedor horizontalmente */
 }
 
-
+.menu-section {
+  margin-bottom: 10px; /* Ajusta el valor según tus necesidades */
+}
 .menu-section ul {
   font-size: 20px;
   display: grid;
@@ -234,12 +236,22 @@ h1{
   padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
 }
 
-.menu-section ul {
-  text-transform: lowercase; /* Asegura que todo el texto sea minúscula */
+.capitalize-first-letter {
+  text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
 }
+
+.capitalize-first-letter span:first-letter {
+  text-transform: uppercase; /* Asegúrate de que solo la primera letra sea mayúscula */
+}
+
+.capitalize-first-letter span {
+  text-transform: lowercase; /* Convierte el resto a minúsculas */
+}
+
 
 .menu-section li {
   flex-direction: row; /* Coloca el icono encima del texto */
+
 }
 /* Título de la sección */
 .section-title {

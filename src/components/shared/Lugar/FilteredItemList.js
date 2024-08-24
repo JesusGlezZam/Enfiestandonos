@@ -121,7 +121,7 @@ export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount
     gridTemplateColumns: `repeat(${columns}, 1fr)`
   };
 
-  const containerClass = type === "Servicios adicionales" ? "type-list menu-section" : "type-list";
+  const containerClass = type === "Servicios adicionales" ? "type-list aditional-service" : "type-list";
 
   return (
     <div className={containerClass}>

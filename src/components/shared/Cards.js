@@ -1,13 +1,10 @@
-import React from 'react'
-
+import React, { useState } from 'react';
 import { getImagePath } from './Images';
-import '../../styles/general/typeEventCard.css'
-import { FaClock, FaMapMarkerAlt, FaSun, FaUser,FaLeaf, FaHome, FaGlassCheers } from 'react-icons/fa';
+import '../../styles/general/typeEventCard.css';
+import { FaClock, FaMapMarkerAlt, FaSun, FaUser, FaLeaf, FaHome, FaGlassCheers } from 'react-icons/fa';
 import { MdCelebration } from 'react-icons/md';
 import { BsFillGiftFill } from 'react-icons/bs';
-import { Link, useLocation } from 'react-router-dom';
-
-
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const getIconByType = (type) => {
   switch (type) {
@@ -27,38 +24,56 @@ const getIconByType = (type) => {
 };
 
 const formatUrl = (name) => {
-  return name.toLowerCase().replace(/ /g, '-');
+  if (typeof name === 'string') {
+    return name
+      .trim() // Elimina espacios en blanco al principio y al final
+      .toLowerCase() // Convierte a minúsculas
+      .replace(/\s+/g, '-') // Reemplaza espacios con guiones
+      .replace(/[^\w\-]+/g, ''); // Elimina caracteres no alfanuméricos y no guiones
+  }
+  console.warn('El parámetro `name` no es una cadena válida:', name);
+  return ''; // Devuelve una cadena vacía si `name` no es una cadena
 };
-
 
 export const Cards = ({ items, itemType }) => {
   const location = useLocation();
   const currentUrl = location.pathname;
+  const [selectedId, setSelectedId] = useState(null); // Estado para almacenar el ID seleccionado
+  const navigate = useNavigate();
 
- 
-
-
-
+  const handleLinkClick = (name, id) => {
+    if (typeof name !== 'string' || !name.trim()) {
+      console.warn('El nombre proporcionado no es válido:', name);
+      return;
+    }
+  
+    setSelectedId(id); // Guardar el ID en el estado
+    console.log('Link ID seleccionado:', id); // Puedes usar este ID como lo necesites
+  
+    // Verifica que `currentUrl` esté definido correctamente
+    const formattedUrl = formatUrl(name);
+    navigate(`${currentUrl}/${formattedUrl}`, { state: { selectedId: id } }); // Navega a DetalleLugar
+  };
+  
+  
   return (
     <section>
       <div className={`${itemType}-cards-container`}>
         {items.map((item) => (
           <div key={item.id} className={`${itemType}-card`}>
-         
-          <Link to={`${currentUrl}/${formatUrl(item.name)}`}>
-        
+            <div onClick={() => handleLinkClick(item.name, item.id)}>
               <img 
                 src={getImagePath(itemType, item.name)} 
                 alt={item.name} 
                 className={`${itemType}-image`} 
               />
-            </Link>
+            </div>
             <div className={`${itemType}-info`}>
-            <Link to={`${currentUrl}/${formatUrl(item.name)}`}>
+              <div onClick={() => handleLinkClick(item.name, item.id)}>
                 <h2>
                   {getIconByType(itemType)} {item.name}
                 </h2>
-              </Link>
+              </div>
               <section className={`${itemType}-details`}>
                 <div className='detail-item'>
                   <div className='detail-container'>
