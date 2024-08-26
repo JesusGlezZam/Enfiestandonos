@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import { FaRing, FaCrown, FaBirthdayCake, FaTree, FaCreditCard, FaCouch, FaWheelchair } from 'react-icons/fa';
 import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat } from 'react-icons/gi';
 import { MdOutlineScreenShare } from 'react-icons/md';
-const iconMap = {
 
+
+/**
+ * iconMap: Mapa que relaciona nombres de eventos/amenidades/servicios con componentes de iconos.
+ * Cada clave en el mapa es el nombre de un tipo de evento, amenidad o servicio, y el valor
+ * es el componente de ícono correspondiente que se renderizará.
+ */
+const iconMap = {
   /** Tipos de eventos */
   'bodas': <FaRing className="icon" />,
   'quinceaños': <FaCrown className="icon" />,
@@ -47,6 +53,11 @@ const iconMap = {
   'saxofon':<GiSaxophone  className="icon" />,
 };
 
+/**
+ * iconColorMap: Mapa que relaciona nombres de eventos/amenidades/servicios con colores.
+ * Cada clave en el mapa es el nombre de un tipo de evento, amenidad o servicio, y el valor
+ * es un código de color que se aplicará al icono correspondiente.
+ */
 const iconColorMap = {
   'bodas': '#007bff',
   'quinceaños': '#e83e8c',
@@ -86,37 +97,59 @@ const iconColorMap = {
   'saxofon': '#FFD700',
 };
 
-// Helper function to get the icon component and apply color
+/**
+ * getIconComponent: Función auxiliar que devuelve el componente de ícono correspondiente
+ * y le aplica el color definido en iconColorMap.
+ *
+ * @param {string} name - Nombre del evento, amenidad o servicio.
+ * @returns {ReactElement} - Componente de ícono con el color aplicado.
+ */
 const getIconComponent = (name) => {
   const IconComponent = iconMap[name.toLowerCase()] || <span className="icon-placeholder">Icono no disponible</span>;
   const color = iconColorMap[name.toLowerCase()] || '#000000';
   return React.cloneElement(IconComponent, { style: { color } });
 };
 
+/**
+ * FilteredItemList: Componente que filtra y muestra una lista de ítems basados en un tipo especificado.
+ * Muestra los ítems disponibles y permite expandir o colapsar la lista, además de mostrar más ítems si
+ * el usuario lo desea.
+ *
+ * @param {object} props - Propiedades del componente.
+ * @param {string} props.type - Tipo de ítems (por ejemplo, 'Servicios adicionales', 'Amenidades').
+ * @param {array} props.items - Lista de ítems a mostrar.
+ * @param {number} [props.columns=3] - Número de columnas en la cuadrícula de ítems.
+ * @param {number} [props.initialVisibleCount=6] - Número inicial de ítems visibles.
+ * @returns {ReactElement} - Componente de lista filtrada.
+ */
 export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount = 6 }) => {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
   const [showAll, setShowAll] = useState(false);
   const [isExpanded, setIsExpanded] = useState(type === "Servicios adicionales" ? false : true);
 
+  // Si no hay ítems disponibles, muestra un mensaje indicándolo
   if (!items || items.length === 0) {
     return <p>No hay {type} disponibles.</p>;
   }
 
-  const availableItems = items.filter(item => item.available);
+ // Filtra los ítems disponibles
+ const availableItems = items.filter(item => item.available);
 
-  if (availableItems.length === 0) {
-    return <p>No hay {type} disponibles.</p>;
-  }
+ // Si no hay ítems disponibles después de filtrar, muestra un mensaje indicándolo
+ if (availableItems.length === 0) {
+   return <p>No hay {type} disponibles.</p>;
+ }
 
-  const handleToggleVisibility = () => {
-    setShowAll(!showAll);
-    setVisibleCount(showAll ? initialVisibleCount : availableItems.length);
-  };
+ // Maneja la visibilidad de los ítems (mostrar más/menos)
+ const handleToggleVisibility = () => {
+   setShowAll(!showAll);
+   setVisibleCount(showAll ? initialVisibleCount : availableItems.length);
+ };
 
-  const handleToggleExpand = () => {
+  // Maneja la expansión/colapso de la lista
+  const toggleExpansion = () => {
     setIsExpanded(!isExpanded);
   };
-
   const gridStyle = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`
   };
@@ -125,12 +158,14 @@ export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount
 
   return (
     <div className={containerClass}>
-      <h2 onClick={type === "Servicios adicionales" ? handleToggleExpand : null}>
+      {/* Botón para expandir/colapsar la lista */}
+      <h2 onClick={type === "Servicios adicionales" ? toggleExpansion : null}>
         {type.charAt(0).toUpperCase() + type.slice(1)}
       </h2>
       {isExpanded && (
         <>
           <ul style={gridStyle}>
+          {/* Renderiza los ítems visibles */}
             {availableItems.slice(0, visibleCount).map((item) => (
               <li key={item.id} className={`${type}-item`}>
                 {getIconComponent(item.name)}
@@ -138,6 +173,7 @@ export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount
               </li>
             ))}
           </ul>
+          {/* Botón para mostrar más ítems si el estado showAll es verdadero */}
           {availableItems.length > initialVisibleCount && (
             <button onClick={handleToggleVisibility} className="show-more-button">
               {showAll ? 'Ver menos' : 'Ver más'}

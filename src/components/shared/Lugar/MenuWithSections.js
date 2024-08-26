@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { PlatillosList } from "./PlatillosList"; // Asegúrate de la ruta correcta
+import { ItemList } from "./ItemList"; // Asegúrate de la ruta correcta
 
 const capitalizeFirstLetter = (text) => {
   if (typeof text !== 'string') return text;
@@ -9,7 +9,12 @@ const capitalizeFirstLetter = (text) => {
 
 const MenuWithSections = ({ data }) => {
   const [openSections, setOpenSections] = useState([]);
-  const [selectedPlatillos, setSelectedPlatillos] = useState([]);
+  const [selectedItems, setSelectedItems] = useState({
+    guisados: [],
+    agua: [],
+    adicional: [],
+    // Agregar inicialización para subsecciones
+  });
 
   const handleToggleSection = (sectionIndex) => {
     setOpenSections(prevOpenSections =>
@@ -19,12 +24,23 @@ const MenuWithSections = ({ data }) => {
     );
   };
 
-  const handleCheckboxChange = (platillo) => {
-    setSelectedPlatillos(prevSelectedPlatillos =>
-      prevSelectedPlatillos.includes(platillo)
-        ? prevSelectedPlatillos.filter(p => p !== platillo)
-        : [...prevSelectedPlatillos, platillo]
-    );
+  const handleCheckboxChange = (item, type) => {
+    setSelectedItems(prevSelectedItems => {
+      if (Object.keys(prevSelectedItems).includes(type)) {
+        return {
+          ...prevSelectedItems,
+          [type]: prevSelectedItems[type] ? (
+            prevSelectedItems[type].includes(item)
+              ? prevSelectedItems[type].filter(i => i !== item)
+              : [...prevSelectedItems[type], item]
+          ) : [item]
+        };
+      }
+      return {
+        ...prevSelectedItems,
+        [type]: [item]
+      };
+    });
   };
 
   return (
@@ -42,25 +58,58 @@ const MenuWithSections = ({ data }) => {
             </span>
           </h2>
           {openSections.includes(index) && (
-            section.platillos ? (
-              <PlatillosList
-                platillos={section.platillos.map(capitalizeFirstLetter)}
-                selectedPlatillos={selectedPlatillos}
-                onCheckboxChange={handleCheckboxChange}
-                className="list"
-              />
-            ) : (
-              section.subSections && Object.keys(section.subSections).map(subSectionKey => (
-                <div key={subSectionKey} className="sub-section">
-                  <h3 className="capitalize-first-letter">{capitalizeFirstLetter(subSectionKey)}</h3>
-                  <PlatillosList
-                    platillos={section.subSections[subSectionKey].map(capitalizeFirstLetter)}
-                    selectedPlatillos={selectedPlatillos}
-                    onCheckboxChange={handleCheckboxChange}
+            <div className="section-content">
+              {/* Mostrar categorías principales si existen */}
+              {section.guisados && (
+                <div className="category">
+                  <h3>Guisados</h3>
+                  <ItemList
+                    items={section.guisados.map(capitalizeFirstLetter)}
+                    selectedItems={selectedItems.guisados}
+                    onCheckboxChange={(item) => handleCheckboxChange(item, 'guisados')}
+                    itemType="guisado"
+                    className="list"
                   />
                 </div>
-              ))
-            )
+              )}
+              {section.agua && (
+                <div className="category">
+                  <h3>Agua</h3>
+                  <ItemList
+                    items={section.agua.map(capitalizeFirstLetter)}
+                    selectedItems={selectedItems.agua}
+                    onCheckboxChange={(item) => handleCheckboxChange(item, 'agua')}
+                    itemType="agua"
+                    className="list"
+                  />
+                </div>
+              )}
+              {section.adicional && (
+                <div className="category">
+                  <h3>Adicional</h3>
+                  <ItemList
+                    items={section.adicional.map(capitalizeFirstLetter)}
+                    selectedItems={selectedItems.adicional}
+                    onCheckboxChange={(item) => handleCheckboxChange(item, 'adicional')}
+                    itemType="adicional"
+                    className="list"
+                  />
+                </div>
+              )}
+              {/* Mostrar subsecciones si existen */}
+              {section.subSections && Object.keys(section.subSections).map(subSectionKey => (
+                <div key={subSectionKey} className="sub-section">
+                  <h3 className="capitalize-first-letter">{capitalizeFirstLetter(subSectionKey)}</h3>
+                  <ItemList
+                    items={section.subSections[subSectionKey].map(capitalizeFirstLetter)}
+                    selectedItems={selectedItems[subSectionKey.toLowerCase()] || []}
+                    onCheckboxChange={(item) => handleCheckboxChange(item, subSectionKey.toLowerCase())}
+                    itemType={subSectionKey.toLowerCase()}
+                    className="list"
+                  />
+                </div>
+              ))}
+            </div>
           )}
         </div>
       ))}
@@ -74,7 +123,9 @@ MenuWithSections.propTypes = {
       PropTypes.shape({
         seccion: PropTypes.string,
         section: PropTypes.string,
-        platillos: PropTypes.arrayOf(PropTypes.string),
+        guisados: PropTypes.arrayOf(PropTypes.string),
+        agua: PropTypes.arrayOf(PropTypes.string),
+        adicional: PropTypes.arrayOf(PropTypes.string),
         subSections: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
       })
     ).isRequired,

@@ -1,7 +1,7 @@
 import { getImagePath } from '../components/shared/Images'; // Asegúrate de que la ruta sea correcta
 
 export const jardinesData = {
-    "type": "jardin",
+    "type": "jard'in",
     "jardines": [
       {
         "id": 1,
@@ -10,13 +10,14 @@ export const jardinesData = {
         image: getImagePath('jardin', 'Santa Maria'),
         "address": "C. Tarandacuaho 26, Emiliano Zapata 1a Secc, 55200 Ecatepec de Morelos, Méx.",
         "hours": "9:00 - 23:00",
-        "capacity": 200,
-        "price": 1500,
+        "price_initial": 260,
+        "capacity_initial": 100,
+        "capacity_max": 250,
         "tipos_de_eventos": [
           { "id": 1, "name": "Bodas", "available": true },
           { "id": 2, "name": "Quinceaños", "available": true },
-          { "id": 3, "name": "Bautizos", "available": true },
-          { "id": 4, "name": "Cumpleaños", "available": true },
+          { "id": 3, "name": "Bautizos", "available": false },
+          { "id": 4, "name": "Cumpleaños", "available": false },
           { "id": 5, "name": "Baby shower o Revelacion de genero", "available": true },
           { "id": 6, "name": "Eventos al aire libre", "available": true },
           { "id": 7, "name": "Fiestas de compromiso", "available": true },
@@ -39,7 +40,7 @@ export const jardinesData = {
         ],"menu":[
           {
             "seccion": "Taquiza",
-            "platillos": [
+            "guisados": [
                 "BISTEC ENCEBOLLADO",
                 "BISTEC EN CHILE PASILLA",
                 "BISTEC EN SALSA ROJA",
@@ -68,7 +69,6 @@ export const jardinesData = {
                 "CARNE DE RES EN ADOBO",
                 "BISTEC EN SALSA VERDE",
                 "BISTEC A LA MEXICANA",
-                "BISTEC ENCEBOLLADO",
                 "LONGANIZA EN SALSA VERDE O SALSA ROJA",
                 "SUADERO ENCHILADO",
                 "TORTITAS DE POLLO EN SALSA VERDE O ROJA",
@@ -77,6 +77,20 @@ export const jardinesData = {
                 "CHULETA AHUMADA A LA HAWAIANA",
                 "PAPAS CON ACELGAS",
                 "PAPAS CON RAJAS"
+            ],
+            "agua": [
+              "Limon",
+              "Jamaica",
+              "Sandia",
+              "Melon",
+              "Pina"
+            ],
+            "adicional":[
+              "Arroz",
+              "Frijoles",
+              "Tortillas",
+              "Salsas",
+              "Hielos"
             ]
         },
         {

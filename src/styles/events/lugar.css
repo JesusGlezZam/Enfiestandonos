@@ -96,6 +96,44 @@ h1{
   margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
 }
 
+/************** Detalle ***/
+/* Estilo para la barra de navegación fija */
+.sticky-header {
+  position: -webkit-sticky; /* Para Safari */
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.sticky-header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sticky-header nav ul li {
+  margin: 0 15px;
+}
+
+.sticky-header nav ul li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+}
+
+.sticky-header nav ul li button:hover {
+  text-decoration: underline;
+}
+
+
 
 /****** Map Header Styles *******/
 .right-column {
@@ -154,7 +192,7 @@ h1{
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
   border-radius: 8px; /* Bordes redondeados para un acabado más suave */
   padding: 20px; /* Espacio interno para que el texto no esté pegado al borde */
-  max-width: 800px; /* Tamaño máximo del contenedor */
+  max-width: 85%; /* Tamaño máximo del contenedor */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   position: relative; /* Establece el contenedor como relativo para posicionar el botón dentro de él */
 }
@@ -261,35 +299,72 @@ h1{
 }
 
 /* Elemento de platillo */
-.platillo-item {
+.menu-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.menu-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.section-content {
+  margin-left: 20px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sub-section {
+  margin-bottom: 20px;
+}
+
+.sub-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
   display: flex;
-  align-items: center; /* Alinea el checkbox y el texto verticalmente */
+  align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd; /* Línea inferior para separación */
+  border-bottom: 1px solid #ddd;
 }
 
-/* Checkbox */
 .checkbox-input {
-  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+  margin-right: 10px;
 }
 
-/* Etiqueta del platillo */
-.platillo-label {
+.item-label {
   display: flex;
-  align-items: center; /* Alinea el checkbox y el texto verticalmente */
- /* cursor: pointer;  Cambia el cursor al pasar sobre el texto */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  align-items: center;
+  width: 100%;
 }
 
-/* Texto del platillo */
-.platillo-text {
-  text-align: left; /* Alinea el texto a la izquierda dentro del elemento de la lista */
+.item-text {
+  text-align: left;
 }
 
-/* Estilo para el texto seleccionado */
-.platillo-text.selected {
-  font-weight: bold; /* Estilo opcional para el texto seleccionado */
-  color: #007bff; /* Color del texto cuando está seleccionado */
+.item-text.selected {
+  font-weight: bold;
+  color: #007bff;
 }
 
 
