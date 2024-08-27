@@ -6,6 +6,7 @@ import { jardinesData } from '../../helpers/datosdummy2';
 import { FaGlassCheers, FaHome, FaLeaf, FaMapMarkerAlt, FaSun } from 'react-icons/fa';
 import { BsFillGiftFill } from 'react-icons/bs';
 import MenuWithSections from '../shared/Lugar/MenuWithSections'; // Asegúrate de la ruta correcta
+import { PromotionSections } from '../shared/Lugar/PromotionSections';
 
 // Función para obtener el ícono según el tipo de lugar
 const getIconByType = (type) => {
@@ -90,9 +91,10 @@ export const DetalleLugar = () => {
       <div className="welcome-section">
         <h2>Bienvenidos</h2>
         <p>
-          En {itemDetails.name}, te ofrecemos un espacio único para tus eventos. Conoce todo lo que podemos ofrecerte para hacer de tu celebración un momento inolvidable. Explora nuestros paquetes y descubre cómo podemos hacer que tu evento sea perfecto.
+          En {itemDetails.name}, te ofrecemos un espacio único para tus eventos. 
         </p>
         <p>
+        Conoce todo lo que podemos ofrecerte para hacer de tu celebración un momento inolvidable.
           <strong>Precio:</strong> ${pricePerPerson} MXN por persona con un mínimo de {minimumCapacity} personas o el precio total del salón de: ${totalPrice} MXN para el paquete básico.
         </p>
       </div>
@@ -104,14 +106,14 @@ export const DetalleLugar = () => {
               <ul>
                 <li><button onClick={() => scrollToSection('eventos')}>Eventos</button></li>
                 <li><button onClick={() => scrollToSection('amenidades')}>Amenidades</button></li>
-                <li><button onClick={() => scrollToSection('menu')}>Paquetes</button></li>
+                <li><button onClick={() => scrollToSection('paquetes')}>Paquetes</button></li>
                 <li><button onClick={() => scrollToSection('menu')}>Menú</button></li>
               </ul>
             </nav>
           </header>
 
           <div id="eventos" className="filtered-item-list">
-            <FilteredItemList type="eventos" items={itemDetails.tipos_de_eventos} columns={3} initialVisibleCount={9} />
+            <FilteredItemList type="Eventos celebrados" items={itemDetails.tipos_de_eventos} columns={3} initialVisibleCount={9} />
           </div>
           <div id="amenidades" className="filtered-item-list">
             <FilteredItemList type="amenidades" items={itemDetails.amenidades} />
@@ -138,13 +140,19 @@ export const DetalleLugar = () => {
           </div>
         </div>
       </div>
-      <div className='promotion'>
-
+      <div id="paquetes" className='promotion'>
+          <h3>
+          Explora nuestros paquetes y descubre cómo podemos hacer que tu evento sea perfecto.
+          </h3>
+          
+          <PromotionSections data={itemDetails} />
       </div>
 
 
       <div id="menu" className="menu-list">
+
         <MenuWithSections data={itemDetails} />
+
         <FilteredItemList type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={4} />
       </div>
     </div>

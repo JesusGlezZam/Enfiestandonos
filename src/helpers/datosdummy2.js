@@ -37,10 +37,110 @@ export const jardinesData = {
           { "id": 9, "name": "Pantalla para proyectar", "available": true },
           { "id": 10, "name": "Salida de emergencia", "available": true }, 
           { "id": 11, "name": "Acepta pago (TC, TD)", "available": true }
-        ],"menu":[
+        ],
+        "paquetes":[
           {
-            "seccion": "Taquiza",
-            "guisados": [
+            seccion: "Paquete 1",
+            subSections:{
+              incluye:[
+                "Lugar de evento",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "DJ por 2 horas", 
+                "Brincolin"
+              ],
+              taquiza:[
+                "4 Guisados elegir",
+                "2 sabores de agua",
+                "Arroz o Totopos",
+                "Frijoles de la olla"
+              ],
+              "Te recomendamos contratar":[
+                "Animador de eventos",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales"
+              ]
+            }
+          },
+          {
+            seccion: "Paquete 2",
+            subSections:{
+              incluye:[
+                "Lugar de evento",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "Meseros",
+                "Barman",
+                "DJ ( música grabada y persona que dirige el evento)", 
+                "Brincolin",
+                "Menu infantil (Solo menores de N anos)"
+              ],
+              "Comida en 3 tiempos":[
+                "Entrada de cortesia (paté, abanico de verduras)",
+                "1er tiempo: Elegir 1 ensalada de fruta o crema ",
+                "2do tiempo: Elegir 1 pasta ",
+                "3er tiempo: Plato Fuerte Elegir una guarnicion y una proteina",
+                "3 sabores de Refresco",
+                "1 Sabor de Agua",
+                "Hielo ilimitado",
+              ],
+              "Te recomendamos contratar":[
+                "Animador de eventos",
+                "Musica versatil",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales",
+                "Torna fiesta",
+              ]
+            }
+          },
+          {
+            seccion: "Paquete 3",
+            subSections:{
+               incluye:[
+                "Lugar de evento",
+                "Animador de eventos",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "Meseros",
+                "Barman",
+                "DJ ( música grabada y persona que dirige el evento)", 
+                "Brincolin",
+                "Menu infantil (Solo menores de N anos)"
+              ],
+              "Comida en 3 tiempos":[
+                "Entrada de cortesia (paté, abanico de verduras)",
+                "1er tiempo: Elegir 1 ensalada de fruta o crema ",
+                "2do tiempo: Elegir 1 pasta ",
+                "3er tiempo: Plato Fuerte Elegir una guarnicion y una proteina",
+                "5 sabores de Refresco",
+                "1 Sabor de Agua",
+                "Torna fiesta o Mesa de dulces",
+                "Hielo ilimitado",
+              ],
+              "Te recomendamos contratar":[
+                "Musica versatil",
+                "Música banda",
+                "Mariachi",
+                "Barra libre",
+                "Torna fiesta",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales",
+             
+              ]
+            }
+          }
+        ],
+        "menu":[
+          {
+            seccion: "Taquiza",
+            subSections:{
+              Guisados: [
                 "BISTEC ENCEBOLLADO",
                 "BISTEC EN CHILE PASILLA",
                 "BISTEC EN SALSA ROJA",
@@ -78,20 +178,21 @@ export const jardinesData = {
                 "PAPAS CON ACELGAS",
                 "PAPAS CON RAJAS"
             ],
-            "agua": [
+            agua: [
               "Limon",
               "Jamaica",
               "Sandia",
               "Melon",
               "Pina"
             ],
-            "adicional":[
+            adicional:[
               "Arroz",
               "Frijoles",
               "Tortillas",
               "Salsas",
               "Hielos"
             ]
+            }
         },
         {
             section: "Tres Tiempos",
@@ -166,8 +267,8 @@ export const jardinesData = {
                 }
               },
               {
-                "section": "Premium",
-                "subSections": {
+                section: "Premium",
+                subSections: {
                   "Entremes": [
                     "Pate zetas al ajillo",
                     "Carrusel de verduras",
@@ -194,7 +295,7 @@ export const jardinesData = {
                   ]
                 }
               }
-            ],
+        ],
         "servicios_adicionales":[
           { "id": 1, "name": "Coordinador de Eventos", "available": true },
           { "id": 2, "name": "Animador de Eventos", "available": true },
