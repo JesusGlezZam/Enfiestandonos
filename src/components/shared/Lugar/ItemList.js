@@ -8,6 +8,8 @@ export const ItemList = ({ items, selectedItems, onCheckboxChange, itemType, cla
     return <p>No hay {itemType}s disponibles.</p>;
   }
 
+  console.log(selectedItems)
+
   return (
     <ul className={`item-list ${className}`}>
       {/* Mapeo a través de los ítems y renderizar cada uno con un checkbox */}

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { ItemList } from "./ItemList"; // Asegúrate de la ruta correcta
+import React, { useState } from 'react' // Asegúrate de la ruta correcta
+import { List } from './List';
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -25,24 +25,13 @@ export const PromotionSections  = ({ data }) => {
     };
   
     // Función para gestionar el cambio de selección de los ítems (checkboxes)
-    const handleCheckboxChange = (item, subSectionKey) => {
-      setSelectedItems(prevSelectedItems => {
-        // Obtener los ítems actualmente seleccionados para la subsección dada
-        const currentItems = prevSelectedItems[subSectionKey] || [];
-        return {
-          ...prevSelectedItems,
-          [subSectionKey]: currentItems.includes(item)
-            ? currentItems.filter(i => i !== item) // Desmarcar el ítem si ya está seleccionado
-            : [...currentItems, item] // Marcar el ítem si no está seleccionado
-        };
-      });
-    };
+
   
     return (
-      <div className="menu">
-        <h2 className="menu-title">Paquetes</h2>
+      <div className="promociones">
+        <h2 className="promociones-title">Paquetes</h2>
         {data.paquetes.map((section, index) => (
-          <div key={index} className="type-list menu-section">
+          <div key={index} className="type-list menu-section package">
             {/* Título de la sección con un manejador de clic para alternar su visibilidad */}
             <h2
               onClick={() => handleToggleSection(index)}
@@ -62,12 +51,10 @@ export const PromotionSections  = ({ data }) => {
                     <h3 className="capitalize-first-letter">
                       {capitalizeFirstLetter(subSectionKey)}
                     </h3>
-                    <ItemList
+                    <List
                       items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección
                       selectedItems={selectedItems[subSectionKey] || []} // Ítems seleccionados en la subsección
-                      onCheckboxChange={(item) => handleCheckboxChange(item, subSectionKey)} // Manejar cambio de selección
                       itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsección
-                      className="list" // Clase CSS para estilizar la lista
                     />
                   </div>
                 ))}

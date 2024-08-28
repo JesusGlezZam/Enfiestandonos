@@ -133,8 +133,6 @@ h1{
   text-decoration: underline;
 }
 
-
-
 /****** Map Header Styles *******/
 .right-column {
   flex: 1; /* Ocupa la mitad del espacio comparado con la columna izquierda */
@@ -252,8 +250,13 @@ h1{
 
 
 
-
+/* MenuWithSections.js */
 /**** Menu con servicios adicionales css  ****/
+.menu-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .menu-section,
 .aditional-service{
   max-width: 100%;
@@ -263,15 +266,35 @@ h1{
 .menu-section {
   margin-bottom: 10px; /* Ajusta el valor según tus necesidades */
 }
+
 .menu-section ul {
   font-size: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 3fr); /* Ajusta el número de columnas */
+  grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
   gap: 10px; /* Espacio entre los elementos de la cuadrícula */
   list-style: none; /* Elimina los íconos de lista predeterminados */
   padding: 0;
   margin: 0;
   padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
+}
+
+.menu-section li {
+  flex-direction: row; /* Coloca el icono encima del texto */
+}
+
+.menu-section h2:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
+}
+
+.menu-section h2 {
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
 .capitalize-first-letter {
@@ -286,39 +309,13 @@ h1{
   text-transform: lowercase; /* Convierte el resto a minúsculas */
 }
 
-
-.menu-section li {
-  flex-direction: row; /* Coloca el icono encima del texto */
-
-}
-/* Título de la sección */
-.section-title {
-  font-size: 23px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-/* Elemento de platillo */
-.menu-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.menu-section {
-  margin-bottom: 20px;
-}
-
-.section-title {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
+/* MenuWithSections.js Secciones y subsecciones */
 .section-content {
   margin-left: 20px;
 }
 
 .category {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .category h3 {
@@ -367,13 +364,7 @@ h1{
   color: #007bff;
 }
 
-
-
-.menu-section h2 {
-  cursor: pointer;
+/***************************/
+.package ul {
+  display: contents;
 }
-
-.menu-section h2:hover {
-  color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
-}
-

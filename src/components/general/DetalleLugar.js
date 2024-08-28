@@ -113,7 +113,7 @@ export const DetalleLugar = () => {
           </header>
 
           <div id="eventos" className="filtered-item-list">
-            <FilteredItemList type="Eventos celebrados" items={itemDetails.tipos_de_eventos} columns={3} initialVisibleCount={9} />
+            <FilteredItemList type="Eventos celebrados" items={itemDetails.tipos_de_eventos} columns={3} initialVisibleCount={6} />
           </div>
           <div id="amenidades" className="filtered-item-list">
             <FilteredItemList type="amenidades" items={itemDetails.amenidades} />
@@ -150,9 +150,7 @@ export const DetalleLugar = () => {
 
 
       <div id="menu" className="menu-list">
-
-        <MenuWithSections data={itemDetails} />
-
+        <MenuWithSections data={itemDetails}  />
         <FilteredItemList type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={4} />
       </div>
     </div>

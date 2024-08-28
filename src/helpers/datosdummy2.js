@@ -40,7 +40,7 @@ export const jardinesData = {
         ],
         "paquetes":[
           {
-            seccion: "Paquete 1",
+            seccion: "A Celebrar",
             subSections:{
               incluye:[
                 "Lugar de evento",
@@ -65,7 +65,7 @@ export const jardinesData = {
             }
           },
           {
-            seccion: "Paquete 2",
+            seccion: "Enfiestandonos",
             subSections:{
               incluye:[
                 "Lugar de evento",
@@ -98,7 +98,7 @@ export const jardinesData = {
             }
           },
           {
-            seccion: "Paquete 3",
+            seccion: "Fiesta sin fin",
             subSections:{
                incluye:[
                 "Lugar de evento",
