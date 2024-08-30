@@ -11,6 +11,7 @@ export const jardinesData = {
         "address": "C. Tarandacuaho 26, Emiliano Zapata 1a Secc, 55200 Ecatepec de Morelos, Méx.",
         "hours": "9:00 - 23:00",
         "price_initial": 260,
+        "price_final": 380,
         "capacity_initial": 100,
         "capacity_max": 250,
         "tipos_de_eventos": [
@@ -41,6 +42,7 @@ export const jardinesData = {
         "paquetes":[
           {
             seccion: "A Celebrar",
+            price: 260,
             subSections:{
               incluye:[
                 "Lugar de evento",
@@ -66,6 +68,7 @@ export const jardinesData = {
           },
           {
             seccion: "Enfiestandonos",
+            price: 320,
             subSections:{
               incluye:[
                 "Lugar de evento",
@@ -99,6 +102,7 @@ export const jardinesData = {
           },
           {
             seccion: "Fiesta sin fin",
+            price: 380,
             subSections:{
                incluye:[
                 "Lugar de evento",
@@ -137,7 +141,8 @@ export const jardinesData = {
           }
         ],
         "menu":[
-          {
+          { 
+            type:"Menu1",
             seccion: "Taquiza",
             subSections:{
               Guisados: [
@@ -194,7 +199,8 @@ export const jardinesData = {
             ]
             }
         },
-        {
+        { 
+            type:"Menu2",
             section: "Tres Tiempos",
             subSections: {
                 Entradas: [
@@ -267,6 +273,7 @@ export const jardinesData = {
                 }
               },
               {
+                type:"Menu3",
                 section: "Premium",
                 subSections: {
                   "Entremes": [

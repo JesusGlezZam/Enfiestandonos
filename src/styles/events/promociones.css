@@ -1,0 +1,162 @@
+/*******    PromotionSections.js     ********************/
+/*  components/shared/Lugar/PromotiosSections.js    */
+
+.promociones{
+  max-width: 100%;
+  margin: 10px; /* Centra el contenedor horizontalmente */
+}
+
+.package ul {
+  display: contents;
+}
+
+/* Menu por columnas */
+.menu-section .package ul{
+  display: grid;
+}
+
+.top-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre columnas */
+}
+
+.sub-section {
+  flex: 1 1 30%; /* Ajuste de tamaño y espaciado */
+  box-sizing: border-box;
+}
+
+
+.menu-section-bottom {
+  margin-top: 20px;
+}
+
+.item-list {
+  padding-left: 20px; /* Espacio para las viñetas */
+  margin: 0;
+  border-bottom: 2px solid #901919;
+}
+
+
+.item-list li {
+  margin-bottom: 0px; /* Espacio entre ítems de la lista */
+ /* border-bottom: 2px solid #901919;*/
+}
+
+/* Ajustar el estilo de las columnas para el diseño responsivo */
+@media (max-width: 768px) {
+  .sub-section {
+    flex: 1 1 100%; /* En pantallas más pequeñas, las columnas ocupan el 100% del ancho */
+  }
+}
+
+
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.section-price {
+  font-size: 16px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Opcional: Agregar un espacio extra entre el título y el precio */
+.section-title,
+.section-price {
+  margin: 0;
+}
+
+.section-content {
+  padding: 10px;
+  margin-top: 0px;
+}
+
+.pricing-info {
+  background-color: #f9f9f9; /* Fondo claro para resaltar la información */
+  padding: 20px; /* Espacio interno alrededor del contenido */
+  border-radius: 8px; /* Bordes redondeados para un estilo moderno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+  margin-bottom: 20px; /* Espacio debajo del bloque */
+}
+
+.package-title {
+  font-size: 1.6em; /* Tamaño de fuente grande para el título del paquete */
+  color: #333; /* Color oscuro para el título */
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.package-description {
+  font-size: 16px; /* Tamaño de fuente legible */
+  color: #555; /* Color gris para el texto explicativo */
+  margin-bottom: 20px; /* Espacio debajo de la descripción */
+  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+}
+
+.price-details {
+  border-bottom: 1px solid #ddd; /* Línea separadora para diferenciar secciones */
+  padding-bottom: 15px; /* Espacio debajo de la línea separadora */
+  margin-bottom: 15px; /* Espacio entre la línea separadora y el texto */
+}
+
+.price-per-person,
+.total-price {
+  margin: 0; /* Elimina márgenes para un diseño más compacto */
+  color: #333; /* Color oscuro para mejor legibilidad */
+}
+
+.pricing-note {
+  font-size: 14px; /* Tamaño de fuente más pequeño para notas adicionales */
+  color: #777; /* Color gris más claro para la nota */
+  margin-top: 10px; /* Espacio arriba de la nota */
+}
+
+.pricing-disclaimer {
+  font-size: 12px; /* Tamaño de fuente más pequeño para la nota de descargo */
+  color: #999; /* Color gris claro para la nota de descargo */
+  margin-top: 5px; /* Espacio arriba de la nota de descargo */
+}
+
+.people-selector {
+  margin-top: 20px;
+}
+
+.people-selector label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.people-selector input {
+  width: 100%;
+  max-width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.people-selector input::placeholder {
+  color: #aaa;
+}
+
+.alert-message {
+  color: #d9534f; /* Color rojo para mensajes de error */
+  font-size: 14px;
+  margin-top: 10px;
+}
+

@@ -5,6 +5,8 @@ import { FaClock, FaMapMarkerAlt, FaSun, FaUser, FaLeaf, FaHome, FaGlassCheers }
 import { MdCelebration } from 'react-icons/md';
 import { BsFillGiftFill } from 'react-icons/bs';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 // Función para obtener el icono según el tipo de evento
 const getIconByType = (type) => {
@@ -114,7 +116,8 @@ export const Cards = ({ items, itemType }) => {
                   <div className='detail-info'>
                     <FaClock className='detail-icon available' />
                     <span>{item.hours || 'No disponible'}</span>
-                    <span>{item.description || 'No disponible'}</span>
+                    <FontAwesomeIcon className='icon-price' icon={faMoneyBill} color="green" />
+                    ${item.price_initial} - ${item.price_final || 'No disponible'}
                   </div>
                 </div>
               </section>

@@ -9,7 +9,7 @@ export const List = ({ items, selectedItems, itemType, className }) => {
     console.log(selectedItems)
   
     return (
-      <ul className={`item-list ${className}`}>
+      <ul className={`item-list package ${className}`}>
         {/* Mapeo a través de los ítems y renderizar cada uno con un checkbox */}
         {items.map((item, index) => (
           <li key={index} className="item">
@@ -23,3 +23,4 @@ export const List = ({ items, selectedItems, itemType, className }) => {
       </ul>
     );
   };
+

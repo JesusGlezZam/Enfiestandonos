@@ -71,11 +71,6 @@ export const DetalleLugar = () => {
     return <div>No hay información del menú disponible.</div>;
   }
 
-  // Calcular el precio total para el paquete básico
-  const pricePerPerson = itemDetails.price_initial;
-  const minimumCapacity = itemDetails.capacity_initial;
-  const totalPrice = pricePerPerson * minimumCapacity;
-
   // Función para manejar el clic en los enlaces de navegación
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -95,7 +90,6 @@ export const DetalleLugar = () => {
         </p>
         <p>
         Conoce todo lo que podemos ofrecerte para hacer de tu celebración un momento inolvidable.
-          <strong>Precio:</strong> ${pricePerPerson} MXN por persona con un mínimo de {minimumCapacity} personas o el precio total del salón de: ${totalPrice} MXN para el paquete básico.
         </p>
       </div>
 
@@ -108,6 +102,7 @@ export const DetalleLugar = () => {
                 <li><button onClick={() => scrollToSection('amenidades')}>Amenidades</button></li>
                 <li><button onClick={() => scrollToSection('paquetes')}>Paquetes</button></li>
                 <li><button onClick={() => scrollToSection('menu')}>Menú</button></li>
+                <li><button onClick={() => scrollToSection('adicionales')}>Servicios adicionales</button></li>
               </ul>
             </nav>
           </header>
@@ -144,15 +139,22 @@ export const DetalleLugar = () => {
           <h3>
           Explora nuestros paquetes y descubre cómo podemos hacer que tu evento sea perfecto.
           </h3>
-          
-          <PromotionSections data={itemDetails} />
+          <h2 className="promociones-title">Paquetes</h2>
+          <PromotionSections data={itemDetails} subSection="A Celebrar"  type="Menu1"  />
+          <PromotionSections data={itemDetails} subSection="Enfiestandonos" type="Menu2"/>
+          <PromotionSections data={itemDetails} subSection="Fiesta sin fin" type="Menu3" />
+             
       </div>
 
 
       <div id="menu" className="menu-list">
         <MenuWithSections data={itemDetails}  />
+      </div>
+      
+      <div id="adicionales">
         <FilteredItemList type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={4} />
       </div>
+      
     </div>
   );
 };
