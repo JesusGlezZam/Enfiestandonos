@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ItemList } from './ItemList';
+import { GiMeal } from 'react-icons/gi';
+
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -51,10 +53,11 @@ export const MenuSection = ({ data, type }) => {
                     <h2
                         onClick={() => handleToggleSection(index)}
                         className="section-title"
-                        style={{ cursor: 'pointer' }}
                     >
-                        <span className="capitalize-first-letter">
+                       <span className="capitalize-first-letter with-sections">
                             {capitalizeFirstLetter(section.seccion || section.section)}
+                            <GiMeal className={`icon-menu ${openSections.includes(index) ? 'icon-expanded' : 'icon-collapsed'}`} /> {/*<MdFastfood className="detail-icon menu" /> <GiFoodTruck className="detail-icon menu" />  <GiBowlOfRice className="detail-icon menu" />*/}
+                           
                         </span>
                     </h2>
                     {openSections.includes(index) && (
@@ -70,8 +73,7 @@ export const MenuSection = ({ data, type }) => {
                                         items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección
                                         selectedItems={selectedItems[subSectionKey] || []} // Ítems seleccionados en la subsección
                                         onCheckboxChange={(item) => handleCheckboxChange(item, subSectionKey)} // Manejar cambio de selección
-                                        itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsección
-                                        className="list" // Clase CSS para estilizar la lista
+                                        itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsecció
                                     />
                                 </div>
                             ))}

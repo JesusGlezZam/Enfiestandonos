@@ -77,9 +77,20 @@
 
 h1{
   font-size: 2em;
-  padding-bottom: 0px;
 }
 
+h2{
+  font-size: 1.7em;
+}
+
+h3{
+  font-size: 1.6em;
+}
+
+p{
+  font-size: 1.3em;
+  padding-bottom: 0px;
+}
 .main-container {
   display: flex;
   height: auto; /* Ocupa el 100% de la altura de la ventana */
@@ -124,7 +135,7 @@ h1{
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   padding: 10px;
 }
@@ -366,4 +377,23 @@ h1{
 
 .icon-price{
   font-size: 1.6em;
+}
+
+
+.with-sections {
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto y el icono */
+  justify-content: space-between; /* Espacia el texto y el icono */
+}
+
+.icon-menu {
+  transition: font-size 0.3s ease; /* Animación suave al cambiar el tamaño del icono */
+}
+
+.icon-expanded {
+  font-size: 60px; /* Tamaño del icono cuando la sección está abierta */
+}
+
+.icon-collapsed {
+  font-size: 30px; /* Tamaño del icono cuando la sección está cerrada */
 }

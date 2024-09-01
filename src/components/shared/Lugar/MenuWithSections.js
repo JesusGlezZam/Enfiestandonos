@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { ItemList } from "./ItemList"; // Asegúrate de la ruta correcta
+import { GiForkKnifeSpoon } from "react-icons/gi";
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -49,9 +50,10 @@ const MenuWithSections = ({ data }) => {
             className="section-title"
             style={{ cursor: 'pointer' }}
           >
-            <span className="capitalize-first-letter">
-              {capitalizeFirstLetter(section.seccion || section.section)}
-            </span>
+           <span className="capitalize-first-letter with-sections">
+            {capitalizeFirstLetter(section.seccion || section.section)}
+            <GiForkKnifeSpoon className={`icon-menu ${openSections.includes(index) ? 'icon-expanded' : 'icon-collapsed'}`} />
+          </span>
           </h2>
           {openSections.includes(index) && (
             <div className="section-content">
@@ -60,7 +62,7 @@ const MenuWithSections = ({ data }) => {
                 <div key={subSectionKey} className="sub-section">
                   {/* Título de la subsección con primera letra capitalizada */}
                   <h3 className="capitalize-first-letter">
-                    {capitalizeFirstLetter(subSectionKey)}
+                   {capitalizeFirstLetter(subSectionKey)}
                   </h3>
                   <ItemList
                     items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección

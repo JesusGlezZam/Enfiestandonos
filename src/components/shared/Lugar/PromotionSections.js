@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { List } from './List';
 import { MenuSection } from './MenuSection';
 import '../../../styles/events/promociones.css';
+import { MdCelebration } from 'react-icons/md';
+import { GiForkKnifeSpoon } from 'react-icons/gi';
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -75,12 +77,13 @@ export const PromotionSections = ({ data, subSection, type }) => {
             {/* Título de la sección con un manejador de clic para alternar su visibilidad */}
             <div className="section-header" onClick={() => handleToggleSection(index)}>
               <span className="section-title">
-                {capitalizeFirstLetter(section.seccion)}
+              <MdCelebration className='detail-icon-promotion celebration'/> {capitalizeFirstLetter(section.seccion)}
               </span>
               <span className="section-price">
                 ${pricePerPerson} MXN por persona
               </span>
             </div>
+            <div clasName='test'>
             {openSections.includes(index) && (
               <div className="section-content">
                 {/* Información de precios */}
@@ -124,7 +127,7 @@ export const PromotionSections = ({ data, subSection, type }) => {
                     <div key={subSectionKey} className={`sub-section col-${(idx % 3) + 1}`}>
                       {/* Título de la subsección con primera letra capitalizada */}
                       <h3 className="capitalize-first-letter">
-                        {capitalizeFirstLetter(subSectionKey)}
+                         {capitalizeFirstLetter(subSectionKey)}
                       </h3>
                       <List
                         items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección
@@ -141,6 +144,7 @@ export const PromotionSections = ({ data, subSection, type }) => {
                 </div>
               </div>
             )}
+            </div>
           </div>
         );
       })}

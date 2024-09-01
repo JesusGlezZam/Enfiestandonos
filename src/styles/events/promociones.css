@@ -1,6 +1,10 @@
 /*******    PromotionSections.js     ********************/
 /*  components/shared/Lugar/PromotiosSections.js    */
 
+.promociones-title{
+  font-size: 24px;
+}
+
 .promociones{
   max-width: 100%;
   margin: 10px; /* Centra el contenedor horizontalmente */
@@ -14,6 +18,19 @@
 .menu-section .package ul{
   display: grid;
 }
+
+.package {
+  transition: max-width 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+.package.collapsed {
+  max-width: 50%;
+}
+
+.package.expanded {
+  max-width: 100%;
+}
+
 
 .top-sections {
   display: flex;
@@ -63,20 +80,43 @@
 }
 
 .section-title {
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: normal;
+  cursor: pointer;
 }
 
 .section-price {
-  font-size: 16px;
   color: green;
   font-weight: bold;
 }
 
+
+
 /* Opcional: Agregar un espacio extra entre el título y el precio */
 .section-title,
 .section-price {
+  font-size: 24px;
   margin: 0;
+  margin-inline-start: 10px;
+}
+
+
+.detail-icon-promotion {
+  font-size: 30px; /* Ajusta el tamaño del ícono */
+}
+
+.celebration {
+  color: #f39c12; /* Color del ícono si lo deseas */
+}
+
+.icon-menu{
+  font-weight: normal;
+  cursor: pointer;
+  color:#8B4513;
+}
+
+.icon-menu {
+  margin-left: 8px; /* Espacio entre el texto y el icono, ajusta según sea necesario */
+  /* Añade otras propiedades si lo deseas */
 }
 
 .section-content {
@@ -159,4 +199,5 @@
   font-size: 14px;
   margin-top: 10px;
 }
+
 
