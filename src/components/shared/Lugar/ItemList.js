@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { GiAppleMaggot, GiCheckMark, GiCircle, GiSettingsKnobs } from 'react-icons/gi';
+import { FaCircle } from 'react-icons/fa';
 
 // Componente generalizado para mostrar listas de ítems
 export const ItemList = ({ items, selectedItems, onCheckboxChange, itemType, className }) => {

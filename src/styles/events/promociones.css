@@ -1,6 +1,5 @@
 /*******    PromotionSections.js     ********************/
 /*  components/shared/Lugar/PromotiosSections.js    */
-
 .promociones-title{
   font-size: 24px;
 }
@@ -18,31 +17,26 @@
 .menu-section .package ul{
   display: grid;
 }
+ 
+.menu-section li {
+  flex-direction: row; /* Coloca el icono encima del texto */
+}
 
 .package {
-  transition: max-width 0.3s ease; /* Transición suave para el cambio de tamaño */
-}
-
-.package.collapsed {
-  max-width: 50%;
-}
-
-.package.expanded {
   max-width: 100%;
-}
-
-
-.top-sections {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Espacio entre columnas */
+  transition: max-width 0.3s ease; /* Transición suave para el cambio de tamaño */
 }
 
 .sub-section {
   flex: 1 1 30%; /* Ajuste de tamaño y espaciado */
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
+.sub-section h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
 
 .menu-section-bottom {
   margin-top: 20px;
@@ -54,12 +48,6 @@
   border-bottom: 2px solid #901919;
 }
 
-
-.item-list li {
-  margin-bottom: 0px; /* Espacio entre ítems de la lista */
- /* border-bottom: 2px solid #901919;*/
-}
-
 /* Ajustar el estilo de las columnas para el diseño responsivo */
 @media (max-width: 768px) {
   .sub-section {
@@ -67,15 +55,13 @@
   }
 }
 
-
-
-
+/******* Vista inicial de las promociones enfiestandonos x 320 pp *********/
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -101,13 +87,13 @@
 .section-title,
 .section-price {
   font-size: 1.75em;
-  margin: 0;
-  margin-inline-start: 10px;
+  margin: 5px;
+  margin-inline-start: 0px;
 }
 
 
 .detail-icon-promotion {
-  font-size: 25px; /* Ajusta el tamaño del ícono */
+  font-size: 30px; /* Ajusta el tamaño del ícono */
   padding-right: 15px;
 }
 
@@ -119,13 +105,25 @@
   font-weight: normal;
   cursor: pointer;
   color:#8B4513;
-}
-
-.icon-menu {
+  transition: font-size 0.3s ease; /* Animación suave al cambiar el tamaño del icono */
   margin-left: 8px; /* Espacio entre el texto y el icono, ajusta según sea necesario */
-  /* Añade otras propiedades si lo deseas */
 }
 
+.icon-collapsed {
+  font-size: 40px; /* Tamaño del ícono cuando la sección está cerrada */
+  transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
+}
+
+.icon-expanded {
+  font-size: 90px; /* Tamaño del ícono cuando la sección está abierta */
+  transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
+}
+
+/******* Vista inicial de las promociones enfiestandonos x 320 pp *********/
+
+
+
+/********** Contenido General dentro de A celebrar ***/
 .section-content {
   padding: 10px;
   margin-top: 0px;
@@ -211,26 +209,25 @@
   margin-top: 10px;
 }
 
+/********** Contenido General dentro de A celebrar ***/
 
-/* Estilo general para la lista */
-.item-list {
-  list-style: none; /* Elimina el estilo de viñeta predeterminado del navegador */
-  padding: 0;
-  margin: 0;
-}
 
-.item {
+/*******   Estilos de lo que incluye el paquete, menu y te recomendamos contratar  */
+.top-sections {
   display: flex;
-  align-items: center;
-  padding: 10px 0;
- 
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre columnas */
 }
 
 .include{
-   border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd;*/
 }
 
-/* Estilo para la viñeta */
+.item-text {
+  text-align: left;
+}
+
+
 .item-bullet {
   font-size: 20px; /* Tamaño del ícono de la viñeta */
   color: green; /* Color de la viñeta */
@@ -238,4 +235,15 @@
 }
 
 
+/********** Estilos para controlar los items de las listas lo comparte Menuwithsections.js y withmenu.js    *******/
+.checkbox-input {
+  margin-right: 20px;
+  transform: scale(1.4);
+}
 
+.with-sections {
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto y el icono */
+  justify-content: space-between; /* Espacia el texto y el icono */
+}
+/********** Estilos para controlar los items de las listas lo comparte Menuwithsections.js y withmenu.js    *******/

@@ -84,44 +84,45 @@ export const PromotionSections = ({ data, subSection, type }) => {
               </span>
             </div>
             
-            <div className='test'>
-  {openSections.includes(index) && (
-    <div className="section-content">
-      {/* Información de precios */}
-      <div className="pricing-info"> 
-        <p className="package-description">
-          ¡Este paquete está diseñado para ofrecerte la mejor experiencia en tu evento!
-        </p>
-        <div className="people-selector">
-          <label htmlFor="people-count">Número de personas:</label>
-          <input 
-            id="people-count" 
-            type="number" 
-            min={minimumCapacity} 
-            max={data.capacity_max} 
-            value={peopleCount || ''} 
-            onChange={handlePeopleCountChange} 
-            onDoubleClick={handleDoubleClick} 
-            placeholder="Introduce número" 
-          />
-          {alertMessage && <p className="alert-message">{alertMessage}</p>}
-        </div>
-        <h4>
-          <strong>Precio por persona:</strong> ${pricePerPerson} MXN
-        </h4>
-        <h4>
-          <strong>Precio total para el salón:</strong> ${totalPrice.toLocaleString()} MXN
-        </h4>
-        <p className="pricing-note">
-          Este paquete tiene un costo base de ${pricePerPerson} MXN por persona, 
-          con un mínimo de {minimumCapacity} personas. Si decides invitar a más personas, 
-          ajustaremos el costo total según el número definitivo de asistentes, 
-          hasta un máximo de {data.capacity_max} personas.
-        </p>
-        { /*<p className="pricing-disclaimer">
-          El precio final se ajustará en función del número total de invitados.
-        </p> */}
-      </div>           
+            <div className='section-promotion'>
+              {openSections.includes(index) && (
+                <div className="section-content">
+                  {/* Información de precios */}
+                  <div className="pricing-info"> 
+                    <p className="package-description">
+                      ¡Este paquete está diseñado para ofrecerte la mejor experiencia en tu evento!
+                    </p>
+                    <div className="people-selector">
+                      <label htmlFor="people-count">Número de personas:</label>
+                      <input 
+                        id="people-count" 
+                        type="number" 
+                        min={minimumCapacity} 
+                        max={data.capacity_max} 
+                        value={peopleCount || ''} 
+                        onChange={handlePeopleCountChange} 
+                        onDoubleClick={handleDoubleClick} 
+                        placeholder="Introduce número" 
+                      />
+                      {alertMessage && <p className="alert-message">{alertMessage}</p>}
+                    </div>
+                    <h4>
+                      <strong>Precio por persona:</strong> ${pricePerPerson} MXN
+                    </h4>
+                    <h4>
+                      <strong>Precio total para el salón:</strong> ${totalPrice.toLocaleString()} MXN
+                    </h4>
+                    <p className="pricing-note">
+                      Este paquete tiene un costo base de ${pricePerPerson} MXN por persona, 
+                      con un mínimo de {minimumCapacity} personas. Si decides invitar a más personas, 
+                      ajustaremos el costo total según el número definitivo de asistentes, 
+                      hasta un máximo de {data.capacity_max} personas.
+                    </p>
+                    { /*<p className="pricing-disclaimer">
+                      El precio final se ajustará en función del número total de invitados.
+                    </p> */}
+                </div>
+
                 {/* Contenedor para las subsecciones en tres columnas */}
                 <div className='top-sections'>
                   {section.subSections && Object.keys(section.subSections).map((subSectionKey, idx) => (

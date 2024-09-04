@@ -1,148 +1,98 @@
 
 
 /* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
-/**** Menu con servicios adicionales css  ****/
-.menu-title {
-    font-size: 24px;
+  .menu{
+    padding-top: 20px;
+  }
+  
+  .along-menu {
     margin-bottom: 20px;
   }
-  
-  .menu-section,
-  .aditional-service{
-    max-width: 100%;
-    margin: 0px; /* Centra el contenedor horizontalmente */
-  }
-  
-  .aditional-service h2{
-    cursor: pointer;
-  }
-  
-  .menu-section {
-    margin-bottom: 10px; /* Ajusta el valor según tus necesidades */
-  }
-  
-  .menu-section ul {
-    font-size: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
-    gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-    list-style: none; /* Elimina los íconos de lista predeterminados */
-    padding: 0;
-    margin: 0;
-    padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
-  }
-  
-  .menu-section li {
-    flex-direction: row; /* Coloca el icono encima del texto */
-  }
-  
-  .menu-section h2:hover,
-  .aditional-service:hover{
-    color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
-  }
-  
-  .menu-section h2 {
-    cursor: pointer;
-  }
-  
-  .section-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    margin: 10px 0;
-  }
-  
-  .capitalize-first-letter {
-    text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
-  }
-  
-  .capitalize-first-letter span:first-letter {
-    text-transform: uppercase; /* Asegúrate de que solo la primera letra sea mayúscula */
-  }
-  
-  .capitalize-first-letter span {
-    text-transform: lowercase; /* Convierte el resto a minúsculas */
-  }
-  
-  /* MenuWithSections.js Secciones y subsecciones */
-  .section-content {
-    margin-left: 20px;
-  }
-  
-  .category {
-    margin-bottom: 40px;
-  }
-  
-  .category h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .sub-section {
-    margin-bottom: 20px;
-  }
-  
-  .sub-section h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .item-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-   /* border-bottom: 1px solid #ddd;*/
-  }
-  
-  .checkbox-input {
-    margin-right: 10px;
-  }
-  
-  .item-label {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .item-text {
-    text-align: left;
-  }
-  
-  .item-text.selected {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .icon-price{
-    font-size: 1.6em;
-  }
-  
-  
-  .with-sections {
+
+  .with-sections-alonge {
+    font-size: 1em;
     display: flex;
     align-items: center; /* Centra verticalmente el texto y el icono */
     justify-content: space-between; /* Espacia el texto y el icono */
   }
   
-  .icon-menu {
+  .along-section{
+    max-width: 100%;
+    margin: 10px; /* Centra el contenedor horizontalmente */
+    padding: 30px;
+  }
+  
+  .along-section ul{
+    display: grid;
+  }
+  
+  .along-section li {
+    flex-direction: row; /* Coloca el icono encima del texto */
+  }
+  
+  
+  .icon-menu-along{
+    font-weight: normal;
+    cursor: pointer;
+    color:#8B4513;
+    font-size: 60px;
     transition: font-size 0.3s ease; /* Animación suave al cambiar el tamaño del icono */
+    margin-left: 8px; /* Espacio entre el texto y el icono, ajusta según sea necesario */ 
   }
   
-  .icon-expanded {
-    font-size: 90px; /* Tamaño del icono cuando la sección está abierta */
+  .icon-collapsed-along{
+    font-size: 40px; /* Tamaño del ícono cuando la sección está cerrada */
+    transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
   }
   
-  .icon-collapsed {
-    font-size: 50px; /* Tamaño del icono cuando la sección está cerrada */
+  .icon-expanded-along {
+    font-size: 90px; /* Tamaño del ícono cuando la sección está abierta */
+    transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
   }
   
+  .section-content-along {
+    margin-left: 20px;
+  }
+
+  .sub-section-along h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-input {
+    margin-right: 10px;
+  }
+
+  .item-text.selected {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+
+
+
+  /* Asegúrate de que los íconos tengan el mismo tamaño y color */
+.item-icon {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 20px; /* Tamaño del ícono */
+    color: #007bff; /* Color azul para el ícono */
+  }
   
-  
-  
-  
+.item-list {
+  list-style-type: none; /* Elimina las viñetas predeterminadas del navegador */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margin predeterminado */
+}
+
+.item-label {
+  margin-bottom: 0px;
+  display: flex;
+  text-align: left;
+  align-items: center; /* Alinea verticalmente el texto con el ícono */
+  font-size: 1.3em; /* Tamaño de la letra para los ítems */
+  color: #333; /* Color del texto */
+}
+
+
+
+

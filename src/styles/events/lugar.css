@@ -117,7 +117,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.3em;
   color: #444444;
   padding: 10px;
 }
@@ -145,7 +145,7 @@ body {
 
 .master-container h2{ 
   font-weight: lighter;
-  font-size: 1.7em;
+  font-size: 1.8em;
 }
 
 /*.welcome-section h2{ 
@@ -233,150 +233,25 @@ p{
 }
 /**************** rigth-column     *****************/
 
-
-
-/****** Esto cubre la secciond de MenuwithSections.js MenuSections.js y ItemList.js y List.js*/
-/* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
-/**** Menu con servicios adicionales css  ****/
-.menu-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.menu-section,
 .aditional-service{
   max-width: 100%;
-  margin: 0px; /* Centra el contenedor horizontalmente */
+  margin: 10px;
 }
 
 .aditional-service h2{
   cursor: pointer;
 }
 
-.menu-section {
-  margin-bottom: 10px; /* Ajusta el valor según tus necesidades */
-}
-
-.menu-section ul {
-  font-size: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-  list-style: none; /* Elimina los íconos de lista predeterminados */
-  padding: 0;
-  margin: 0;
-  padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
-}
-
-.menu-section li {
-  flex-direction: row; /* Coloca el icono encima del texto */
-}
-
-.menu-section h2:hover,
 .aditional-service:hover{
   color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
 }
 
-.menu-section h2 {
-  cursor: pointer;
-}
-
-.section-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  margin: 10px 0;
-}
-
-.capitalize-first-letter {
-  text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
-}
-
-.capitalize-first-letter span:first-letter {
-  text-transform: uppercase; /* Asegúrate de que solo la primera letra sea mayúscula */
-}
-
-.capitalize-first-letter span {
-  text-transform: lowercase; /* Convierte el resto a minúsculas */
-}
-
-/* MenuWithSections.js Secciones y subsecciones */
-.section-content {
-  margin-left: 20px;
-}
-
-.category {
-  margin-bottom: 40px;
-}
-
-.category h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.sub-section {
-  margin-bottom: 20px;
-}
-
-.sub-section h3 {
-  font-size: 1.3em;
-  margin-bottom: 10px;
-}
-
-.item-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
- /* border-bottom: 1px solid #ddd;*/
-}
-
-.checkbox-input {
-  margin-right: 10px;
-}
-
-.item-label {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.item-text {
-  text-align: left;
-}
-
-.item-text.selected {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.icon-price{
-  font-size: 1.6em;
-}
 
 
-.with-sections {
-  display: flex;
-  align-items: center; /* Centra verticalmente el texto y el icono */
-  justify-content: space-between; /* Espacia el texto y el icono */
-}
+/****** Esto cubre la secciond de MenuwithSections.js MenuSections.js y ItemList.js y List.js*/
+/* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
+/**** Menu con servicios adicionales css  ****/
 
-.icon-menu {
-  transition: font-size 0.3s ease; /* Animación suave al cambiar el tamaño del icono */
-}
-
-.icon-expanded {
-  font-size: 90px; /* Tamaño del icono cuando la sección está abierta */
-}
-
-.icon-collapsed {
-  font-size: 50px; /* Tamaño del icono cuando la sección está cerrada */
-}
 
 
 

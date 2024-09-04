@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { ItemList } from "./ItemList"; // Asegúrate de la ruta correcta
 import { GiForkKnifeSpoon } from "react-icons/gi";
-
+import { IconList } from "./IconList";
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -42,35 +41,33 @@ const MenuWithSections = ({ data }) => {
 
   return (
     <div className="menu">
-      <h2 className="menu-title">Menú</h2>
+      <h2 className="menu-title along-menu">Menú</h2>
       {data.menu.map((section, index) => (
-        <div key={index} className="type-list menu-section">
+        <div key={index} className="type-list along-section">
           {/* Título de la sección con un manejador de clic para alternar su visibilidad */}
           <h2
             onClick={() => handleToggleSection(index)}
             className="section-title"
             style={{ cursor: 'pointer' }}
           >
-           <span className="capitalize-first-letter with-sections">
+           <span className="capitalize-first-letter with-sections-alonge">
             {capitalizeFirstLetter(section.seccion || section.section)}
-            <GiForkKnifeSpoon className={`icon-menu ${openSections.includes(index) ? 'icon-expanded' : 'icon-collapsed'}`} />
+            <GiForkKnifeSpoon className={`icon-menu-along ${openSections.includes(index) ? 'icon-expanded-along' : 'icon-collapsed-along'}`} />
           </span>
           </h2>
           {openSections.includes(index) && (
-            <div className="section-content">
+            <div className="section-content-along">
               {/* Mostrar subsecciones si existen */}
               {section.subSections && Object.keys(section.subSections).map(subSectionKey => (
-                <div key={subSectionKey} className="sub-section">
+                <div key={subSectionKey} className="sub-section-along">
                   {/* Título de la subsección con primera letra capitalizada */}
                   <h3 className="capitalize-first-letter">
                    {capitalizeFirstLetter(subSectionKey)}
                   </h3>
-                  <ItemList
+                  <IconList
                     items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección
-                    selectedItems={selectedItems[subSectionKey] || []} // Ítems seleccionados en la subsección
-                    onCheckboxChange={(item) => handleCheckboxChange(item, subSectionKey)} // Manejar cambio de selección
                     itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsección
-                    className="list" // Clase CSS para estilizar la lista
+                    className="list-bullet" // Clase CSS para estilizar la lista
                   />
                 </div>
               ))}

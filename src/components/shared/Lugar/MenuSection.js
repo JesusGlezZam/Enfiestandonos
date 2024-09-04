@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ItemList } from './ItemList';
 import { GiMeal } from 'react-icons/gi';
+import '../../../styles/events/menuwithsections.css'
 
 
 // Función para capitalizar la primera letra de un texto
