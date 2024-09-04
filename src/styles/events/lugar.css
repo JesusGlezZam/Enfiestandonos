@@ -1,3 +1,9 @@
+/* Mostrar dentro de la pnatalla DetalleLugar un tipo de letra mas suave*/ 
+body {
+  color: #333333;
+  font-weight: lighter;
+}
+
 /********** Contenedor de la galería  ***********/
 /*****src/components/shared/Lugar/Galery.js***/
 .gallery-container {
@@ -65,59 +71,35 @@
   background-color: rgba(0, 0, 0, 0.7); /* Más oscuro al pasar el cursor */
 }
 
-/***************                 ******************/
+/***************      Galery           ******************/
 
 
-/* components/general/DetalleLugar.js */
-/**************** Detalle de lugar de manera General **************/
-.master-container{
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
-  padding:  25px;
-}
-
-h1{
-  font-size: 2em;
-}
-
-h2{
-  font-size: 1.7em;
-}
-
-h3{
-  font-size: 1.6em;
-}
-
-p{
-  font-size: 1.3em;
-  padding-bottom: 0px;
-}
-.main-container {
-  display: flex;
-  height: auto; /* Ocupa el 100% de la altura de la ventana */
-}
-
-.left-column {
-  flex: 2; /* Ocupa el doble del espacio en comparación con la columna derecha */
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.filtered-item-list,
-.menu-list{
-  margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
-}
-
-/************** Detalle ***/
+/************** Header de navegacion ***/
 /* Estilo para la barra de navegación fija */
 .sticky-header {
   position: -webkit-sticky; /* Para Safari */
   position: sticky;
   top: 0;
   background-color: #fff;
-  /*border-bottom: 1px solid #ddd;*/
-  z-index: 1000;
+  z-index: 50;
   padding: 10px;
+  width: 80%; /* Ancho del 60% de la pantalla */
+  margin: 0 auto; /* Centra el header horizontalmente */
+  border-radius: 30px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  border: 2px solid yellow; /* Añade un borde amarillo de 2px */
 }
+
+/* Estilos para los elementos activos */
+.sticky-header ul li.active {
+  border-radius: 30px;
+  background-color: #ffeb3b; /* Color de fondo para el ítem activo */
+}
+
+.sticky-header ul li.active button {
+  color: #000; /* Color del texto del botón activo */
+}
+
 
 .sticky-header nav ul {
   list-style-type: none;
@@ -136,15 +118,75 @@ p{
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: #333;
+  color: #444444;
   padding: 10px;
 }
 
 .sticky-header nav ul li button:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: #ffeb3b;
+}
+/*********   stick- header de navegacion   *****/
+
+
+
+/* components/general/DetalleLugar.js */
+/**************** Detalle de lugar de manera General **************/
+.master-container{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+  padding:  25px;
 }
 
-/****** Map Header Styles *******/
+.master-container h1{
+  font-size: 2em;
+  font-weight: lighter;
+}
+
+.master-container h2{ 
+  font-weight: lighter;
+  font-size: 1.7em;
+}
+
+/*.welcome-section h2{ 
+  font-weight: lighter;
+  font-size: 1.7em;
+}*/ /*porque master ya tambien lo engloba*/
+
+.master-container h3{
+  font-weight: lighter;
+  font-size: 1.6em;
+}
+
+.main-container{
+  font-weight: lighter;
+}
+
+p{
+  color: #333333 ; /* Color gris más claro para la nota */
+  font-size: 1.3em;
+  padding-bottom: 0px;
+}
+.main-container {
+  display: flex;
+  height: auto; /* Ocupa el 100% de la altura de la ventana */
+}
+
+.left-column {
+  flex: 2; /* Ocupa el doble del espacio en comparación con la columna derecha */
+  padding: 20px;
+  overflow-y: hidden;
+}
+
+.filtered-item-list,
+.menu-list{
+  margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
+}
+
+/******  left-column  ***/
+
+
+/****** rigth colum Map Header Styles *******/
 .right-column {
   flex: 1; /* Ocupa la mitad del espacio comparado con la columna izquierda */
   padding: 20px;
@@ -163,7 +205,7 @@ p{
 
 .map-container {
   width: 90%;
-  height: 50%;
+  height: 600px;
   position: relative;
 }
 
@@ -189,79 +231,12 @@ p{
   font-size: 1.5rem;
   color: #333;
 }
-/**************** left-column rigth-column     *****************/
+/**************** rigth-column     *****************/
 
 
 
-/**************** FilteredItemList css Tipos de eventos ***********/
-/* src/components/shared/Lugar/FilteredItemList.js  */
-/* funciona para FilteredItemList type="eventos" type="amenidades" */
-.type-list {
-  border: 1px solid #ccc; /* Borde del contenedor */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
-  border-radius: 8px; /* Bordes redondeados para un acabado más suave */
-  padding: 20px; /* Espacio interno para que el texto no esté pegado al borde */
-  max-width: 85%; /* Tamaño máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  position: relative; /* Establece el contenedor como relativo para posicionar el botón dentro de él */
-}
-
-.type-list ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
-  gap: 16px; /* Espacio entre los elementos de la cuadrícula */
-  list-style: none; /* Elimina los íconos de lista predeterminados */
-  padding: 0;
-  margin: 0;
-  padding-bottom: 60px; /* Espacio adicional en la parte inferior para el botón */
-}
-
-.type-list li {
-  display: flex;
-  flex-direction: column; /* Coloca el icono encima del texto */
-  align-items: center; /* Centra el contenido horizontalmente */
-  text-align: center;
-  padding: 10px; /* Espacio interno para mejorar la presentación */
-}
-
-.show-more-button {
-  position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
-  right: 20px; /* Espacio desde el borde derecho del contenedor */
-  bottom: 20px; /* Espacio desde el borde inferior del contenedor */
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.show-more-button:hover {
-  background-color: #0056b3;
-}
-
-
-.icon {
-  color:gray;
-  font-size: 60px; /* Ajusta el tamaño del icono aquí */
-  margin-bottom: 8px; /* Espacio entre el icono y el texto */
-}
-
-.menu-section .icon{
-  font-size: 75px; /* Ajusta el tamaño del icono aquí */
-}
-
-.item-text {
-  font-size: 20px; /* Tamaño de la fuente del texto */
-  color: #333; /* Color del texto */
-}
-
-/* funciona para FilteredItemList type="eventos" type="amenidades" */
-
-
-
-/* MenuWithSections.js */
+/****** Esto cubre la secciond de MenuwithSections.js MenuSections.js y ItemList.js y List.js*/
+/* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
 /**** Menu con servicios adicionales css  ****/
 .menu-title {
   font-size: 24px;
@@ -272,6 +247,10 @@ p{
 .aditional-service{
   max-width: 100%;
   margin: 0px; /* Centra el contenedor horizontalmente */
+}
+
+.aditional-service h2{
+  cursor: pointer;
 }
 
 .menu-section {
@@ -293,7 +272,8 @@ p{
   flex-direction: row; /* Coloca el icono encima del texto */
 }
 
-.menu-section h2:hover {
+.menu-section h2:hover,
+.aditional-service:hover{
   color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
 }
 
@@ -339,7 +319,7 @@ p{
 }
 
 .sub-section h3 {
-  font-size: 16px;
+  font-size: 1.3em;
   margin-bottom: 10px;
 }
 
@@ -391,9 +371,13 @@ p{
 }
 
 .icon-expanded {
-  font-size: 60px; /* Tamaño del icono cuando la sección está abierta */
+  font-size: 90px; /* Tamaño del icono cuando la sección está abierta */
 }
 
 .icon-collapsed {
-  font-size: 30px; /* Tamaño del icono cuando la sección está cerrada */
+  font-size: 50px; /* Tamaño del icono cuando la sección está cerrada */
 }
+
+
+
+

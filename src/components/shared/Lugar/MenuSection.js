@@ -46,7 +46,7 @@ export const MenuSection = ({ data, type }) => {
 
     return (
         <div className="menu">
-            <h2 className="menu-title">Menú</h2>
+            <h3 className="menu-title">Menú</h3>
             {filteredSections.map((section, index) => (
                 <div key={index} className="type-list menu-section package">
                     {/* Título de la sección con un manejador de clic para alternar su visibilidad */}
@@ -73,7 +73,7 @@ export const MenuSection = ({ data, type }) => {
                                         items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección
                                         selectedItems={selectedItems[subSectionKey] || []} // Ítems seleccionados en la subsección
                                         onCheckboxChange={(item) => handleCheckboxChange(item, subSectionKey)} // Manejar cambio de selección
-                                        itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsecció
+                                        itemType={subSectionKey} // Tipo de ítem basado en el nombre de la subsección
                                     />
                                 </div>
                             ))}

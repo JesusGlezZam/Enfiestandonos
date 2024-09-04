@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ItemList } from "./ItemList"; // Asegúrate de la ruta correcta
 import { GiForkKnifeSpoon } from "react-icons/gi";
 
+
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
   if (typeof text !== 'string') return text;

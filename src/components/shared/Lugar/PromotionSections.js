@@ -3,7 +3,6 @@ import { List } from './List';
 import { MenuSection } from './MenuSection';
 import '../../../styles/events/promociones.css';
 import { MdCelebration } from 'react-icons/md';
-import { GiForkKnifeSpoon } from 'react-icons/gi';
 
 // Función para capitalizar la primera letra de un texto
 const capitalizeFirstLetter = (text) => {
@@ -77,50 +76,52 @@ export const PromotionSections = ({ data, subSection, type }) => {
             {/* Título de la sección con un manejador de clic para alternar su visibilidad */}
             <div className="section-header" onClick={() => handleToggleSection(index)}>
               <span className="section-title">
-              <MdCelebration className='detail-icon-promotion celebration'/> {capitalizeFirstLetter(section.seccion)}
+              <MdCelebration className='detail-icon-promotion celebration'/>
+               {capitalizeFirstLetter(section.seccion)}
               </span>
               <span className="section-price">
                 ${pricePerPerson} MXN por persona
               </span>
             </div>
-            <div clasName='test'>
-            {openSections.includes(index) && (
-              <div className="section-content">
-                {/* Información de precios */}
-                <div className="pricing-info"> 
-                  <p className="package-description">
-                    ¡Este paquete está diseñado para ofrecerte la mejor experiencia en tu evento! 
-                  </p>
-                  <div className="people-selector">
-                    <label htmlFor="people-count">Número de personas:</label>
-                    <input 
-                      id="people-count" 
-                      type="number" 
-                      min={minimumCapacity} 
-                      max={data.capacity_max} 
-                      value={peopleCount || ''} 
-                      onChange={handlePeopleCountChange} 
-                      onDoubleClick={handleDoubleClick} 
-                      placeholder="Introduce número" 
-                    />
-                    {alertMessage && <p className="alert-message">{alertMessage}</p>}
-                  </div>
-                  <h4>
-                    <strong>Precio por persona:</strong> ${pricePerPerson} MXN
-                  </h4>
-                  <h4>
-                    <strong>Precio total para el salón:</strong> ${totalPrice.toLocaleString()} MXN
-                  </h4>
-                  <p className="pricing-note">
-                    Este paquete tiene un costo inicial de ${pricePerPerson} MXN por persona, 
-                    con un mínimo de {minimumCapacity} personas. Si planeas invitar a más personas, 
-                    ajustaremos el costo total para que se adapte a tus necesidades hasta {data.capacity_max} personas.
-                  </p>
-                  <p className="pricing-disclaimer">
-                    *El precio total puede variar según el número final de asistentes.
-                  </p>
-                </div>
-           
+            
+            <div className='test'>
+  {openSections.includes(index) && (
+    <div className="section-content">
+      {/* Información de precios */}
+      <div className="pricing-info"> 
+        <p className="package-description">
+          ¡Este paquete está diseñado para ofrecerte la mejor experiencia en tu evento!
+        </p>
+        <div className="people-selector">
+          <label htmlFor="people-count">Número de personas:</label>
+          <input 
+            id="people-count" 
+            type="number" 
+            min={minimumCapacity} 
+            max={data.capacity_max} 
+            value={peopleCount || ''} 
+            onChange={handlePeopleCountChange} 
+            onDoubleClick={handleDoubleClick} 
+            placeholder="Introduce número" 
+          />
+          {alertMessage && <p className="alert-message">{alertMessage}</p>}
+        </div>
+        <h4>
+          <strong>Precio por persona:</strong> ${pricePerPerson} MXN
+        </h4>
+        <h4>
+          <strong>Precio total para el salón:</strong> ${totalPrice.toLocaleString()} MXN
+        </h4>
+        <p className="pricing-note">
+          Este paquete tiene un costo base de ${pricePerPerson} MXN por persona, 
+          con un mínimo de {minimumCapacity} personas. Si decides invitar a más personas, 
+          ajustaremos el costo total según el número definitivo de asistentes, 
+          hasta un máximo de {data.capacity_max} personas.
+        </p>
+        { /*<p className="pricing-disclaimer">
+          El precio final se ajustará en función del número total de invitados.
+        </p> */}
+      </div>           
                 {/* Contenedor para las subsecciones en tres columnas */}
                 <div className='top-sections'>
                   {section.subSections && Object.keys(section.subSections).map((subSectionKey, idx) => (

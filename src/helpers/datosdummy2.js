@@ -19,12 +19,14 @@ export const jardinesData = {
           { "id": 2, "name": "Quinceaños", "available": true },
           { "id": 3, "name": "Bautizos", "available": false },
           { "id": 4, "name": "Cumpleaños", "available": false },
-          { "id": 5, "name": "Baby shower o Revelacion de genero", "available": true },
+          { "id": 5, "name": "Baby shower", "available": true },
+          { "id": 5, "name": "Revelacion de genero", "available": true },
           { "id": 6, "name": "Eventos al aire libre", "available": true },
           { "id": 7, "name": "Fiestas de compromiso", "available": true },
           { "id": 8, "name": "Reuniones familiares", "available": true },
           { "id": 9, "name": "Picnics corporativos", "available": true },
           { "id": 10, "name": "Cualquier otro tipo de evento", "available": true },
+          
         ],
         "amenidades": [
           { "id": 1, "name": "Acceso a discapacitados", "available": true },

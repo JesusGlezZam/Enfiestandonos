@@ -84,24 +84,31 @@
   cursor: pointer;
 }
 
+.section-title:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
+}
+
 .section-price {
   color: green;
   font-weight: bold;
 }
 
-
+.section-price:hover {
+  /* font-size: 25px;  Cambia el color al pasar el mouse sobre el título */
+}
 
 /* Opcional: Agregar un espacio extra entre el título y el precio */
 .section-title,
 .section-price {
-  font-size: 24px;
+  font-size: 1.75em;
   margin: 0;
   margin-inline-start: 10px;
 }
 
 
 .detail-icon-promotion {
-  font-size: 30px; /* Ajusta el tamaño del ícono */
+  font-size: 25px; /* Ajusta el tamaño del ícono */
+  padding-right: 15px;
 }
 
 .celebration {
@@ -133,13 +140,13 @@
 }
 
 .package-title {
-  font-size: 1.6em; /* Tamaño de fuente grande para el título del paquete */
+  font-size: 1.8em; /* Tamaño de fuente grande para el título del paquete */
   color: #333; /* Color oscuro para el título */
   margin-bottom: 10px; /* Espacio debajo del título */
 }
 
 .package-description {
-  font-size: 16px; /* Tamaño de fuente legible */
+  font-size: 1.7em; /* Tamaño de fuente legible */
   color: #555; /* Color gris para el texto explicativo */
   margin-bottom: 20px; /* Espacio debajo de la descripción */
   line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
@@ -158,13 +165,13 @@
 }
 
 .pricing-note {
-  font-size: 14px; /* Tamaño de fuente más pequeño para notas adicionales */
+  font-size: 1.3em; /* Tamaño de fuente más pequeño para notas adicionales */
   color: #777; /* Color gris más claro para la nota */
   margin-top: 10px; /* Espacio arriba de la nota */
 }
 
 .pricing-disclaimer {
-  font-size: 12px; /* Tamaño de fuente más pequeño para la nota de descargo */
+  font-size: 1.2em; /* Tamaño de fuente más pequeño para la nota de descargo */
   color: #999; /* Color gris claro para la nota de descargo */
   margin-top: 5px; /* Espacio arriba de la nota de descargo */
 }
@@ -175,7 +182,7 @@
 
 .people-selector label {
   display: block;
-  font-size: 16px;
+  font-size: 1.5em;
   color: #555;
   margin-bottom: 5px;
 }
@@ -184,7 +191,7 @@
   width: 100%;
   max-width: 150px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1.5em;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
@@ -194,10 +201,41 @@
   color: #aaa;
 }
 
+.pricing-info h4{
+  font-size: 1.2em;
+}
+
 .alert-message {
   color: #d9534f; /* Color rojo para mensajes de error */
   font-size: 14px;
   margin-top: 10px;
 }
+
+
+/* Estilo general para la lista */
+.item-list {
+  list-style: none; /* Elimina el estilo de viñeta predeterminado del navegador */
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+ 
+}
+
+.include{
+   border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para la viñeta */
+.item-bullet {
+  font-size: 20px; /* Tamaño del ícono de la viñeta */
+  color: green; /* Color de la viñeta */
+  margin-right: 10px; /* Espacio entre la viñeta y el texto */
+}
+
 
 

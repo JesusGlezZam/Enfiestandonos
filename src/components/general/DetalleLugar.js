@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FilteredItemList } from '../shared/Lugar/FilteredItemList';
 import { Galery } from '../shared/Lugar/Galery';
 import { useLocation, useParams } from 'react-router-dom';
 import { jardinesData } from '../../helpers/datosdummy2';
 import { FaGlassCheers, FaHome, FaLeaf, FaMapMarkerAlt, FaSun } from 'react-icons/fa';
 import { BsFillGiftFill } from 'react-icons/bs';
-import MenuWithSections from '../shared/Lugar/MenuWithSections'; // Asegúrate de la ruta correcta
+import MenuWithSections from '../shared/Lugar/MenuWithSections';
 import { PromotionSections } from '../shared/Lugar/PromotionSections';
 
 // Función para obtener el ícono según el tipo de lugar
@@ -33,80 +33,152 @@ const formatName = (name) => {
 
 // Componente principal que muestra los detalles de un lugar específico
 export const DetalleLugar = () => {
-  // Obtiene los parámetros de la URL
   const { itemType, name } = useParams();
-  
   const location = useLocation();
-  const { selectedId } = location.state || {}; // Obtiene el ID seleccionado del estado de la ubicación
-  const [itemDetails, setItemDetails] = useState(null); // Estado para almacenar los detalles del lugar
+  const { selectedId } = location.state || {};
+  const [itemDetails, setItemDetails] = useState(null);
 
-  // Efecto para cargar los detalles del lugar basado en el tipo y ID seleccionados
+  // Ref para el sticky header
+  const stickyHeaderRef = useRef(null);
+
+  // Estado para la sección activa
+  const [activeSection, setActiveSection] = useState('');
+
   useEffect(() => {
     if (!selectedId) {
       console.warn('No se proporcionó selectedId');
       return;
     }
 
-    // Función para obtener los detalles del lugar
     const fetchItemDetails = () => {
       let data;
       if (itemType === 'jardin') {
         data = jardinesData.jardines.find(jardin => jardin.id === selectedId);
       }
-      setItemDetails(data); // Actualiza el estado con los detalles del lugar
+      setItemDetails(data);
     };
 
     fetchItemDetails();
-  }, [itemType, selectedId]); // Ejecuta el efecto cuando cambian itemType o selectedId
+  }, [itemType, selectedId]);
 
-  const formattedName = formatName(name); // Formatea el nombre para su uso en la galería
+  useEffect(() => {
+    // Define las secciones y los umbrales
+    const sections = ['eventos', 'amenidades', 'paquetes', 'menu', 'adicionales'];
+    const thresholds = {
+      eventos: 0.7,
+      amenidades: 0.7,
+      paquetes: 0.5,
+      menu: 0.5,
+      adicionales: 1
+    };
 
-  // Muestra un mensaje de carga si los detalles aún no están disponibles
+    // Crear y almacenar observadores
+    const observers = {};
+
+    const updateObservers = () => {
+      // Primero, desconectar todos los observadores existentes
+      sections.forEach(sectionId => {
+        if (observers[sectionId]) {
+          observers[sectionId].disconnect();
+        }
+      });
+
+      // Crear un nuevo observador para cada sección
+      sections.forEach(sectionId => {
+        const threshold = thresholds[sectionId] || 0.0; // Asegúrate de obtener el umbral para cada sección
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        }, {
+          threshold: threshold // Usar el umbral aquí
+        });
+
+        observers[sectionId] = observer;
+        const section = document.getElementById(sectionId);
+        if (section) {
+          observer.observe(section);
+        }
+      });
+    };
+
+    // Configurar los observadores inicialmente
+    updateObservers();
+
+    // Actualizar observadores cuando cambien las secciones
+    return () => {
+      // Desconectar todos los observadores al desmontar
+      sections.forEach(sectionId => {
+        if (observers[sectionId]) {
+          observers[sectionId].disconnect();
+        }
+      });
+    };
+  }, [itemDetails]); // Dependencia en itemDetails para actualizar observadores cuando cambie el contenido
+
+  const scrollToSection = (sectionId) => {
+    const headerHeight = stickyHeaderRef.current?.offsetHeight || 0;
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const formattedName = formatName(name);
+
   if (!itemDetails) {
     return <div>Cargando...</div>;
   }
 
-  // Muestra un mensaje si no hay información del menú disponible
   if (!itemDetails.menu) {
     return <div>No hay información del menú disponible.</div>;
   }
 
-  // Función para manejar el clic en los enlaces de navegación
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Renderiza el componente principal
   return (
     <div className='master-container'>
-      
       <h1>{getIconByType(itemType)} {itemDetails.name}</h1>
       <Galery itemType={itemType} name={formattedName} />
 
       <div className="welcome-section">
-        <h2>Bienvenidos</h2>
+        <h2>¡Bienvenidos!</h2>
         <p>
           En {itemDetails.name}, te ofrecemos un espacio único para tus eventos. 
         </p>
         <p>
-        Conoce todo lo que podemos ofrecerte para hacer de tu celebración un momento inolvidable.
+          Conoce todo lo que podemos ofrecerte para hacer de tu celebración un momento inolvidable.
         </p>
       </div>
+      
+      <header className="sticky-header" ref={stickyHeaderRef}>
+        <nav>
+          <ul>
+            <li className={activeSection === 'eventos' ? 'active' : ''}>
+              <button onClick={() => scrollToSection('eventos')}>Eventos</button>
+            </li>
+            <li className={activeSection === 'amenidades' ? 'active' : ''}>
+              <button onClick={() => scrollToSection('amenidades')}>Amenidades</button>
+            </li>
+            <li className={activeSection === 'paquetes' ? 'active' : ''}>
+              <button onClick={() => scrollToSection('paquetes')}>Paquetes</button>
+            </li>
+            <li className={activeSection === 'menu' ? 'active' : ''}>
+              <button onClick={() => scrollToSection('menu')}>Menú</button>
+            </li>
+            <li className={activeSection === 'adicionales' ? 'active' : ''}>
+              <button onClick={() => scrollToSection('adicionales')}>Servicios adicionales</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
       <div className="main-container">
         <div className="left-column">
-          <header className="sticky-header">
-            <nav>
-              <ul>
-                <li><button onClick={() => scrollToSection('eventos')}>Eventos</button></li>
-                <li><button onClick={() => scrollToSection('amenidades')}>Amenidades</button></li>
-                <li><button onClick={() => scrollToSection('paquetes')}>Paquetes</button></li>
-                <li><button onClick={() => scrollToSection('menu')}>Menú</button></li>
-                <li><button onClick={() => scrollToSection('adicionales')}>Servicios adicionales</button></li>
-              </ul>
-            </nav>
-          </header>
-
           <div id="eventos" className="filtered-item-list">
             <FilteredItemList type="Eventos celebrados" items={itemDetails.tipos_de_eventos} columns={3} initialVisibleCount={6} />
           </div>
@@ -135,26 +207,24 @@ export const DetalleLugar = () => {
           </div>
         </div>
       </div>
-      <div id="paquetes" className='promotion'>
-          <h3>
-          Explora nuestros paquetes y descubre cómo podemos hacer que tu evento sea perfecto.
-          </h3>
-          <h2 className="promociones-title">Paquetes</h2>
-          <PromotionSections data={itemDetails} subSection="A Celebrar"  type="Menu1"  />
-          <PromotionSections data={itemDetails} subSection="Enfiestandonos" type="Menu2"/>
-          <PromotionSections data={itemDetails} subSection="Fiesta sin fin" type="Menu3" />
-             
-      </div>
 
+      <div id="paquetes" className='promotion'>
+        <h3>
+          Explora nuestros paquetes y descubre cómo podemos hacer que tu evento sea perfecto.
+        </h3>
+        <h2 className="promociones-title">Paquetes</h2>
+        <PromotionSections data={itemDetails} subSection="A Celebrar" type="Menu1" />
+        <PromotionSections data={itemDetails} subSection="Enfiestandonos" type="Menu2"/>
+        <PromotionSections data={itemDetails} subSection="Fiesta sin fin" type="Menu3" />
+      </div>
 
       <div id="menu" className="menu-list">
-        <MenuWithSections data={itemDetails}  />
+        <MenuWithSections data={itemDetails} />
       </div>
-      
+
       <div id="adicionales">
-        <FilteredItemList type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={4} />
+        <FilteredItemList type="Servicios adicionales" items={itemDetails.servicios_adicionales} columns={4} initialVisibleCount={8} />
       </div>
-      
     </div>
   );
 };
