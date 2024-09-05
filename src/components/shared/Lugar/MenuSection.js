@@ -47,7 +47,7 @@ export const MenuSection = ({ data, type }) => {
 
     return (
         <div className="menu">
-            <h3 className="menu-title">Menú</h3>
+            <h3 className="menu-title promo">Menú</h3>
             {filteredSections.map((section, index) => (
                 <div key={index} className="type-list menu-section package">
                     {/* Título de la sección con un manejador de clic para alternar su visibilidad */}

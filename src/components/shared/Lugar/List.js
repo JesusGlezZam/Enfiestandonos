@@ -13,7 +13,10 @@ export const List = ({ items, itemType }) => {
       {/* Mapeo a través de los ítems y renderizar cada uno con una viñeta */}
       {items.map((item, index) => (
         <li key={index} className="item include">
-          <FaCheckCircle className="item-bullet" />
+          <div>
+            <FaCheckCircle className="item-bullet" />
+          </div>
+          
           <span className="item-text">
             {item} {/* Mostrar el nombre del ítem */}
           </span>

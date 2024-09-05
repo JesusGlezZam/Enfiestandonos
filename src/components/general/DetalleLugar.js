@@ -141,7 +141,7 @@ export const DetalleLugar = () => {
   }
 
   return (
-    <div className='master-container'>
+    <div className='master-container contents'>
       <h1>{getIconByType(itemType)} {itemDetails.name}</h1>
       <Galery itemType={itemType} name={formattedName} />
 

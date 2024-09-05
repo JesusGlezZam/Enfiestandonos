@@ -1,5 +1,4 @@
 
-
 /* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
   .menu{
     padding-top: 20px;
@@ -41,7 +40,7 @@
   }
   
   .icon-collapsed-along{
-    font-size: 40px; /* Tamaño del ícono cuando la sección está cerrada */
+    font-size: 50px; /* Tamaño del ícono cuando la sección está cerrada */
     transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
   }
   
@@ -92,6 +91,8 @@
   font-size: 1.3em; /* Tamaño de la letra para los ítems */
   color: #333; /* Color del texto */
 }
+
+
 
 
 

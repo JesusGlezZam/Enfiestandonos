@@ -23,6 +23,7 @@
 }
 
 .package {
+  padding: 20px;
   max-width: 100%;
   transition: max-width 0.3s ease; /* Transición suave para el cambio de tamaño */
 }
@@ -49,9 +50,15 @@
 }
 
 /* Ajustar el estilo de las columnas para el diseño responsivo */
-@media (max-width: 768px) {
+/* Pantallas medianas (tabletas) y más pequeñas */
+@media (max-width: 1024px) {
   .sub-section {
-    flex: 1 1 100%; /* En pantallas más pequeñas, las columnas ocupan el 100% del ancho */
+    flex: 1 1 45%; /* En pantallas medianas, las columnas ocupan el 45% del ancho */
+  }
+
+  .menu-section .package ul {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta el diseño de las columnas en pantallas más pequeñas */
   }
 }
 
@@ -110,7 +117,7 @@
 }
 
 .icon-collapsed {
-  font-size: 40px; /* Tamaño del ícono cuando la sección está cerrada */
+  font-size: 50px; /* Tamaño del ícono cuando la sección está cerrada */
   transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
 }
 
@@ -223,11 +230,6 @@
   /* border-bottom: 1px solid #ddd;*/
 }
 
-.item-text {
-  text-align: left;
-}
-
-
 .item-bullet {
   font-size: 20px; /* Tamaño del ícono de la viñeta */
   color: green; /* Color de la viñeta */
@@ -247,3 +249,134 @@
   justify-content: space-between; /* Espacia el texto y el icono */
 }
 /********** Estilos para controlar los items de las listas lo comparte Menuwithsections.js y withmenu.js    *******/
+
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+
+  .type-list{
+    padding: 10px;
+  }
+
+  .section-header {
+    padding: 10px;
+  }  
+
+  .detail-icon-promotion {
+    font-size: 20px;
+    padding-right: 5px;
+  } 
+  .section-title { 
+    font-size: 1.3em;
+    margin: 5px;
+  }
+
+  .section-price { 
+    font-size: 1.15em;
+    margin: 5px;
+  }
+
+  .include span{
+    text-align: left;
+  }
+
+  .package {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .package h2{
+    font-size: 1.2em;
+    padding: 0px;
+  }
+
+  .item-bullet {
+    font-size: 15px;
+  }  
+
+  .menu-section .package ul {
+    display: grid; /* Las listas en pantallas pequeñas se muestran como bloques */
+  }
+  .checkbox-input {
+    margin-right: 10px;
+    transform: scale(1.2);
+  }  
+
+  .people-selector label {
+    font-size: 1em;
+  }
+
+  .people-selector input {
+    max-width: 100px;
+    font-size: 1em;
+  } 
+
+  .pricing-info h4 {
+    font-size: .9em;
+  }
+
+  .sub-section h3 {
+    font-size: 1.1em;
+  } 
+  
+  .sub-section .capitalize-first-letter {
+    font-size: .8em;
+  } 
+
+  .top-sections {
+    gap: 5px;
+}
+
+  .type-list li {
+    padding: 5px;
+  }    
+
+  .menu {
+    padding-top: 0px;
+  }
+
+  .promo{
+    font-size: 1.8em;
+  }
+
+  .section-title{
+   /* font-size: 1em;*/
+  }
+
+  .section-content {
+    font-size: 1.2em;
+    margin-top: -20px;
+  } 
+  
+  .icon-collapsed {
+    font-size: 40px;
+  }
+
+  .icon-expanded {
+    font-size: 50px;
+  }
+
+  
+  .pricing-info p{
+    font-size: .9em; 
+    text-align: center;
+  }
+
+  .pricing-info .pricing-note{ 
+    text-align: left;
+    font-size: 0.75em; 
+  }
+  .pricing-info {
+    padding: 10px;
+  }
+
+  .sub-section label {
+    text-align: left; /* Alinea el texto a la derecha */
+    font-size: 0.75em;
+    display: block; /* O inline-block si prefieres que no ocupe todo el ancho */
+    width: 100%; /* Asegúrate de que el ancho del label sea suficiente para que text-align tenga efecto */
+  }
+ 
+
+ 
+}
