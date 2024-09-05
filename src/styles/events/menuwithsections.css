@@ -1,0 +1,121 @@
+
+/* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
+  .along-menu {
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .with-sections-alonge {
+    font-size: 1em;
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto y el icono */
+    justify-content: space-between; /* Espacia el texto y el icono */
+  }
+  
+  .along-section{
+    max-width: 100%;
+    margin: 10px; /* Centra el contenedor horizontalmente */
+    padding: 30px;
+    border: 2px solid #C8102E;
+  }
+  
+  .along-section ul{
+    display: grid;
+  }
+  
+  .along-section li {
+    flex-direction: row; /* Coloca el icono encima del texto */
+  }
+  
+  
+  .icon-menu-along{
+    font-weight: normal;
+    cursor: pointer;
+    color:#8B4513;
+    font-size: 60px;
+    transition: font-size 0.3s ease; /* Animación suave al cambiar el tamaño del icono */
+    margin-left: 8px; /* Espacio entre el texto y el icono, ajusta según sea necesario */ 
+  }
+  
+  .icon-collapsed-along{
+    font-size: 50px; /* Tamaño del ícono cuando la sección está cerrada */
+    transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
+  }
+  
+  .icon-expanded-along {
+    font-size: 90px; /* Tamaño del ícono cuando la sección está abierta */
+    transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
+  }
+  
+  .section-content-along {
+    margin-left: 20px;
+  }
+
+  .sub-section-along h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-input {
+    margin-right: 10px;
+  }
+
+  .item-text.selected {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  /* Asegúrate de que los íconos tengan el mismo tamaño y color */
+.item-icon {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 20px; /* Tamaño del ícono */
+    color: #007bff; /* Color azul para el ícono */
+  }
+  
+.item-list {
+  list-style-type: none; /* Elimina las viñetas predeterminadas del navegador */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margin predeterminado */
+}
+
+.item-label {
+  margin-bottom: 0px;
+  display: flex;
+  text-align: left;
+  align-items: center; /* Alinea verticalmente el texto con el ícono */
+  font-size: 1.3em; /* Tamaño de la letra para los ítems */
+  color: #333; /* Color del texto */
+}
+
+@media(max-width: 767px){
+  .item-label {
+    font-size: 1em;
+  }
+
+
+  .type-list ul {
+    padding-bottom: 10px;
+  }
+
+  .item-icon {
+    font-size: 15px;
+  }
+
+
+  .sub-section-along h3 {
+    font-size: 1.2em;
+  }
+
+  .icon-collapsed-along {
+    font-size: 40px;
+  }
+
+  .icon-expanded-along {
+    font-size: 50px;
+  }
+}
+
+
+
+
+

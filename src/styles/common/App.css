@@ -9,7 +9,7 @@ html, body {
 
 /* Encabezado (Header) */
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   background-color: #ff6f61;
@@ -323,3 +323,17 @@ footer nav ul li a:hover {
   }
 
 }
+
+
+
+/* styles.css o tu archivo CSS de estilos */
+ul {
+  list-style-type: none; /* Elimina los íconos de lista */
+  padding: 0;
+}
+
+.icon {
+  font-size: 24px; /* Ajusta el tamaño del icono aquí */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+

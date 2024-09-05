@@ -5,9 +5,6 @@ console.log(getImagePath('infantil', 'Santa Maria'));
 console.log(getImagePath('jardin', 'Los Cisnes'));
 console.log(getImagePath('jardin', 'Rosalinda'));
 
-
-
-
 export const jardinesData = {
   type: "jardin",
   jardines: [
@@ -91,7 +88,7 @@ export const jardinesData = {
           { "id": 2, "name": "Fiestas temáticas", "available": true },
           { "id": 3, "name": "Show de payasos o magos", "available": true },
           { "id": 4, "name": "Eventos escolares", "available": true }
-        ]
+      ],
     },
     {
       id: 2,
