@@ -1,0 +1,80 @@
+/**************** FilteredItemList css Tipos de eventos ***********/
+/* src/components/shared/Lugar/FilteredItemList.js  */
+/* funciona para FilteredItemList type="eventos" type="amenidades" */
+.type-list {
+    border: 1px solid #ccc; /* Borde del contenedor */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+    border-radius: 8px; /* Bordes redondeados para un acabado más suave */
+    padding: 40px; /* Espacio interno para que el texto no esté pegado al borde */
+    max-width: 80%; /* Tamaño máximo del contenedor */
+    margin: 10px auto; /* Centra el contenedor horizontalmente */
+    position: relative; /* Establece el contenedor como relativo para posicionar el botón dentro de él */
+  }
+  
+  .type-list ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
+    gap: 16px; /* Espacio entre los elementos de la cuadrícula */
+    list-style: none; /* Elimina los íconos de lista predeterminados */
+    padding: 0;
+    margin: 0;
+    padding-bottom: 60px; /* Espacio adicional en la parte inferior para el botón */
+  }
+  
+  .type-list li {
+    display: flex;
+    flex-direction: column; /* Coloca el icono encima del texto */
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center;
+    padding: 10px; /* Espacio interno para mejorar la presentación */
+  }
+  
+  .show-more-button {
+    position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
+    right: 20px; /* Espacio desde el borde derecho del contenedor */
+    bottom: 20px; /* Espacio desde el borde inferior del contenedor */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .show-more-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .icon {
+    color:gray;
+    font-size: 75px; /* Ajusta el tamaño del icono aquí */
+    margin-bottom: 8px; /* Espacio entre el icono y el texto */
+  }
+  
+  .icon-service {
+    color:gray;
+    font-size: 90px; /* Ajusta el tamaño del icono aquí */
+    margin-bottom: 8px; /* Espacio entre el icono y el texto */
+  }
+  
+  
+  
+  .menu-section .icon{
+    font-size: 75px; /* Ajusta el tamaño del icono aquí */
+  }
+  
+  .item-text {
+    text-align: left;
+    font-size: 20px; /* Tamaño de la fuente del texto */
+    color: #333; /* Color del texto */
+  }
+
+  @media (min-width: 2048px) {
+    .type-list {
+        max-width: 60%; /* Tamaño máximo del contenedor para pantallas grandes */
+    }
+}
+  
+  /* funciona para FilteredItemList type="eventos" type="amenidades" */

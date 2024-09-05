@@ -11,6 +11,7 @@ export const jardinesData = {
         "address": "C. Tarandacuaho 26, Emiliano Zapata 1a Secc, 55200 Ecatepec de Morelos, Méx.",
         "hours": "9:00 - 23:00",
         "price_initial": 260,
+        "price_final": 380,
         "capacity_initial": 100,
         "capacity_max": 250,
         "tipos_de_eventos": [
@@ -18,12 +19,14 @@ export const jardinesData = {
           { "id": 2, "name": "Quinceaños", "available": true },
           { "id": 3, "name": "Bautizos", "available": false },
           { "id": 4, "name": "Cumpleaños", "available": false },
-          { "id": 5, "name": "Baby shower o Revelacion de genero", "available": true },
+          { "id": 5, "name": "Baby shower", "available": true },
+          { "id": 5, "name": "Revelacion de genero", "available": true },
           { "id": 6, "name": "Eventos al aire libre", "available": true },
           { "id": 7, "name": "Fiestas de compromiso", "available": true },
           { "id": 8, "name": "Reuniones familiares", "available": true },
           { "id": 9, "name": "Picnics corporativos", "available": true },
           { "id": 10, "name": "Cualquier otro tipo de evento", "available": true },
+          
         ],
         "amenidades": [
           { "id": 1, "name": "Acceso a discapacitados", "available": true },
@@ -37,10 +40,114 @@ export const jardinesData = {
           { "id": 9, "name": "Pantalla para proyectar", "available": true },
           { "id": 10, "name": "Salida de emergencia", "available": true }, 
           { "id": 11, "name": "Acepta pago (TC, TD)", "available": true }
-        ],"menu":[
+        ],
+        "paquetes":[
           {
-            "seccion": "Taquiza",
-            "guisados": [
+            seccion: "A Celebrar",
+            price: 260,
+            subSections:{
+              incluye:[
+                "Lugar de evento",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "DJ por 2 horas", 
+                "Brincolin"
+              ],
+              taquiza:[
+                "4 Guisados elegir",
+                "2 sabores de agua",
+                "Arroz o Totopos",
+                "Frijoles de la olla"
+              ],
+              "Te recomendamos contratar":[
+                "Animador de eventos",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales"
+              ]
+            }
+          },
+          {
+            seccion: "Enfiestandonos",
+            price: 320,
+            subSections:{
+              incluye:[
+                "Lugar de evento",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "Meseros",
+                "Barman",
+                "DJ ( música grabada y persona que dirige el evento)", 
+                "Brincolin",
+                "Menu infantil (Solo menores de N anos)"
+              ],
+              "Comida en 3 tiempos":[
+                "Entrada de cortesia (paté, abanico de verduras)",
+                "1er tiempo: Elegir 1 ensalada de fruta o crema ",
+                "2do tiempo: Elegir 1 pasta ",
+                "3er tiempo: Plato Fuerte Elegir una guarnicion y una proteina",
+                "3 sabores de Refresco",
+                "1 Sabor de Agua",
+                "Hielo ilimitado",
+              ],
+              "Te recomendamos contratar":[
+                "Animador de eventos",
+                "Musica versatil",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales",
+                "Torna fiesta",
+              ]
+            }
+          },
+          {
+            seccion: "Fiesta sin fin",
+            price: 380,
+            subSections:{
+               incluye:[
+                "Lugar de evento",
+                "Animador de eventos",
+                "6 horas de evento",
+                "1/2 hora de entrada",
+                "1/2 hora de salida",
+                "Meseros",
+                "Barman",
+                "DJ ( música grabada y persona que dirige el evento)", 
+                "Brincolin",
+                "Menu infantil (Solo menores de N anos)"
+              ],
+              "Comida en 3 tiempos":[
+                "Entrada de cortesia (paté, abanico de verduras)",
+                "1er tiempo: Elegir 1 ensalada de fruta o crema ",
+                "2do tiempo: Elegir 1 pasta ",
+                "3er tiempo: Plato Fuerte Elegir una guarnicion y una proteina",
+                "5 sabores de Refresco",
+                "1 Sabor de Agua",
+                "Torna fiesta o Mesa de dulces",
+                "Hielo ilimitado",
+              ],
+              "Te recomendamos contratar":[
+                "Musica versatil",
+                "Música banda",
+                "Mariachi",
+                "Barra libre",
+                "Torna fiesta",
+                "Mesa de dulces",
+                "Arreglo con globos",
+                "Arreglos florales",
+             
+              ]
+            }
+          }
+        ],
+        "menu":[
+          { 
+            type:"Menu1",
+            seccion: "Taquiza",
+            subSections:{
+              Guisados: [
                 "BISTEC ENCEBOLLADO",
                 "BISTEC EN CHILE PASILLA",
                 "BISTEC EN SALSA ROJA",
@@ -78,22 +185,24 @@ export const jardinesData = {
                 "PAPAS CON ACELGAS",
                 "PAPAS CON RAJAS"
             ],
-            "agua": [
+            agua: [
               "Limon",
               "Jamaica",
               "Sandia",
               "Melon",
               "Pina"
             ],
-            "adicional":[
+            adicional:[
               "Arroz",
               "Frijoles",
               "Tortillas",
               "Salsas",
               "Hielos"
             ]
+            }
         },
-        {
+        { 
+            type:"Menu2",
             section: "Tres Tiempos",
             subSections: {
                 Entradas: [
@@ -166,8 +275,9 @@ export const jardinesData = {
                 }
               },
               {
-                "section": "Premium",
-                "subSections": {
+                type:"Menu3",
+                section: "Premium",
+                subSections: {
                   "Entremes": [
                     "Pate zetas al ajillo",
                     "Carrusel de verduras",
@@ -194,7 +304,7 @@ export const jardinesData = {
                   ]
                 }
               }
-            ],
+        ],
         "servicios_adicionales":[
           { "id": 1, "name": "Coordinador de Eventos", "available": true },
           { "id": 2, "name": "Animador de Eventos", "available": true },

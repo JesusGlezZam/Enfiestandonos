@@ -1,3 +1,9 @@
+/* Mostrar dentro de la pnatalla DetalleLugar un tipo de letra mas suave*/ 
+body {
+  color: #333333;
+  font-weight: lighter;
+}
+
 /********** Contenedor de la galería  ***********/
 /*****src/components/shared/Lugar/Galery.js***/
 .gallery-container {
@@ -65,48 +71,106 @@
   background-color: rgba(0, 0, 0, 0.7); /* Más oscuro al pasar el cursor */
 }
 
-/***************                 ******************/
+/* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 767px) {
+  .master-container {
+    padding: 10px;
+    margin: 0px 0px;
+  }
 
+  .master-container h1 {
+    font-size: 1.5em;
+  } 
+  
+   /* Estilo para el contenedor de la galería */
+   .gallery-container {
+    min-height: 60vh;
+    height: 60vh;
+    max-height: 600px;
+    display: contents;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 
-/* components/general/DetalleLugar.js */
-/**************** Detalle de lugar de manera General **************/
-.master-container{
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
-  padding:  25px;
+  /* Imagen principal */
+  .main-image {
+    text-align: center; /* Centra los elementos en línea dentro del contenedor */
+    width: 100%; /* La imagen principal ocupa el 100% del ancho */
+    height: 300px; /* Altura automática para mantener la proporción */
+    margin-bottom: 5px; /* Espacio debajo de la imagen principal */
+  }
+
+  .main-image img {
+    width: 98%; /* Ajusta la imagen para que ocupe el ancho completo */
+    height: auto; /* Altura automática para mantener la proporción */
+  }
+
+  /* Contenedor de imágenes secundarias */
+  .secondary-images {
+    width: 100%; /* Ocupa el 100% del ancho */
+    flex-direction: row; /* Imágenes secundarias en columna */
+  }
+
+  /* Imágenes secundarias en dos filas */
+  .secondary-images img {
+    width: 100%; /* Imágenes secundarias ocupan el 100% del ancho */
+    height: 150px; /* Altura automática para mantener la proporción */
+    margin-bottom: 0px; /* Espacio entre las imágenes */
+  }
+  
+  /* Ajuste para mostrar solo dos imágenes en la fila inferior */
+  .secondary-images img:nth-of-type(1),
+  .secondary-images img:nth-of-type(2),
+  .secondary-images img:nth-of-type(3),
+  .secondary-images img:nth-of-type(4){
+    width: 48%; /* Ancho ligeramente menor para espacio entre las imágenes */
+    /* display: inline-block; Alinea dos imágenes en la fila */
+    margin-right: 0%; /* Espacio entre las dos imágenes */
+  }
+
+  .secondary-images img:nth-of-type(2) {
+    margin-right: 0; /* Elimina el margen derecho de la segunda imagen */
+  }
+
+  /* Botón "Ver más" */
+  .view-more {
+    position: absolute; /* El botón "Ver más" se muestra en el flujo normal del documento */
+    width: 25%; /* Ocupa el ancho completo del contenedor */
+    padding: 10px; /* Ajusta el padding */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-top: 10px; /* Espacio superior para separar del contenido */
+  }
 }
+/***************      Galery           ******************/
 
-h1{
-  font-size: 2em;
-  padding-bottom: 0px;
-}
 
-.main-container {
-  display: flex;
-  height: auto; /* Ocupa el 100% de la altura de la ventana */
-}
-
-.left-column {
-  flex: 2; /* Ocupa el doble del espacio en comparación con la columna derecha */
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.filtered-item-list,
-.menu-list{
-  margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
-}
-
-/************** Detalle ***/
+/************** Header de navegacion ***/
 /* Estilo para la barra de navegación fija */
 .sticky-header {
   position: -webkit-sticky; /* Para Safari */
   position: sticky;
   top: 0;
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
+  z-index: 50;
   padding: 10px;
+  width: 80%; /* Ancho del 60% de la pantalla */
+  margin: 0 auto; /* Centra el header horizontalmente */
+  border-radius: 30px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  border: 2px solid yellow; /* Añade un borde amarillo de 2px */
 }
+
+/* Estilos para los elementos activos */
+.sticky-header ul li.active {
+  border-radius: 30px;
+  background-color: #ffeb3b; /* Color de fondo para el ítem activo */
+}
+
+.sticky-header ul li.active button {
+  color: #000; /* Color del texto del botón activo */
+}
+
 
 .sticky-header nav ul {
   list-style-type: none;
@@ -124,18 +188,170 @@ h1{
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: #333;
+  font-size: 1.3em;
+  color: #444444;
   padding: 10px;
 }
 
 .sticky-header nav ul li button:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: #ffeb3b;
+}
+
+/* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 767px) {
+  .sticky-header {
+    width: 100%; /* Ancho completo de la pantalla */ 
+  }
+
+  .sticky-header nav ul {
+    flex-direction: row; /* Coloca los elementos en una columna en lugar de fila */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .sticky-header nav ul li {
+    margin: 5px 0; /* Reduce el margen vertical entre los elementos de la lista */
+  }
+
+  .sticky-header nav ul li button {
+    font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    padding: 10px; /* Ajusta el padding en pantallas pequeñas */
+  }
+}
+/*********   stick- header de navegacion   *****/
+
+
+
+/* components/general/DetalleLugar.js */
+/**************** Detalle de lugar de manera General **************/
+.master-container{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+  padding:  25px;
+}
+
+.master-container {
+  padding: 70px; /* Ajusta el padding según sea necesario */
+  margin: -60px -30px; /* Ajusta el margen según sea necesario */
+}
+.master-container h1{
+  font-size: 2em;
+  font-weight: lighter;
+}
+
+.master-container h2{ 
+  font-weight: lighter;
+  font-size: 1.8em;
+}
+
+.master-container h3{
+  font-weight: lighter;
+  font-size: 1.6em;
+}
+
+/*.master-container  p{
+  font-size: .9em;
+}*/
+
+.main-container{
+  font-weight: lighter;
+}
+
+.main-container {
+  display: flex;
+  height: auto; /* Ocupa el 100% de la altura de la ventana */
+}
+
+.welcome-section p{
+  font-size: 1.4em;
+}
+
+.left-column {
+  flex: 2; /* Ocupa el doble del espacio en comparación con la columna derecha */
+  padding: 20px;
+  overflow-y: hidden;
+}
+
+.filtered-item-list,
+.menu-list{
+  margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
+}
+
+.filtered-item-list .type-list {
+  margin-bottom: 10px;
+  
+}
+/******  left-column  ***/
+
+
+/* Estilos para pantallas medianas (tablets en orientación horizontal) */
+@media (max-width: 1024px) {
+  .master-container {
+    padding: 40px; /* Reduce el padding en pantallas medianas */
+    margin: -30px -15px; /* Ajusta el margen para pantallas medianas */
+  }
+
+  .master-container h1 {
+    font-size: 1.6em; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+
+  .master-container h2 {
+    font-size: 1.4em; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+
+  .main-container {
+    flex-direction: column; /* Cambia la dirección del flex a columna en pantallas medianas */
+    padding-bottom: 30px;
+  }
+
+  .left-column {
+    flex: 1; /* Reduce el tamaño de la columna izquierda en pantallas medianas */
+    padding: 15px; /* Reduce el padding en pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 767px) {
+  .master-container {
+    padding: 20px; /* Reduce aún más el padding en pantallas pequeñas */
+    margin: 0; /* Elimina el margen en pantallas pequeñas */
+  }
+
+  .master-container h1 {
+    font-size: 1.4em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+
+  .map-header h3{
+    font-size: 1.1em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+  .promo h3 {
+    font-size: 1em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+
+  .left-column {
+    flex: 1; /* La columna izquierda ocupa todo el espacio disponible */
+    padding: 10px; /* Reduce aún más el padding en pantallas pequeñas */
+  }
+
+  .item-text {
+    font-size: .9em;
+    color: #333;
+  }
+
+  .icon-service {
+    font-size: 50px;
+  }  
+
+  
+  .filtered-item-list,
+  .menu-list {
+    margin-bottom: 15px; /* Ajusta el margen entre los componentes en pantallas pequeñas */
+  }
 }
 
 
 
-/****** Map Header Styles *******/
+/****** rigth-column Map Header Styles *******/
 .right-column {
   flex: 1; /* Ocupa la mitad del espacio comparado con la columna izquierda */
   padding: 20px;
@@ -154,7 +370,7 @@ h1{
 
 .map-container {
   width: 90%;
-  height: 50%;
+  height: 600px;
   position: relative;
 }
 
@@ -180,200 +396,93 @@ h1{
   font-size: 1.5rem;
   color: #333;
 }
-/**************** left-column rigth-column     *****************/
 
+@media (max-width: 767px) {
 
+  .right-column {
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    align-items: flex-start; /* Alinea los elementos al inicio en lugar de centrar */
+  }
 
-/**************** FilteredItemList css Tipos de eventos ***********/
-/* src/components/shared/Lugar/FilteredItemList.js  */
-/* funciona para FilteredItemList type="eventos" type="amenidades" */
-.type-list {
-  border: 1px solid #ccc; /* Borde del contenedor */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
-  border-radius: 8px; /* Bordes redondeados para un acabado más suave */
-  padding: 20px; /* Espacio interno para que el texto no esté pegado al borde */
-  max-width: 85%; /* Tamaño máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  position: relative; /* Establece el contenedor como relativo para posicionar el botón dentro de él */
+  .map-container {
+    width: 100%; /* Ajusta el ancho del mapa en pantallas pequeñas */
+    height: 250px; /* Reduce la altura del mapa para pantallas pequeñas */
+  }
+
+  .address {
+    font-size: 0.8em; /* Reduce aún más el tamaño de la fuente */
+    margin: 5px 5px; /* Ajusta el margen */
+  }
+
+  .address p{
+    padding-bottom: 10px;
+  }
+  
+  .map-icon {
+    font-size: 1rem;
+    margin-right: 10px;
 }
+}  
+/**************** rigth-column     *****************/
 
-.type-list ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
-  gap: 16px; /* Espacio entre los elementos de la cuadrícula */
-  list-style: none; /* Elimina los íconos de lista predeterminados */
-  padding: 0;
-  margin: 0;
-  padding-bottom: 60px; /* Espacio adicional en la parte inferior para el botón */
-}
-
-.type-list li {
-  display: flex;
-  flex-direction: column; /* Coloca el icono encima del texto */
-  align-items: center; /* Centra el contenido horizontalmente */
-  text-align: center;
-  padding: 10px; /* Espacio interno para mejorar la presentación */
-}
-
-.show-more-button {
-  position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
-  right: 20px; /* Espacio desde el borde derecho del contenedor */
-  bottom: 20px; /* Espacio desde el borde inferior del contenedor */
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.show-more-button:hover {
-  background-color: #0056b3;
-}
-
-
-.icon {
-  color:gray;
-  font-size: 60px; /* Ajusta el tamaño del icono aquí */
-  margin-bottom: 8px; /* Espacio entre el icono y el texto */
-}
-
-.menu-section .icon{
-  font-size: 75px; /* Ajusta el tamaño del icono aquí */
-}
-
-.item-text {
-  font-size: 20px; /* Tamaño de la fuente del texto */
-  color: #333; /* Color del texto */
-}
-
-/* funciona para FilteredItemList type="eventos" type="amenidades" */
-
-
-
-
-/**** Menu con servicios adicionales css  ****/
-.menu-section,
+/****** Estilos de la seccion de servicios adicionales */
 .aditional-service{
   max-width: 100%;
-  margin: 0px; /* Centra el contenedor horizontalmente */
+  margin: 10px;
 }
 
-.menu-section {
-  margin-bottom: 10px; /* Ajusta el valor según tus necesidades */
-}
-.menu-section ul {
-  font-size: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 3fr); /* Ajusta el número de columnas */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-  list-style: none; /* Elimina los íconos de lista predeterminados */
-  padding: 0;
-  margin: 0;
-  padding-bottom: 20px; /* Espacio adicional en la parte inferior para el botón */
-}
-
-.capitalize-first-letter {
-  text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
-}
-
-.capitalize-first-letter span:first-letter {
-  text-transform: uppercase; /* Asegúrate de que solo la primera letra sea mayúscula */
-}
-
-.capitalize-first-letter span {
-  text-transform: lowercase; /* Convierte el resto a minúsculas */
-}
-
-
-.menu-section li {
-  flex-direction: row; /* Coloca el icono encima del texto */
-
-}
-/* Título de la sección */
-.section-title {
-  font-size: 23px;
-  margin-bottom: 10px;
+.aditional-service h2{
   cursor: pointer;
 }
 
-/* Elemento de platillo */
-.menu-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.menu-section {
-  margin-bottom: 20px;
-}
-
-.section-title {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.section-content {
-  margin-left: 20px;
-}
-
-.category {
-  margin-bottom: 20px;
-}
-
-.category h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.sub-section {
-  margin-bottom: 20px;
-}
-
-.sub-section h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.item-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.checkbox-input {
-  margin-right: 10px;
-}
-
-.item-label {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.item-text {
-  text-align: left;
-}
-
-.item-text.selected {
-  font-weight: bold;
-  color: #007bff;
-}
-
-
-
-.menu-section h2 {
-  cursor: pointer;
-}
-
-.menu-section h2:hover {
+.aditional-service:hover{
   color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
 }
+/****** Estilos de la seccion de servicios adicionales */
 
+
+
+
+@media (max-width: 767px) {
+  .master-container {
+    padding: 10px;
+    margin: 0px 0px;
+  }
+
+  .master-container h1 {
+    font-size: 1.5em;
+  }
+  
+  .master-container h2 {
+    font-size: 1.2em;
+  }
+
+  .welcome-section p{
+    font-size: 1em;
+  }
+  
+  .map-container p{
+    font-size: .8em;
+  }
+
+  .type-list ul {
+    padding-bottom: 30px;
+  }
+
+  .show-more-button {
+    bottom: 7px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .item-text {
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 50px;
+  }
+
+  
+
+}

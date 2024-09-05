@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { FaRing, FaCrown, FaBirthdayCake, FaTree, FaCreditCard, FaCouch, FaWheelchair } from 'react-icons/fa';
-import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat } from 'react-icons/gi';
+import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat, GiStorkDelivery } from 'react-icons/gi';
 import { MdOutlineScreenShare } from 'react-icons/md';
-
+import '../../../styles/events/filterreditemlist.css';
 
 /**
  * iconMap: Mapa que relaciona nombres de eventos/amenidades/servicios con componentes de iconos.
- * Cada clave en el mapa es el nombre de un tipo de evento, amenidad o servicio, y el valor
- * es el componente de ícono correspondiente que se renderizará.
  */
 const iconMap = {
   /** Tipos de eventos */
@@ -15,7 +13,8 @@ const iconMap = {
   'quinceaños': <FaCrown className="icon" />,
   'bautizos': <GiHolySymbol className="icon" />,
   'cumpleaños': <FaBirthdayCake className="icon" />,  
-  'baby shower o revelacion de genero': <GiBabyBottle className="icon pregnat"/>,   //color="#FF1493  
+  'baby shower': <GiBabyBottle className="icon" />,
+  'revelacion de genero': <GiStorkDelivery className="icon" />,
   'picnics corporativos': <GiBriefcase className="icon" />,
   'eventos al aire libre': <FaTree className="icon" />,
   'fiestas de compromiso': <GiLovers className="icon" />,
@@ -35,35 +34,34 @@ const iconMap = {
   'acepta pago (tc, td)': <FaCreditCard className="icon" />,
   'área para fumar': <GiCigarette className="icon" />,
 
-  /**    Servicios adicionales */
-  'coordinador de eventos': <GiSuitcase className="icon" />,
-  'animador de eventos': <GiDramaMasks className="icon" />,
-  'dj': <GiHeadphones className="icon" />,
-  'barra libre':<GiBeerStein className="icon" />, 
-  'torna fiesta':<GiTacos  className="icon" /> , 
-  'arreglo de globos':<GiBalloons className="icon" />,
-  'decoración temática': <GiPaintBrush className="icon" />,
-  'mesa de dulces':<GiCandyCanes className="icon" />,
-  'arreglos florales': <GiFlowers className="icon" />,
-  'música versatil': <GiPianoKeys className="icon" />,
-  'música banda': <GiFrenchHorn className="icon" />,
-  'mariachi': <GiTrumpet className="icon" />,
-  'norteño':<GiAccordion  className="icon" />,
-  'banda de rock': <GiDrum className="icon" />,
-  'saxofon':<GiSaxophone  className="icon" />,
+  /** Servicios adicionales */
+  'coordinador de eventos': <GiSuitcase className="icon-service" />,
+  'animador de eventos': <GiDramaMasks className="icon-service" />,
+  'dj': <GiHeadphones className="icon-service" />,
+  'barra libre': <GiBeerStein className="icon-service" />,
+  'torna fiesta': <GiTacos className="icon-service" />,
+  'arreglo de globos': <GiBalloons className="icon-service" />,
+  'decoración temática': <GiPaintBrush className="icon-service" />,
+  'mesa de dulces': <GiCandyCanes className="icon-service" />,
+  'arreglos florales': <GiFlowers className="icon-service" />,
+  'música versatil': <GiPianoKeys className="icon-service" />,
+  'música banda': <GiFrenchHorn className="icon-service" />,
+  'mariachi': <GiTrumpet className="icon-service" />,
+  'norteño': <GiAccordion className="icon-service" />,
+  'banda de rock': <GiDrum className="icon-service" />,
+  'saxofon': <GiSaxophone className="icon-service" />,
 };
 
 /**
  * iconColorMap: Mapa que relaciona nombres de eventos/amenidades/servicios con colores.
- * Cada clave en el mapa es el nombre de un tipo de evento, amenidad o servicio, y el valor
- * es un código de color que se aplicará al icono correspondiente.
  */
 const iconColorMap = {
   'bodas': '#007bff',
   'quinceaños': '#e83e8c',
   'bautizos': '#17a2b8',
   'cumpleaños': '#ffc107',
-  'baby shower o revelacion de genero': '#FF1493',
+  'baby shower': '#FF1493',
+  'revelacion de genero': '#FFD700',
   'picnics corporativos': '#28a745',
   'eventos al aire libre': '#dc3545',
   'fiestas de compromiso': '#FF0000',
@@ -125,31 +123,32 @@ const getIconComponent = (name) => {
 export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount = 6 }) => {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
   const [showAll, setShowAll] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(type === "Servicios adicionales" ? false : true);
+  const [isExpanded, setIsExpanded] = useState(type === "Servicios adicionales" ? true : true);
 
   // Si no hay ítems disponibles, muestra un mensaje indicándolo
   if (!items || items.length === 0) {
     return <p>No hay {type} disponibles.</p>;
   }
 
- // Filtra los ítems disponibles
- const availableItems = items.filter(item => item.available);
+  // Filtra los ítems disponibles
+  const availableItems = items.filter(item => item.available);
 
- // Si no hay ítems disponibles después de filtrar, muestra un mensaje indicándolo
- if (availableItems.length === 0) {
-   return <p>No hay {type} disponibles.</p>;
- }
+  // Si no hay ítems disponibles después de filtrar, muestra un mensaje indicándolo
+  if (availableItems.length === 0) {
+    return <p>No hay {type} disponibles.</p>;
+  }
 
- // Maneja la visibilidad de los ítems (mostrar más/menos)
- const handleToggleVisibility = () => {
-   setShowAll(!showAll);
-   setVisibleCount(showAll ? initialVisibleCount : availableItems.length);
- };
+  // Maneja la visibilidad de los ítems (mostrar más/menos)
+  const handleToggleVisibility = () => {
+    setShowAll(!showAll);
+    setVisibleCount(showAll ? initialVisibleCount : availableItems.length);
+  };
 
   // Maneja la expansión/colapso de la lista
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded);
   };
+
   const gridStyle = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`
   };
@@ -165,7 +164,7 @@ export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount
       {isExpanded && (
         <>
           <ul style={gridStyle}>
-          {/* Renderiza los ítems visibles */}
+            {/* Renderiza los ítems visibles */}
             {availableItems.slice(0, visibleCount).map((item) => (
               <li key={item.id} className={`${type}-item`}>
                 {getIconComponent(item.name)}
