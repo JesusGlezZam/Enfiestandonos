@@ -70,5 +70,11 @@
     font-size: 20px; /* Tamaño de la fuente del texto */
     color: #333; /* Color del texto */
   }
+
+  @media (min-width: 2048px) {
+    .type-list {
+        max-width: 60%; /* Tamaño máximo del contenedor para pantallas grandes */
+    }
+}
   
   /* funciona para FilteredItemList type="eventos" type="amenidades" */
