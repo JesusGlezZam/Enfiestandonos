@@ -12,15 +12,15 @@ import { BsFillGiftFill } from 'react-icons/bs';
 const getIconByType = (type) => {
     switch (type) {
         case 'jardin':
-            return <FaLeaf className='icon-jardin'/>;
+            return <FaLeaf className='icon-jardin general'/>;
         case 'infantil':
-            return <BsFillGiftFill className='icon-infantil'/>;
+            return <BsFillGiftFill className='icon-infantil general'/>;
         case 'salon':
-            return <FaGlassCheers className='icon-salon'/>;
+            return <FaGlassCheers className='icon-salon general'/>;
         case 'hacienda':
-            return <FaHome className='icon-hacienda'/>;
+            return <FaHome className='icon-hacienda general'/>;
         case 'terraza':
-            return <FaSun className='icon-terraza'/>;
+            return <FaSun className='icon-terraza general'/>;
         default:
             return null;
     }
@@ -82,13 +82,15 @@ export const SectionCarrusel = ({ title, type, items, itemType }) => {
     
     return (
         <section className='custom-carousel-section'>
-            <div className="custom-carousel-title-container">
-                {/* Título del carrusel y botón para ver todos los elementos */}
-                <h2 className="custom-carousel-title" onClick={() => handleNavigation(type)}> 
-                    {getIconByType(type)} {title} 
-                </h2>
-                <strong className="custom-carousel-link" onClick={() => handleNavigation(type)}>Ver todos</strong>
-            </div>
+          <div className="custom-carousel-title-container">
+            <h2 className="custom-carousel-title" onClick={() => handleNavigation(type)}> 
+                <div className="icon-container">
+                    {getIconByType(type)} 
+                </div>
+                <span className="title">{title}</span> 
+            </h2>
+            <strong className="custom-carousel-link" onClick={() => handleNavigation(type)}>Ver todos</strong>
+        </div>
             
             {/* Carrusel de elementos */}
             <Slider {...settings} className="custom-carousel-slider">

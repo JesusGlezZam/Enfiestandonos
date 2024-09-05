@@ -116,7 +116,7 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
   .hacienda-image,
   .terraza-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     cursor: pointer;
   }

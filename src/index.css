@@ -16,7 +16,6 @@ h2.welcome {
   margin: 10px auto; /* Margen superior e inferior para espacio entre secciones */
 }
 
-.custom-carousel-title,
 .custom-carousel-link {
   padding-left: 30px;
   margin-bottom: 0px;
@@ -28,15 +27,31 @@ h2.welcome {
   display: flex;
   justify-content: space-between; /* Alinea el contenido en los extremos */
   align-items: center; /* Alinea verticalmente el contenido */
-  margin-bottom: 10px; /* Espacio inferior del contenedor */
+  /* margin-bottom: 10px; Espacio inferior del contenedor */
+}
+
+.custom-carousel-title {
+  display: flex; /* Alinea el ícono y el título horizontalmente */
+  align-items: center; /* Alinea el ícono y el título verticalmente al centro */
+  font-weight: lighter;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.icon-container {
+  margin-right: 15px; /* Espacio entre el ícono y el título */
 }
 
 .custom-carousel-link {
-  padding-right: 50px;
-  font-size: 1.6em; /* Tamaño del texto del enlace */
-  color: #007bff; /* Color del enlace (puedes ajustar según tus preferencias) */
+  padding-top: 15px;
+  font-size: 1.6em; /* Alinea el tamaño del texto con el del h2 */
+  color: #007bff; /* Color del enlace */
   text-decoration: none; /* Elimina subrayado del enlace */
   transition: color 0.3s ease; /* Transición suave para el color del enlace */
+  padding-right: 50px; /* Espacio entre el texto del enlace y el borde del contenedor */
+  line-height: 1.25em; /* Ajusta la altura de línea para alinear verticalmente */
 }
 
 .custom-carousel-link:hover {
@@ -63,7 +78,7 @@ h2.welcome {
 
 .custom-carousel-image {
   width: 98%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
@@ -73,6 +88,7 @@ h2.welcome {
 }
 
 .custom-carousel-item-title {
+  font-weight: lighter;
   margin: 0;
   font-size: 1.5em;
   padding-bottom: 5px;
@@ -126,17 +142,24 @@ h2.welcome {
     margin-top: 20px;
     margin-bottom: -15px;
   }
-  
 
-  .custom-carousel-title {
-    padding-left: 5px;
+
+  .custom-carousel-title, .icon-container {
     font-size: 1em;
-    padding-bottom:20px;
+  }
+  
+  .icon-container {
+    margin-right: 10px; /* Espacio entre el ícono y el título */
+  }
+  .custom-carousel-title {
+    padding-left: 15px;
+    font-size: .8em;
+    padding-bottom:0px;
   }
 
   .custom-carousel-link {
-    padding-right: 10px;
-    font-size: 1em;
+    padding-right: 12px;
+    font-size: 1.1em;
   }
 
   .custom-carousel-item {
@@ -145,7 +168,7 @@ h2.welcome {
   }
 
   .custom-carousel-image {
-    height: 120px;
+    height: 130px;
   }
 
   .custom-carousel-item-title {

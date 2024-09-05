@@ -1,10 +1,7 @@
 
 /* MenuWithSections se quedo porque se comparte stylos en promocion-menu y seccion menu.js */
-  .menu{
-    padding-top: 20px;
-  }
-  
   .along-menu {
+    padding-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -19,6 +16,7 @@
     max-width: 100%;
     margin: 10px; /* Centra el contenedor horizontalmente */
     padding: 30px;
+    border: 2px solid #C8102E;
   }
   
   .along-section ul{
@@ -67,9 +65,6 @@
     color: #007bff;
   }
 
-
-
-
   /* Asegúrate de que los íconos tengan el mismo tamaño y color */
 .item-icon {
     margin-right: 10px; /* Espacio entre el ícono y el texto */
@@ -92,6 +87,33 @@
   color: #333; /* Color del texto */
 }
 
+@media(max-width: 767px){
+  .item-label {
+    font-size: 1em;
+  }
+
+
+  .type-list ul {
+    padding-bottom: 10px;
+  }
+
+  .item-icon {
+    font-size: 15px;
+  }
+
+
+  .sub-section-along h3 {
+    font-size: 1.2em;
+  }
+
+  .icon-collapsed-along {
+    font-size: 40px;
+  }
+
+  .icon-expanded-along {
+    font-size: 50px;
+  }
+}
 
 
 

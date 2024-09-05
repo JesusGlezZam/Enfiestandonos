@@ -95,13 +95,14 @@ body {
 
   /* Imagen principal */
   .main-image {
+    text-align: center; /* Centra los elementos en línea dentro del contenedor */
     width: 100%; /* La imagen principal ocupa el 100% del ancho */
     height: 300px; /* Altura automática para mantener la proporción */
     margin-bottom: 5px; /* Espacio debajo de la imagen principal */
   }
 
   .main-image img {
-    width: 100%; /* Ajusta la imagen para que ocupe el ancho completo */
+    width: 98%; /* Ajusta la imagen para que ocupe el ancho completo */
     height: auto; /* Altura automática para mantener la proporción */
   }
 
@@ -296,10 +297,6 @@ body {
 
   .master-container h2 {
     font-size: 1.4em; /* Reduce el tamaño del texto en pantallas medianas */
-  }
-
-  .promotion h3 {
-    font-size: 1.2em; /* Reduce el tamaño del texto en pantallas medianas */
   }
 
   .main-container {
