@@ -21,16 +21,16 @@ export const Inicio = () => {
       <hr className="custom-hr" />
       
       <h2 className='welcome'>Estos espacios únicos son el lugar perfecto para tu evento.</h2>
-      <SectionCarrusel title="Jardines" type="jardin" items={jardinesData.jardines}  />
-      <SectionCarrusel title="Salones Infantiles" type="infantil" items={infantilesData.infantiles} />
+      <SectionCarrusel title="Jardines" type="jardin" items={jardinesData.jardines}  itemType="jardin" />
+      <SectionCarrusel title="Salones Infantiles" type="infantil" items={infantilesData.infantiles}  itemType="infantil"/>
 
       <Publish imageKey="publicidad1" />
 
-      <SectionCarrusel title="Salones" type="salon" items={salonesData.salones} />
+      <SectionCarrusel title="Salones" type="salon" items={salonesData.salones}  itemType="salon" />
 
-      <SectionCarrusel title="Haciendas" type="hacienda" items={haciendasData.haciendas} />
+      <SectionCarrusel title="Haciendas" type="hacienda" items={haciendasData.haciendas}  itemType="hacienda" />
 
-      <SectionCarrusel title="Terraza" type="terraza" items={terrazasData.terrazas} />   
+      <SectionCarrusel title="Terraza" type="terraza" items={terrazasData.terrazas}  itemType="terraza" />   
     </div>
   );
 };

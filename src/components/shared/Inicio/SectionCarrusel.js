@@ -7,6 +7,8 @@ import { MdCelebration } from 'react-icons/md';
 import { paginateArray } from '../../../helpers/utils'; // Importa la función para paginar los elementos
 import { useNavigate } from 'react-router-dom';
 import { BsFillGiftFill } from 'react-icons/bs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 // Función que devuelve el ícono correspondiente según el tipo de evento
 const getIconByType = (type) => {
@@ -96,71 +98,78 @@ export const SectionCarrusel = ({ title, type, items, itemType }) => {
             <Slider {...settings} className="custom-carousel-slider">
                 {currentItems.length > 0 ? (
                     currentItems.map((item, index) => (
-                        <div key={index} className="custom-carousel-item">
-                            <div className="custom-carousel-image-container">
-                                {/* Imagen del elemento */}
-                                <img 
-                                    src={item.image || 'default-image.png'} 
-                                    alt={item.name || 'No disponible'} 
-                                    className="custom-carousel-image" 
-                                />
-                            </div>
-                            <div className="custom-carousel-info">
-                                {/* Título del elemento */}
-                                <h2 className="custom-carousel-item-title">{item.name || 'No disponible'}</h2>
-                                
-                                {/* Sección de detalles del elemento */}
-                                <section className={`${itemType}-details`}>
-                                    <div className='detail-item'>
-                                        <div className='detail-container'>
-                                            {/* Detalle de tipos de eventos disponibles */}
-                                            <div className='detail-info'>
-                                                <MdCelebration className='detail-icon celebration' size={20} />
-                                                <span>
-                                                    {(item.tipos_de_eventos || [])  
-                                                        .filter(evento => evento.available)
-                                                        .slice(0, 3)
-                                                        .map(evento => evento.name)
-                                                        .join(', ')
-                                                        || 'No hay eventos disponibles'}
-                                                </span>
-                                            </div>
-
-                                            {/* Enlace a Google Maps con la dirección */}
-                                            <div className='detail-info'>
-                                                <a 
-                                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
-                                                    target="_blank" 
-                                                    rel="noopener noreferrer"
-                                                    className="maps-button"
-                                                >
-                                                    <FaMapMarkerAlt className='detail-icon maps' />
-                                                </a>
-                                                <span>{item.address}</span>
-                                            </div>
-                                        </div>
-                                    </div>              
-                                    
-                                    <div className='detail-container'>
-                                        {/* Capacidad máxima del lugar */}
-                                        <div className='detail-info'>
-                                            <FaUser className='detail-icon user' />
-                                            <span>Cap. máxima: <span className='capacity'>{item.capacity || 'No disponible'}</span></span>
-                                        </div>
-                                        {/* Horario disponible */}
-                                        <div className='detail-info'>
-                                            <FaClock className='detail-icon available' />
-                                            <span>{item.hours || 'No disponible'}</span>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
+                    <div key={index} className="custom-carousel-item">
+                        <div className="custom-carousel-image-container">
+                        {/* Imagen del elemento */}
+                        <img 
+                            src={item.image || 'default-image.png'} 
+                            alt={item.name || 'No disponible'} 
+                            className="custom-carousel-image" 
+                        />
                         </div>
+                        <div className={`${itemType}-info`}>
+                        {/* Título del elemento con icono */}
+                        <h2>
+                            {getIconByType(itemType)} {item.name || 'No disponible'}
+                        </h2>
+
+                        {/* Sección de detalles del elemento */}
+                        <section className={`${item.itemType}-details`}>
+                            <div className='detail-item'>
+                            <div className='detail-container first'>
+                                <div className='detail-info'>
+                                <MdCelebration className='detail-icon celebration' />
+                                <span>
+                                    {(item.tipos_de_eventos || [])  
+                                    .filter(evento => evento.available) // Filtra los eventos disponibles
+                                    .slice(0, 3) // Toma solo los primeros 3 eventos
+                                    .map(evento => evento.name) // Obtiene el nombre de cada evento
+                                    .join(', ') || 'No hay eventos disponibles'} {/* Muestra un mensaje si no hay eventos */}
+                                </span>
+                                </div>
+                                <div className='detail-info'>
+                                <a 
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="maps-button"
+                                >
+                                    <FaMapMarkerAlt className='detail-icon maps' />
+                                </a>
+                                <span className='truncate'>{item.address}</span>
+                                </div>
+                            </div>
+                            </div>   
+                            
+                            <div className='detail-container'>
+                            <div className='detail-info'>
+                                <FaUser className='detail-icon user' />
+                                <span>Cap. máx: <span className='capacity'>{item.capacity_max || 'No disponible'}</span></span>
+                            </div>
+                            <div className='detail-info'> 
+                                <FontAwesomeIcon className='icon-price detail-icon available' icon={faMoneyBill} color="green" />
+                                <span>${item.price_initial} - ${item.price_final || 'No disponible'}</span>
+                            </div>
+                            <div className='detail-info'>
+                                <FaClock className='detail-icon available' />
+                                <span className='time-event'>
+                                {item.event_hors  ? item.event_hors  : 'No disponible'}
+                                </span>
+                                {item.event_hors  && <span> hrs de evento </span>}
+                            </div>
+                            </div>    
+                        </section>
+                        </div>
+                    </div>
                     ))
                 ) : (
                     <p>No hay elementos disponibles para mostrar.</p>
                 )}
-            </Slider>
+</Slider>
+
         </section>
     );
 };
+
+
+

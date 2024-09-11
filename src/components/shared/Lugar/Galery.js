@@ -8,7 +8,7 @@ export const Galery = ({ itemType, name }) => {
  console.log({ itemType, name })
 
  // Usando Webpack para requerir imágenes dinámicamente basadas en itemType y el nombre formateado
- const images = require.context(`../../../../public/Enfiestandonos/events/jardin/santamaria/eventos`, false, /\.png$/);
+ const images = require.context(`../../../../public/Enfiestandonos/events/jardin/loscisnes/eventos`, false, /\.png$/);
 
  const imagePaths = images.keys().map(images);
 

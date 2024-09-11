@@ -78,6 +78,14 @@
   margin: 0; /* Elimina el margin predeterminado */
 }
 
+.capitalize-first-letter {
+  text-transform: lowercase; /* Convierte todo el texto a minúsculas */
+}
+
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase; /* Convierte solo la primera letra a mayúscula */
+}
+
 .item-label {
   margin-bottom: 0px;
   display: flex;
@@ -114,6 +122,8 @@
     font-size: 50px;
   }
 }
+
+
 
 
 

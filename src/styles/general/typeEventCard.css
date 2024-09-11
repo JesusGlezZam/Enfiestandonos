@@ -94,8 +94,8 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
   .terraza-cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
+    padding: 10px;
   }
 
   /* Tarjetas */
@@ -134,6 +134,13 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
     margin: 0;
     cursor: pointer;
   }
+  .jardin-info h2:hover,
+  .infantil-info h2:hover,
+  .salon-info h2:hover,
+  .hacienda-info h2:hover,
+  .terraza-info h2:hover {
+   color: #0056b3 ;
+  }
   
   /* Información dentro de la tarjeta */
   .jardin-info,
@@ -141,7 +148,7 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
   .salon-info,
   .hacienda-info,
   .terraza-info {
-    padding: 15px;
+    padding: 10px;
   } 
   
  
@@ -154,6 +161,7 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
 }
 
 .detail-item span {
+  font-size: 1.1em;
   white-space: nowrap;
   flex-wrap: wrap;
   text-overflow: ellipsis;

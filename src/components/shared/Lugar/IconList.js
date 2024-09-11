@@ -8,6 +8,8 @@ export const IconList = ({ items, itemType, className }) => {
     return <p>No hay {itemType}s disponibles.</p>;
   }
 
+  
+
   return (
     <ul className={`item-list ${className}`}>
       {items.map((item, index) => (
@@ -15,7 +17,7 @@ export const IconList = ({ items, itemType, className }) => {
             <div>
                 <GiConfirmed className="item-icon" /> {/**GiCheckMark */}
             </div>
-          <label htmlFor={`${itemType}-checkbox-${index}`} className="item-label">
+          <label htmlFor={`${itemType}-checkbox-${index}`} className="item-label ">
             <span>{item}</span> {/* Mostrar el nombre del ítem */}
           </label>
         </li>

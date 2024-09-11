@@ -1,9 +1,11 @@
 
 /****** Estilos de las tarjetas de la pagina de inicio  */
 h2.welcome {
+  font-size: 1.6em;
   text-align: left;
   margin-top: 30px;
   margin-bottom: -10px; /* Espacio abajo */
+  padding-bottom: 10px;
 }
 
 .custom-carousel-section {
@@ -127,7 +129,8 @@ h2.welcome {
 }
 
 /* Estilos para la capacidad */
-.capacity {
+.capacity,
+.time-event {
   font-weight: bold; /* Estilo para el texto de la capacidad */
 }
 
@@ -222,9 +225,69 @@ h2.welcome {
 }
 
 .icon-price{
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
 
 
+.detail-info {
+  display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+  align-items: center; /* Alinea los íconos y el texto verticalmente al centro */
+  width: 100%; /* Ancho completo en pantallas más pequeñas */
+  margin-bottom: 5px; /* Espacio inferior para separación */
+}
 
+.detail-icon {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.time-event {
+  font-weight: bold; /* Estilo para el número en negrita */
+  margin-right: 4px; /* Espacio entre el número y el texto siguiente */
+}
+
+
+
+.detail-container {
+  display: grid; /* Usa Grid para distribuir los elementos */
+  grid-template-columns: 1fr 1fr 1fr; /* Define el tamaño de las columnas en proporciones 3/5 y 2/5 */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.first {
+  display: grid; /* Usa Grid para distribuir los elementos */
+  grid-template-columns: 1fr 1fr; /* Define el tamaño de las columnas en proporciones 3/5 y 2/5 */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.detail-info {
+  font-size: 1.1em;
+  display: flex; /* Usa Flexbox para alinear el ícono y el texto */
+  align-items: center; /* Alinea verticalmente al centro */
+  min-width: 0; /* Permite que el contenido se ajuste en un contenedor flex */
+}
+
+
+.detail-info .detail-icon {
+  font-size: 1.2em;
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.detail-icon.celebration{
+  font-size: 25px; /* Ajusta el tamaño del icono */
+}
+
+.truncate {
+  white-space: nowrap; /* Evita el salto de línea dentro del contenedor */
+  overflow: hidden; /* Oculta el texto que desborda el contenedor */
+  text-overflow: ellipsis; /* Muestra "..." al final del texto desbordante */
+  flex: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+
+
+.custom-carousel-info h2{
+  padding: 0px;
+}

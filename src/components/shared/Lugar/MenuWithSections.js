@@ -50,8 +50,8 @@ const MenuWithSections = ({ data }) => {
             className="section-title"
             style={{ cursor: 'pointer' }}
           >
-           <span className="capitalize-first-letter with-sections-alonge">
-            {capitalizeFirstLetter(section.seccion || section.section)}
+           <span className="with-sections-alonge">
+            {section.seccion || section.section}
             <GiForkKnifeSpoon className={`icon-menu-along ${openSections.includes(index) ? 'icon-expanded-along' : 'icon-collapsed-along'}`} />
           </span>
           </h2>
@@ -62,7 +62,7 @@ const MenuWithSections = ({ data }) => {
                 <div key={subSectionKey} className="sub-section-along">
                   {/* Título de la subsección con primera letra capitalizada */}
                   <h3 className="capitalize-first-letter">
-                   {capitalizeFirstLetter(subSectionKey)}
+                   {subSectionKey}
                   </h3>
                   <IconList
                     items={section.subSections[subSectionKey].map(capitalizeFirstLetter)} // Capitalizar cada ítem en la subsección

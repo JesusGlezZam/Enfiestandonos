@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { FaRing, FaCrown, FaBirthdayCake, FaTree, FaCreditCard, FaCouch, FaWheelchair } from 'react-icons/fa';
-import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat, GiStorkDelivery } from 'react-icons/gi';
+import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, 
+GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat, GiStorkDelivery, 
+GiCakeSlice, GiCrown, GiDinosaurRex, GiClown, GiTeacher, GiShield, GiPlayButton, GiSofa, GiMagicHat, GiCupcake, GiFoodTruck, GiGamepad, GiCarousel, GiRing, GiGraduateCap, GiDominoMask, 
+GiPerson, GiFlowerPot, GiWaterSplash, GiBarbecue, GiHighHeel, GiBabyFace, GiCook, 
+GiJoystick,
+GiPuzzle} from 'react-icons/gi';
 import { MdOutlineScreenShare } from 'react-icons/md';
 import '../../../styles/events/filterreditemlist.css';
+import { FaPaintbrush } from 'react-icons/fa6';
 
 /**
  * iconMap: Mapa que relaciona nombres de eventos/amenidades/servicios con componentes de iconos.
@@ -14,17 +20,36 @@ const iconMap = {
   'bautizos': <GiHolySymbol className="icon" />,
   'cumpleaños': <FaBirthdayCake className="icon" />,  
   'baby shower': <GiBabyBottle className="icon" />,
-  'revelacion de genero': <GiStorkDelivery className="icon" />,
+  'revelación de género': <GiStorkDelivery className="icon" />,
   'picnics corporativos': <GiBriefcase className="icon" />,
   'eventos al aire libre': <FaTree className="icon" />,
-  'fiestas de compromiso': <GiLovers className="icon" />,
+  'fiesta de compromiso': <GiLovers className="icon" />,
   'reuniones familiares': <GiFamilyHouse className="icon" />,
   'cualquier otro tipo de evento': <GiPartyPopper className="icon" />,
+  /**infantiles */
+  'fiesta de cumpleaños infantil': <GiCakeSlice className="icon" />,
+  'fiesta temáticas': <GiPartyPopper className="icon" />,
+  'fiesta de superhéroes': <GiShield className="icon" />,
+  'fiesta de princesas': <GiCrown className="icon" />,
+  'fiesta de dinosaurios': <GiDinosaurRex className="icon" />,
+  'show de payaso': <GiClown className="icon" />,
+  'show de magia': <GiMagicHat className="icon" />,
+  'eventos escolares': <GiTeacher className="icon" />,
+  /**salones */
+  "graduaciones": <GiGraduateCap className="icon" s />,
+  "fiesta de despedida": <GiDominoMask className="icon"/>, //GiDominoMask  GiCurlyMask  GiDualityMask
+  "fiesta de compromiso": <GiRing className="icon" />,
+  "fiesta corporativa": <GiBriefcase className="icon" />,
+   /**haciendas */
+   'evento de gala':<GiHighHeel  className="icon" />,
+   'jardines y/o espacios exteriores': <GiFlowerPot className="icon" />,
+   'alberca': <GiWaterSplash className="icon"/>,
+   'área de barbacoa o parrilla': <GiBarbecue className="icon" />,
   
   /* Amenidades   */
   'acceso a discapacitados': <FaWheelchair className="icon" />,
-  'recibidor': <FaCouch className="icon" />,
-  'cambiador': <GiDress className="icon" />,
+  'recibidor': <GiSofa className="icon" />,
+  'cambiador': <GiDress className="icon" />, 
   'área de cocina': <GiHotMeal className="icon" />,
   'estacionamiento': <GiCarSeat className="icon" />,
   'área de juegos o brincolín': <GiJumpingRope className="icon" />,
@@ -33,10 +58,16 @@ const iconMap = {
   'salida de emergencia': <GiExitDoor className="icon" />,
   'acepta pago (tc, td)': <FaCreditCard className="icon" />,
   'área para fumar': <GiCigarette className="icon" />,
+  /** infantiles */
+  'zona de juegos': <GiPuzzle className="icon" />,
+  'zona de juegos': <GiJoystick className="icon" />,
+  'área de descanso': <FaCouch  className="icon" />,
+
 
   /** Servicios adicionales */
   'coordinador de eventos': <GiSuitcase className="icon-service" />,
   'animador de eventos': <GiDramaMasks className="icon-service" />,
+  'host de recepción': <GiPerson className="icon-service" />,
   'dj': <GiHeadphones className="icon-service" />,
   'barra libre': <GiBeerStein className="icon-service" />,
   'torna fiesta': <GiTacos className="icon-service" />,
@@ -50,6 +81,15 @@ const iconMap = {
   'norteño': <GiAccordion className="icon-service" />,
   'banda de rock': <GiDrum className="icon-service" />,
   'saxofon': <GiSaxophone className="icon-service" />,
+  /**infantiles */
+  'pastelería personalizada': <GiCupcake className="icon" />,
+  'renta de juegos de fiesta': <GiCarousel className="icon" />,   //GiTicket
+  'estación de pintura facial': <FaPaintbrush className="icon" />,
+  'alquiler de carros de comida': <GiFoodTruck className="icon" />,
+  'área de juegos de video': <GiGamepad className="icon" />,
+  /**haciendas */
+  "catering gourmet": <GiCook className="icon"  />,
+  "servicio de babysitting": <GiBabyFace className="icon" />
 };
 
 /**
@@ -61,12 +101,30 @@ const iconColorMap = {
   'bautizos': '#17a2b8',
   'cumpleaños': '#ffc107',
   'baby shower': '#FF1493',
-  'revelacion de genero': '#FFD700',
+  'revelación de género': '#FFD700',
   'picnics corporativos': '#28a745',
   'eventos al aire libre': '#dc3545',
-  'fiestas de compromiso': '#FF0000',
+  'fiesta de compromiso': '#FF0000',
   'reuniones familiares': '#6f42c1',
   'cualquier otro tipo de evento': '#00CED1',
+  'fiesta de cumpleaños infantil': '#ff69b4', // Hot Pink
+  'fiesta temáticas': '#ff9900', // Orange
+  'fiesta de superhéroes': '#ff0000', // Red
+  'fiesta de princesas': '#d3a9e1', // Light Purple
+  'fiesta de dinosaurios': '#228b22', // Forest Green
+  'show de payaso': '#ff6347', // Tomato
+  'show de magia': '#6a0dad', // Blue Violet
+  'eventos escolares': '#4caf50', // Green
+  'fiesta corporativa': '#007bff',
+  'fiesta de despedida': '#ff4500',
+  'jardines y/o espacios exteriores': '#3a7d34',
+  'alberca':  '#00bfff',
+  'área de barbacoa o parrilla':  '#b22222',
+
+
+
+
+
   'acceso a discapacitados': '#0d6efd',
   'recibidor': '#D381E0',
   'cambiador': '#C8102E',
@@ -80,6 +138,7 @@ const iconColorMap = {
   'acepta pago (tc, td)': '#ffc107',
   'coordinador de eventos': '#6f42c1',
   'animador de eventos': '#dc3545',
+  'host de recepción': '#00274d  ',
   'dj': '#fd7e14',
   'barra libre': '#FFD700',
   'torna fiesta': '#6F4F28',
@@ -93,6 +152,19 @@ const iconColorMap = {
   'norteño': '#4CAF50',
   'banda de rock': '#8B4513',
   'saxofon': '#FFD700',
+  /**infantiles */
+  'zona de juegos': '#1E90FF' ,
+  'área de descanso': '#B0C4DE',
+  'pastelería personalizada': '#ff69b4',
+  'renta de juegos de fiesta': '#ff5722',   //GiTicket
+  'estación de pintura facial': '#007bff' ,
+  'alquiler de carros de comida': '#ff9900',
+  'área de juegos de video': '#28a745',
+  /**salones */
+  "graduaciones": '#00008b' ,
+  /**haciendas */
+  "catering gourmet": '#ff4500',
+  "servicio de babysitting": '#f08080',
 };
 
 /**
@@ -168,7 +240,7 @@ export const FilteredItemList = ({ type, items, columns = 3, initialVisibleCount
             {availableItems.slice(0, visibleCount).map((item) => (
               <li key={item.id} className={`${type}-item`}>
                 {getIconComponent(item.name)}
-                <div className="item-text">{item.name}</div>
+                <div className="item-text capitalize-first-letter">{item.name}</div>
               </li>
             ))}
           </ul>

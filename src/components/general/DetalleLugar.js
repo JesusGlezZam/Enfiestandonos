@@ -7,6 +7,7 @@ import { FaGlassCheers, FaHome, FaLeaf, FaMapMarkerAlt, FaSun } from 'react-icon
 import { BsFillGiftFill } from 'react-icons/bs';
 import MenuWithSections from '../shared/Lugar/MenuWithSections';
 import { PromotionSections } from '../shared/Lugar/PromotionSections';
+import { haciendasData, infantilesData, salonesData } from '../../helpers/datosdummy';
 
 // Función para obtener el ícono según el tipo de lugar
 const getIconByType = (type) => {
@@ -55,6 +56,19 @@ export const DetalleLugar = () => {
       if (itemType === 'jardin') {
         data = jardinesData.jardines.find(jardin => jardin.id === selectedId);
       }
+      else if (itemType === 'infantil') {
+        data = infantilesData.infantiles.find(infantil => infantil.id === selectedId);
+      }
+      else if (itemType === 'salon') {
+        data = salonesData.salones.find(salon => salon.id === selectedId);
+      }
+      else if (itemType === 'hacienda') {
+        data = haciendasData.haciendas.find(hacienda => hacienda.id === selectedId);
+      }
+      else if (itemType === 'terraza') {
+        data = haciendasData.haciendas.find(hacienda => hacienda.id === selectedId);
+      }
+
       setItemDetails(data);
     };
 
