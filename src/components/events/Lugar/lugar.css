@@ -1,0 +1,375 @@
+/* Mostrar dentro de la pnatalla DetalleLugar un tipo de letra mas suave*/ 
+body {
+  color: #333333;
+  font-weight: lighter;
+}
+
+/********** Contenedor de la galería  ***********/
+
+
+/************** Header de navegacion ***/
+/* Estilo para la barra de navegación fija */
+.sticky-header {
+  position: -webkit-sticky; /* Para Safari */
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 50;
+  padding: 10px;
+  width: 80%; /* Ancho del 60% de la pantalla */
+  margin: 0 auto; /* Centra el header horizontalmente */
+  border-radius: 30px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  border: 2px solid yellow; /* Añade un borde amarillo de 2px */
+}
+
+/* Estilos para los elementos activos */
+.sticky-header ul li.active {
+  border-radius: 30px;
+  background-color: #ffeb3b; /* Color de fondo para el ítem activo */
+}
+
+.sticky-header ul li.active button {
+  color: #000; /* Color del texto del botón activo */
+}
+
+
+.sticky-header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sticky-header nav ul li {
+  margin: 0 15px;
+}
+
+.sticky-header nav ul li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: #444444;
+  padding: 10px;
+}
+
+.sticky-header nav ul li button:hover {
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: #ffeb3b;
+}
+
+/* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 767px) {
+  .sticky-header {
+    width: 100%; /* Ancho completo de la pantalla */ 
+  }
+
+  .sticky-header nav ul {
+    flex-direction: row; /* Coloca los elementos en una columna en lugar de fila */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .sticky-header nav ul li {
+    margin: 5px 0; /* Reduce el margen vertical entre los elementos de la lista */
+  }
+
+  .sticky-header nav ul li button {
+    font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    padding: 10px; /* Ajusta el padding en pantallas pequeñas */
+  }
+}
+/*********   stick- header de navegacion   *****/
+
+
+
+/* components/general/DetalleLugar.js */
+/**************** Detalle de lugar de manera General **************/
+.master-container{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+  padding:  25px;
+}
+
+.master-container {
+  padding: 40px; /* Ajusta el padding según sea necesario */
+  margin: 20px auto; /* Ajusta el margen según sea necesario */
+  border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de caja */
+  border: 2px solid #A0522D;
+}
+.master-container h1{
+  font-size: 2em;
+  font-weight: lighter;
+}
+
+.master-container h2{ 
+  font-weight: lighter;
+  font-size: 1.8em;
+}
+
+.master-container h3{
+  font-weight: lighter;
+  font-size: 1.6em;
+}
+
+/*.master-container  p{
+  font-size: .9em;
+}*/
+
+.main-container{
+  font-weight: lighter;
+}
+
+.main-container {
+  display: flex;
+  height: auto; /* Ocupa el 100% de la altura de la ventana */
+}
+
+.welcome-section p{
+  font-size: 1.4em;
+}
+
+.left-column {
+  flex: 2; /* Ocupa el doble del espacio en comparación con la columna derecha */
+  padding: 20px;
+  overflow-y: hidden;
+}
+
+.filtered-item-list,
+.menu-list{
+  margin-bottom: 20px; /* Espacio entre los componentes FilteredItemList */
+}
+
+.filtered-item-list .type-list {
+  margin-bottom: 10px;
+  
+}
+/******  left-column  ***/
+
+
+/* Estilos para pantallas medianas (tablets en orientación horizontal) */
+@media (max-width: 1024px) {
+  .master-container {
+    padding: 40px; /* Reduce el padding en pantallas medianas */
+    margin: -30px -15px; /* Ajusta el margen para pantallas medianas */
+  }
+
+  .master-container h1 {
+    font-size: 1.6em; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+
+  .master-container h2 {
+    font-size: 1.4em; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+
+  .main-container {
+    flex-direction: column; /* Cambia la dirección del flex a columna en pantallas medianas */
+    padding-bottom: 30px;
+  }
+
+  .left-column {
+    flex: 1; /* Reduce el tamaño de la columna izquierda en pantallas medianas */
+    padding: 15px; /* Reduce el padding en pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 767px) {
+  .master-container {
+    padding: 20px; /* Reduce aún más el padding en pantallas pequeñas */
+    margin: 0; /* Elimina el margen en pantallas pequeñas */
+  }
+
+  .master-container h1 {
+    font-size: 1.4em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+
+  .map-header h3{
+    font-size: 1.1em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+  .promo h3 {
+    font-size: 1em; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+
+  .left-column {
+    flex: 1; /* La columna izquierda ocupa todo el espacio disponible */
+    padding: 10px; /* Reduce aún más el padding en pantallas pequeñas */
+  }
+
+  .item-text {
+    font-size: .9em;
+    color: #333;
+  }
+
+  .icon-service {
+    font-size: 50px;
+  }  
+
+  
+  .filtered-item-list,
+  .menu-list {
+    margin-bottom: 15px; /* Ajusta el margen entre los componentes en pantallas pequeñas */
+  }
+}
+
+
+
+/****** rigth-column Map Header Styles *******/
+.right-column {
+  flex: 1; /* Ocupa la mitad del espacio comparado con la columna izquierda */
+  padding: 20px;
+  background-color: #f4f4f4; /* Color de fondo para diferenciar la columna del mapa */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Address and Map Styles */
+.address {
+  font-size: 1rem;
+  color: #524e4e; /* Color más claro para el ícono */
+  margin: 10px 10px;
+}
+
+.map-container {
+  width: 90%;
+  height: 600px;
+  position: relative;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.map-icon {
+  font-size: 2rem;
+  color: #999; /* Color más claro para el ícono */
+  margin-right: 20px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+@media (max-width: 767px) {
+
+  .right-column {
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    align-items: flex-start; /* Alinea los elementos al inicio en lugar de centrar */
+  }
+
+  .map-container {
+    width: 100%; /* Ajusta el ancho del mapa en pantallas pequeñas */
+    height: 250px; /* Reduce la altura del mapa para pantallas pequeñas */
+  }
+
+  .address {
+    font-size: 0.8em; /* Reduce aún más el tamaño de la fuente */
+    margin: 5px 5px; /* Ajusta el margen */
+  }
+
+  .address p{
+    padding-bottom: 10px;
+  }
+  
+  .map-icon {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+}  
+/**************** rigth-column     *****************/
+
+/****** Estilos de la seccion de servicios adicionales */
+.aditional-service{
+  max-width: 100%;
+  margin: 10px;
+}
+
+.aditional-service h2{
+  cursor: pointer;
+}
+
+.aditional-service:hover{
+  color: #007bff; /* Cambia el color al pasar el mouse sobre el título */
+}
+/****** Estilos de la seccion de servicios adicionales */
+
+
+
+
+@media (max-width: 767px) {
+  .master-container {
+    padding: 10px;
+    margin: 0px 0px;
+  }
+
+  .master-container h1 {
+    font-size: 1.5em;
+  }
+  
+  .master-container h2 {
+    font-size: 1.2em;
+  }
+
+  .welcome-section p{
+    font-size: 1em;
+  }
+  
+  .map-container p{
+    font-size: .8em;
+  }
+
+  .type-list ul {
+    padding-bottom: 30px;
+  }
+
+  .show-more-button {
+    bottom: 7px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .item-text {
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 50px;
+  }
+
+}
+
+.event-types-list {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.event-types-list h2 {
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.event-types-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-types-list .event-type-item {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 5px;
+}

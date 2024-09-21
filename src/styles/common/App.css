@@ -84,9 +84,9 @@ body > div {
 
 .content {
   flex: 1;
-  padding: 40px;
-  width: 85%; /* Ocupa el 90% del ancho de la pantalla */
-  margin: 0 auto; /* Centra horizontalmente */
+  padding-top: 20px;
+  width: 86%; /* Ocupa el 90% del ancho de la pantalla */
+  margin: 20px auto; /* Centra horizontalmente */
  
 }
 @media (max-width: 768px) {

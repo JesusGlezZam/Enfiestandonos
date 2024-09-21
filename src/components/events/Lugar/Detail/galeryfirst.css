@@ -1,0 +1,139 @@
+/*****src/components/shared/Lugar/Galery.js***/
+.gallery-container {
+    min-height: 55vh; 
+    height: 55vh; /* Ocupa el 60% de la altura de la ventana */
+    max-height: 600px; /* Altura máxima para pantallas grandes, ajusta según sea necesario */
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    overflow: hidden; /* Oculta el contenido desbordante */
+  }
+  
+  /* Imagen principal */
+  .main-image {
+    width: 45%; /* Ocupa el 50% del ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    overflow: hidden; /* Oculta el contenido desbordante */
+  }
+  
+  .main-image img {
+    width: 99%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la imagen cubriendo el contenedor sin distorsionar */
+    border: 0px solid #ccc; /* Borde alrededor de la imagen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+    border-radius: 15px;
+  }
+  
+  /* Contenedor de imágenes secundarias */
+  .secondary-images {
+    width: 55%; /* Ocupa el 60% del ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+    gap: 5px; /* Espacio entre las imágenes */
+    position: relative; /* Necesario para posicionar el botón de manera absoluta */
+  }
+  
+  /* Cada imagen secundaria ocupa la mitad del espacio disponible */
+  .secondary-images img {
+    width: calc(50% - 10px); /* Dos imágenes por fila, con un espacio de 10px entre ellas */
+    height: calc(50% - 6px); /* Dos imágenes por columna, con un espacio de 10px entre ellas */
+    object-fit: cover; /* Mantiene la imagen cubriendo el contenedor sin distorsionar */
+    border: 2px solid #ccc; /* Borde alrededor de la imagen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de relieve */
+    border-radius: 15px;
+  }
+  
+  /* Botón "Ver más" */
+  .view-more {
+    position: absolute; /* Para posicionar sobre la última imagen */
+    bottom: 10px; /* Ajusta según sea necesario */
+    right: 25px; /* Ajusta según sea necesario */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    color: #fff;
+    border: 2px solid #fff; /* Borde blanco */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-more:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Más oscuro al pasar el cursor */
+  }
+  
+  /* Estilos para pantallas pequeñas (móviles en orientación vertical) */
+  @media (max-width: 767px) {
+    .master-container {
+      padding: 10px;
+      margin: 0px 0px;
+    }
+  
+    .master-container h1 {
+      font-size: 1.5em;
+    } 
+    
+     /* Estilo para el contenedor de la galería */
+     .gallery-container {
+      min-height: 60vh;
+      height: 60vh;
+      max-height: 600px;
+      display: contents;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+  
+    /* Imagen principal */
+    .main-image {
+      text-align: center; /* Centra los elementos en línea dentro del contenedor */
+      width: 100%; /* La imagen principal ocupa el 100% del ancho */
+      height: 300px; /* Altura automática para mantener la proporción */
+      margin-bottom: 5px; /* Espacio debajo de la imagen principal */
+    }
+  
+    .main-image img {
+      width: 98%; /* Ajusta la imagen para que ocupe el ancho completo */
+      height: auto; /* Altura automática para mantener la proporción */
+    }
+  
+    /* Contenedor de imágenes secundarias */
+    .secondary-images {
+      width: 100%; /* Ocupa el 100% del ancho */
+      flex-direction: row; /* Imágenes secundarias en columna */
+    }
+  
+    /* Imágenes secundarias en dos filas */
+    .secondary-images img {
+      width: 100%; /* Imágenes secundarias ocupan el 100% del ancho */
+      height: 150px; /* Altura automática para mantener la proporción */
+      margin-bottom: 0px; /* Espacio entre las imágenes */
+    }
+    
+    /* Ajuste para mostrar solo dos imágenes en la fila inferior */
+    .secondary-images img:nth-of-type(1),
+    .secondary-images img:nth-of-type(2),
+    .secondary-images img:nth-of-type(3),
+    .secondary-images img:nth-of-type(4){
+      width: 48%; /* Ancho ligeramente menor para espacio entre las imágenes */
+      /* display: inline-block; Alinea dos imágenes en la fila */
+      margin-right: 0%; /* Espacio entre las dos imágenes */
+    }
+  
+    .secondary-images img:nth-of-type(2) {
+      margin-right: 0; /* Elimina el margen derecho de la segunda imagen */
+    }
+  
+    /* Botón "Ver más" */
+    .view-more {
+      position: absolute; /* El botón "Ver más" se muestra en el flujo normal del documento */
+      width: 25%; /* Ocupa el ancho completo del contenedor */
+      padding: 10px; /* Ajusta el padding */
+      text-align: center; /* Centra el texto dentro del botón */
+      margin-top: 10px; /* Espacio superior para separar del contenido */
+    }
+  }
+  /***************      Galery           ******************/
+  
