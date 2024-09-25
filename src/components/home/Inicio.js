@@ -30,7 +30,7 @@ export const Inicio = () => {
 
       <TypeSectionCarrusel title="Haciendas" type="hacienda" items={haciendasData.haciendas}  itemType="hacienda" />
 
-      <TypeSectionCarrusel title="Terraza" type="terraza" items={terrazasData.terrazas}  itemType="terraza" />   
+      <TypeSectionCarrusel title="Terraza" type="terraza" items={terrazasData.terrazas}  itemType="terraza" />  
     </div>
   );
 };

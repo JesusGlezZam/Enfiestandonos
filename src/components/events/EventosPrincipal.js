@@ -22,29 +22,30 @@ export const EventosPrincipal = ({ eventType }) => {
   }, [location]);
 
   // Selección dinámica del conjunto de datos basado en el tipo de evento
-  let eventData;
+  let eventData  = [];
   switch (eventType) {
     case 'jardin':
-      eventData = jardinesData.jardines;
+      eventData = jardinesData.jardines || [];
       break;
     case 'infantil':
-      eventData = infantilesData.infantiles;
+      eventData = infantilesData.infantiles || [];
       break;
     case 'salon':
-      eventData = salonesData.salones;
+      eventData = salonesData.salones || [];
       break;
     case 'hacienda':
-        eventData = haciendasData.haciendas;
+        eventData = haciendasData.haciendas || [];
         break; 
     case 'terraza':
-          eventData = terrazasData.terraza;
-    break;     
+          eventData = terrazasData.terraza || [];
+        break;     
     default:
       eventData = [];
   }
 
   // Calcular el total de elementos
-  const totalItems = eventData.length;
+  //const totalItems = eventData.length;
+  const totalItems = Array.isArray(eventData) ? eventData.length : 0;
 
   // Calcular el total de páginas
   const totalPages = Math.ceil(totalItems / (pageSizeFirstSection + pageSizeSecondSection));
@@ -135,17 +136,23 @@ export const EventosPrincipal = ({ eventType }) => {
         </div>
       )}
 
-      {/* Primera sección con 6 elementos */}
-      {firstSectionItems.length > 0 && <Cards items={firstSectionItems} itemType={eventType} />}
-      
-      {/* Publicidad siempre visible después de los primeros 6 elementos */}
-      <Publish imageKey="publicidad1" />
+        {totalItems === 0 ? (
+        <div className="no-more-items">No contamos por el momento con espacios para tu evento.</div>
+      ) : (
+        <>
+          {/* Primera sección con 6 elementos */}
+          {firstSectionItems.length > 0 && <Cards items={firstSectionItems} itemType={eventType} />}
+          
+          {/* Publicidad siempre visible después de los primeros 6 elementos */}
+          <Publish imageKey="publicidad1" />
 
-      {/* Segunda sección con paginado para 12 elementos por página */}
-      {secondSectionItems.length > 0 && <Cards items={secondSectionItems} itemType={eventType} />}
-      
+          {/* Segunda sección con paginado para 12 elementos por página */}
+          {secondSectionItems.length > 0 && <Cards items={secondSectionItems} itemType={eventType} />}
+        </>
+      )}
+
       {/* Mostrar controles de paginación solo si hay más de una página */}
-      {totalPages > 1 && (
+      {totalPages > 1 && totalItems > 0 && (
         <div className="pagination-controls">
           <button
             className="pagination-button"
@@ -163,11 +170,6 @@ export const EventosPrincipal = ({ eventType }) => {
             Siguiente
           </button>
         </div>
-      )}
-
-      {/* Mostrar leyenda si no hay elementos disponibles */}
-      {totalItems === 0 && (
-        <div className="no-more-items">No contamos por el momento con espacios para tu evento.</div>
       )}
     </div>
   );

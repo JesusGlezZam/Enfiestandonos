@@ -13,6 +13,7 @@ import { SalonesList } from '../components/events/TiposEventos/Salones/SalonesLi
 import { TerrazasList } from '../components/events/TiposEventos/Terrazas/TerrazasList'
 import { HaciendasList } from '../components/events/TiposEventos/Haciendas/HaciendasList'
 import { DetalleLugar } from '../components/events/Lugar/DetalleLugar'
+import { Requisitos } from '../components/contact/Requisitos'
 
 
 
@@ -36,6 +37,7 @@ export const AppRouter = () => {
           <Route path="/espacios-para-tu-evento/hacienda" element={<HaciendasList />} />
           <Route path="/espacios-para-tu-evento/terraza" element={<TerrazasList />} />
           <Route path="/espacios-para-tu-evento/:itemType/:name" element={<DetalleLugar />} />
+          <Route path="/contacto" element={<Requisitos />} />
           <Route path='*' element={<div><h1>ERROR ESTA PAGINA NO EXISTE</h1></div>} />
         </Routes>
       </section>

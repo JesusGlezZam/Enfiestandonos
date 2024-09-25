@@ -35,6 +35,8 @@ export const jardinesData = {
           { "id": 3, "name": "Cambiador", "available": true },
           { "id": 4, "name": "Área de cocina", "available": true },         
           { "id": 5, "name": "Estacionamiento", "available": true },
+          { "id": 12, "name": "Pista de baile", "available": true },         
+          { "id": 13, "name": "Baños", "available": true },
           { "id": 6, "name": "Área de juegos o brincolín", "available": true },
           { "id": 7, "name": "Área para fumar", "available": true },
           { "id": 8, "name": "WiFi", "available": true },

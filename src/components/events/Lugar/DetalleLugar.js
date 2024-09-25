@@ -7,7 +7,7 @@ import { FaGlassCheers, FaHome, FaLeaf, FaMapMarkerAlt, FaSun } from 'react-icon
 import { BsFillGiftFill } from 'react-icons/bs';
 import MenuWithSections from './Detail/Menu/MenuWithSections';
 import { PromotionSections } from './Detail/Promociones/Promotions/PromotionSections';
-import { haciendasData, infantilesData, salonesData } from '../../../helpers/datosdummy';
+import { haciendasData, infantilesData, salonesData, terrazasData } from '../../../helpers/datosdummy';
 import './lugar.css'
 
 // Función para obtener el ícono según el tipo de lugar
@@ -46,6 +46,11 @@ export const DetalleLugar = () => {
   // Estado para la sección activa
   const [activeSection, setActiveSection] = useState('');
 
+  // Desplazarse al inicio al cargar el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Dependencia vacía asegura que se ejecute solo una vez al montar
+
   useEffect(() => {
     if (!selectedId) {
       console.warn('No se proporcionó selectedId');
@@ -67,7 +72,7 @@ export const DetalleLugar = () => {
         data = haciendasData.haciendas.find(hacienda => hacienda.id === selectedId);
       }
       else if (itemType === 'terraza') {
-        data = haciendasData.haciendas.find(hacienda => hacienda.id === selectedId);
+        data = terrazasData.terrazas.find(terraza => terraza.id === selectedId);
       }
 
       setItemDetails(data);

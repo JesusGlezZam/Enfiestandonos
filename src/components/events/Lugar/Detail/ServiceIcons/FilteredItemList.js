@@ -5,10 +5,11 @@ GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPiano
 GiCakeSlice, GiCrown, GiDinosaurRex, GiClown, GiTeacher, GiShield, GiPlayButton, GiSofa, GiMagicHat, GiCupcake, GiFoodTruck, GiGamepad, GiCarousel, GiRing, GiGraduateCap, GiDominoMask, 
 GiPerson, GiFlowerPot, GiWaterSplash, GiBarbecue, GiHighHeel, GiBabyFace, GiCook, 
 GiJoystick,
-GiPuzzle} from 'react-icons/gi';
+GiPuzzle,
+GiMusicalNotes} from 'react-icons/gi';
 import { MdOutlineScreenShare } from 'react-icons/md';
 import './filterreditemlist.css';
-import { FaPaintbrush } from 'react-icons/fa6';
+import { FaPaintbrush, FaRestroom } from 'react-icons/fa6';
 
 /**
  * iconMap: Mapa que relaciona nombres de eventos/amenidades/servicios con componentes de iconos.
@@ -52,6 +53,11 @@ const iconMap = {
   'cambiador': <GiDress className="icon" />, 
   'área de cocina': <GiHotMeal className="icon" />,
   'estacionamiento': <GiCarSeat className="icon" />,
+  'baños':  <FaRestroom  className="icon"/>,
+  'pista de baile': <GiMusicalNotes className="icon" /> ,
+ 
+
+
   'área de juegos o brincolín': <GiJumpingRope className="icon" />,
   'wifi': <GiAerialSignal className="icon" />,
   'pantalla para proyectar': <MdOutlineScreenShare className="icon" />,
@@ -59,7 +65,7 @@ const iconMap = {
   'acepta pago (tc, td)': <FaCreditCard className="icon" />,
   'área para fumar': <GiCigarette className="icon" />,
   /** infantiles */
-  'zona de juegos': <GiPuzzle className="icon" />,
+  //'zona de juegos': <GiPuzzle className="icon" />,
   'zona de juegos': <GiJoystick className="icon" />,
   'área de descanso': <FaCouch  className="icon" />,
 
@@ -124,7 +130,8 @@ const iconColorMap = {
 
 
 
-
+  'baños': '#808080 ' ,
+  'pista de baile': '#FF4500 ',
   'acceso a discapacitados': '#0d6efd',
   'recibidor': '#D381E0',
   'cambiador': '#C8102E',
