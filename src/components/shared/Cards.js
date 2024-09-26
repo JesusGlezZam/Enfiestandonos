@@ -12,19 +12,20 @@ import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 const getIconByType = (type) => {
   switch (type) {
     case 'jardin':
-      return <FaLeaf className="icon-jardin" />;
+      return <FaLeaf className='icon-jardin general' />;
     case 'infantil':
-      return <BsFillGiftFill className="icon-infantil" />;
+      return <BsFillGiftFill className='icon-infantil general' />;
     case 'salon':
-      return <FaGlassCheers className="icon-salon" />;
+      return <FaGlassCheers className='icon-salon general' />;
     case 'hacienda':
-      return <FaHome className="icon-hacienda" />;
+      return <FaHome className='icon-hacienda general' />;
     case 'terraza':
-      return <FaSun className="icon-terraza" />;
+      return <FaSun className='icon-terraza general' />;
     default:
-      return null; // Si no hay coincidencia, no se muestra ningún icono
+      return null; // O un ícono por defecto si lo prefieres
   }
 };
+
 
 // Función para formatear la URL a partir del nombre
 const formatUrl = (name) => {
@@ -77,15 +78,15 @@ export const Cards = ({ items, itemType }) => {
               {/* Nombre del ítem con icono */}
               <div onClick={() => handleLinkClick(item.name, item.id)}>
                 <h2>
-                  {getIconByType(itemType)} {item.name}
+                  {getIconByType(itemType)} {item.name || 'No disponible'}
                 </h2>
               </div>
               <section className={`${itemType}-details`}>
                 {/* Detalles del ítem */}
                 <div className='detail-item'>
-                  <div className='detail-container'>
+                  <div className='detail-container first'>
                     <div className='detail-info'>
-                      <MdCelebration className='detail-icon celebration' size={20} />
+                      <MdCelebration className='detail-icon celebration' />
                       <span>
                         {(item.tipos_de_eventos || [])  
                           .filter(evento => evento.available) // Filtra los eventos disponibles
@@ -94,7 +95,6 @@ export const Cards = ({ items, itemType }) => {
                           .join(', ') || 'No hay eventos disponibles'} {/* Muestra un mensaje si no hay eventos */}
                       </span>
                     </div>
-
                     <div className='detail-info'>
                       <a 
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} 
@@ -104,22 +104,28 @@ export const Cards = ({ items, itemType }) => {
                       >
                         <FaMapMarkerAlt className='detail-icon maps' />
                       </a>
-                      <span>{item.address}</span>
+                      <span className='truncate'>{item.address}</span>
                     </div>
                   </div>
                 </div>              
                 <div className='detail-container'>
                   <div className='detail-info'>
                     <FaUser className='detail-icon user' />
-                    <span>Cap. máxima: <span className='capacity'>{item.capacity_max || 'No disponible'}</span></span>
+                    <span>Cap. máx: <span className='capacity'>{item.capacity_max || 'No disponible'}</span></span>
+                  </div>
+                  <div className='detail-info'> 
+                    <FontAwesomeIcon className='icon-price detail-icon available' icon={faMoneyBill} color="green" />
+                    <span>${item.price_initial} - ${item.price_final || 'No disponible'}</span>
                   </div>
                   <div className='detail-info'>
                     <FaClock className='detail-icon available' />
-                    <span>{item.hours || 'No disponible'}</span>
-                    <FontAwesomeIcon className='icon-price' icon={faMoneyBill} color="green" />
-                    ${item.price_initial} - ${item.price_final || 'No disponible'}
+                    <span className='time-event'>
+                      {item.event_hors  ? item.event_hors  : 'No disponible'}
+                    </span>
+                    {item.event_hors  && <span>hrs de evento </span>}
                   </div>
                 </div>
+
               </section>
             </div>
           </div>

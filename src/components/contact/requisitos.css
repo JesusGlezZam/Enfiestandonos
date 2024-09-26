@@ -1,0 +1,184 @@
+/***************************************************************/
+.requisitos {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+
+/*****/
+
+.paquete-section {
+    background-color: #f9f9f9; /* Fondo suave */
+    border: 1px solid #ddd; /* Bordes sutiles */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin: 20px 0; /* Espaciado vertical */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .section-title-contact {
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    display: flex; /* Flex para alinear el símbolo */
+    justify-content: space-between; /* Espacio entre título y símbolo */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 15px; /* Espaciado inferior */
+  }
+  
+  .section-title-contact span {
+    font-size: 1.5rem; /* Tamaño del símbolo */
+    transition: transform 0.3s; /* Transición suave */
+  }
+  
+  .paquete-detail-list {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+  }
+  
+  .paquete-detail-list li {
+    display: block; /* Flex para ícono y texto */
+    align-items: center; /* Centra verticalmente */
+    padding: 10px 10px; /* Espaciado vertical */
+  }
+  
+  .paquete-detail-list li:not(:last-child) {
+    border-bottom: 1px solid #eee; /* Línea divisoria solo en elementos intermedios */
+  }
+  
+  .paquete-detail-list li strong {
+    margin-left: 10px; /* Espacio entre el ícono y el texto */
+    font-weight: bold; /* Negrita */
+  }
+  
+  .paquete-detail-list li svg {
+    width: 1.5rem; /* Tamaño del ícono */
+    height: 1.5rem; /* Tamaño del ícono */
+    color: #007bff; /* Color del ícono */
+  }
+  
+  .clause{
+    font-size: 1.2rem; /* Tamaño del símbolo */
+    padding-bottom: 20px;
+  }  
+  
+/*******************************/
+
+.paquete-list {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre tarjetas */
+    margin-top: 20px;
+  }
+  
+  .paquete {
+    border: 1px solid #ccc;
+    flex: 1; /* Las tarjetas ocuparán el mismo espacio */
+    margin: 10px; /* Espacio entre tarjetas */
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-width: 300px; /* Ancho mínimo para tarjetas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  }
+  
+
+  /*****************/
+  .extras-section {
+    margin-top: 30px; /* Espacio superior para separar de otras secciones */
+    padding: 15px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde alrededor de la sección */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f2f8f2; /* Color de fondo suave para diferenciar */
+}
+
+.extras-section h2 {
+    font-size: 1.8em; /* Tamaño de fuente para el título de la sección */
+    color: #2980b9; /* Color del título */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el título */
+}
+
+.extras-list {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0; /* Sin padding por defecto */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.extras-list li {
+    padding: 10px; /* Espaciado interno para cada servicio */
+    border-bottom: 1px solid #ddd; /* Línea separadora entre servicios */
+    font-size: 1.1em; /* Tamaño de fuente consistente */
+    color: #333; /* Color del texto */
+}
+
+.extras-list li:last-child {
+    border-bottom: none; /* Quitar borde en el último elemento */
+}
+
+.extras-list li:hover {
+    background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+}
+
+
+/*****/
+
+.requisitos-salones {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.requisitos-salones h1 {
+    font-size: 2.5em; /* Aumentado para mayor impacto */
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.requisitos-salones h2 {
+    font-size: 2em; /* Aumentado para destacar secciones */
+    color: #2980b9;
+    margin-top: 30px;
+}
+
+.requisitos-salones h3 {
+    font-size: 1.5em; /* Aumentado para mayor claridad */
+    color: #34495e;
+    margin-top: 15px;
+}
+
+.requisitos-salones p {
+    font-size: 1.1em; /* Tamaño de fuente más grande */
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.requisitos-salones ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.requisitos-salones li {
+    margin: 5px 0;
+    font-size: 1.1em; /* Tamaño de fuente consistente */
+}
+
+.requisitos-salones .requisito {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.requisitos-salones strong {
+    color: #e74c3c;
+}
+
+
+
+/***************************************************************/

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CarruselServices } from '../shared/Inicio/CarruselServices'
+import { CarruselServices } from '../home/CarruselServices'
 
 export const EspaciosEventos = () => {
   return (

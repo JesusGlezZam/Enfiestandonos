@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import LocalBarIcon from '@mui/icons-material/LocalBar';
 import { FaGlassCheers } from 'react-icons/fa';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 export const Header = () => {
   const [showMessage, setShowMessage] = useState(true);
@@ -29,7 +28,7 @@ export const Header = () => {
     <div className='header'>
         <nav>
             <div className='logo' onClick={handleClick}>
-              <h2 className='logo'> Enfiestándonos  <FaGlassCheers className='detail-icon celebration' size={25} /></h2>
+              <h2 className='logo'> Enfiestándonos  <FaGlassCheers className='detail-icon celebration'  /></h2>
             </div>
 
             {/**Temporal hasta implementar la barra 
