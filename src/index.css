@@ -1,19 +1,22 @@
 
 /****** Estilos de las tarjetas de la pagina de inicio  */
 h2.welcome {
+  font-size: 1.6em;
   text-align: left;
   margin-top: 30px;
   margin-bottom: -10px; /* Espacio abajo */
+  padding-bottom: 10px;
 }
 
 .custom-carousel-section {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   background-color: #ffffff; /* Fondo blanco */
   border-radius: 25px; /* Esquinas redondeadas */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
   border: none; /* 0 solid transparent;  Borde inicial transparente */
-  margin: 10px auto; /* Margen superior e inferior para espacio entre secciones */
+  margin: 20px auto; /* Margen superior e inferior para espacio entre secciones */
+  border: 2px solid #FCE300;
 }
 
 .custom-carousel-link {
@@ -77,7 +80,7 @@ h2.welcome {
 }
 
 .custom-carousel-image {
-  width: 98%;
+  width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
@@ -127,22 +130,29 @@ h2.welcome {
 }
 
 /* Estilos para la capacidad */
-.capacity {
+.capacity,
+.time-event {
   font-weight: bold; /* Estilo para el texto de la capacidad */
 }
 
-
+.no-elements-message {
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de fuente */
+  color: #DC143C; /* Color carmesí */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  font-weight: bold; /* Negrita */
+}
 
 
 /* Consultas de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
+
   h2.welcome {
     text-align: left;
     font-size: 1em;
     margin-top: 20px;
     margin-bottom: -15px;
   }
-
 
   .custom-carousel-title, .icon-container {
     font-size: 1em;
@@ -169,6 +179,7 @@ h2.welcome {
 
   .custom-carousel-image {
     height: 130px;
+    width: 98%;
   }
 
   .custom-carousel-item-title {
@@ -197,6 +208,8 @@ h2.welcome {
   .detail-icon {
     margin-right: 6px; /* Menor espacio en pantallas pequeñas */
   }
+
+  
 }
 /****************************  Colores para los iconos de la pagina principal        ***********************/
 
@@ -222,9 +235,86 @@ h2.welcome {
 }
 
 .icon-price{
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
 
 
+.detail-info {
+  display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+  align-items: center; /* Alinea los íconos y el texto verticalmente al centro */
+  width: 100%; /* Ancho completo en pantallas más pequeñas */
+  margin-bottom: 5px; /* Espacio inferior para separación */
+}
 
+.detail-icon {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.time-event {
+  font-weight: bold; /* Estilo para el número en negrita */
+  margin-right: 4px; /* Espacio entre el número y el texto siguiente */
+}
+
+
+
+.detail-container {
+  display: grid; /* Usa Grid para distribuir los elementos */
+  grid-template-columns: 1fr 1fr 1fr; /* Define el tamaño de las columnas en proporciones 3/5 y 2/5 */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.first {
+  display: grid; /* Usa Grid para distribuir los elementos */
+  grid-template-columns: 1fr 1fr; /* Define el tamaño de las columnas en proporciones 3/5 y 2/5 */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.detail-info {
+  font-size: 1.1em;
+  display: flex; /* Usa Flexbox para alinear el ícono y el texto */
+  align-items: center; /* Alinea verticalmente al centro */
+  min-width: 0; /* Permite que el contenido se ajuste en un contenedor flex */
+}
+
+
+.detail-info .detail-icon {
+  font-size: 1.2em;
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.detail-icon.celebration{
+  font-size: 27px; /* Ajusta el tamaño del icono */
+}
+
+.truncate {
+  white-space: nowrap; /* Evita el salto de línea dentro del contenedor */
+  overflow: hidden; /* Oculta el texto que desborda el contenedor */
+  text-overflow: ellipsis; /* Muestra "..." al final del texto desbordante */
+  flex: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+.custom-carousel-info h2{
+  padding: 0px;
+}
+
+
+@media (max-width: 768px) {
+  .detail-icon.celebration{
+    font-size: 15px;
+  }
+
+  .detail-info{
+    font-size: .9em;
+    }
+    
+}
+
+@media (min-width: 1920px) {
+  .custom-carousel-image {
+    height: 280px;
+    width: 100%; /* Ajusta según sea necesario */
+  }
+}
