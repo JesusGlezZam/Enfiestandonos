@@ -108,12 +108,12 @@ const PaqueteList = () => {
     <div className="requisitos">
        <h1>¡Bienvenido a Enfiestándonos!</h1>
        <p>
-        Estamos encantados de que consideren registrar su salón con nosotros. Para garantizar que cada evento sea memorable y satisfactorio, les proponemos que armen tres paquetes de servicios dentro de nuestra plataforma: <strong>A Celebrar</strong>, <strong>Enfiestándonos</strong>, y <strong>Fiesta Sin Fin</strong>.
+        Estamos encantados de que consideren registrar su salón con nosotros. Para garantizar que cada evento sea memorable y satisfactorio,  les sugerimos crear tres opciones de servicios en nuestra plataforma:  <strong>A Celebrar</strong>, <strong>Enfiestándonos</strong>, y <strong>Fiesta Sin Fin</strong>.
       </p>
     
       <div className="paquete-section">
         {/*<h2 onClick={toggleSection} className="section-title">*/}
-          <h2  className="section-title">
+          <h2  className="section-title-contact">
           {isOpen ? 'Elementos Esenciales del Paquete' : 'Elementos Esenciales del Paquete'} {/*<span>{isOpen ? '-' : '+'}</span>*/}
         </h2>
         {isOpen && (
@@ -149,12 +149,12 @@ const PaqueteList = () => {
       </div>
 
       <div className='clause'>
-        <strong>Cláusula:</strong> Todos los paquetes que incluyan refresco deben incluir un vitrolero de agua para mantenerse hidratados.
+        <strong>Importante:</strong> Todos los paquetes que incluyan refresco también deben ofrecer un vitrolero de agua. Es fundamental pensar en todos los asistentes, especialmente en quienes no consumen refrescos, como los niños. Siempre hay alguien que necesita un vaso de agua para mantenerse hidratado.
       </div>
       
 
       <p>
-      Estos paquetes son ejemplos de cómo van incrementando en opciones y servicios. Además, les sugerimos que consideren agregar recomendaciones adicionales, que pueden tener un costo extra, para personalizar aún más el evento.
+      Estos paquetes son ejemplos de cómo van incrementando en opciones y servicios. Además, les sugerimos que consideren agregar recomendaciones adicionales con costos extra, para personalizar aún más el evento.
       </p>
 
       <h2>Ejemplo de Paquetes de Eventos</h2>

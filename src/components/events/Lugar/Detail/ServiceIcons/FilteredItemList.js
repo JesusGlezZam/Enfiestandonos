@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { FaRing, FaCrown, FaBirthdayCake, FaTree, FaCreditCard, FaCouch, FaWheelchair } from 'react-icons/fa';
 import { GiHolySymbol, GiBabyBottle, GiBriefcase, GiLovers, GiFamilyHouse, GiPartyPopper, GiDress, GiJumpingRope, GiAerialSignal, GiExitDoor, GiCigarette, GiSuitcase, GiDramaMasks, GiHeadphones, 
 GiBeerStein, GiTacos, GiBalloons, GiPaintBrush, GiCandyCanes, GiFlowers, GiPianoKeys, GiFrenchHorn, GiTrumpet, GiAccordion, GiDrum, GiSaxophone, GiHotMeal, GiCarSeat, GiStorkDelivery, 
-GiCakeSlice, GiCrown, GiDinosaurRex, GiClown, GiTeacher, GiShield, GiPlayButton, GiSofa, GiMagicHat, GiCupcake, GiFoodTruck, GiGamepad, GiCarousel, GiRing, GiGraduateCap, GiDominoMask, 
+GiCakeSlice, GiCrown, GiDinosaurRex, GiClown, GiTeacher, GiShield, GiSofa, GiMagicHat, GiCupcake, GiFoodTruck, GiGamepad, GiCarousel, GiRing, GiGraduateCap, GiDominoMask, 
 GiPerson, GiFlowerPot, GiWaterSplash, GiBarbecue, GiHighHeel, GiBabyFace, GiCook, 
 GiJoystick,
-GiPuzzle,
 GiMusicalNotes} from 'react-icons/gi';
 import { MdOutlineScreenShare } from 'react-icons/md';
 import './filterreditemlist.css';

@@ -55,11 +55,10 @@ export const MenuSection = ({ data, type }) => {
                         onClick={() => handleToggleSection(index)}
                         className="section-title"
                     >
-                       <span className="with-sections">
-                            {capitalizeFirstLetter(section.seccion || section.section)}
-                            <GiMeal className={`icon-menu ${openSections.includes(index) ? 'icon-expanded' : 'icon-collapsed'}`} /> {/*<MdFastfood className="detail-icon menu" /> <GiFoodTruck className="detail-icon menu" />  <GiBowlOfRice className="detail-icon menu" />*/}
-                           
-                        </span>
+                        <div className="with-sections">
+                            {capitalizeFirstLetter(section.seccion || section.section)}  
+                        </div>
+                        <GiMeal className={`icon-menu ${openSections.includes(index) ? 'icon-expanded' : 'icon-collapsed'}`} /> {/*<MdFastfood className="detail-icon menu" /> <GiFoodTruck className="detail-icon menu" />  <GiBowlOfRice className="detail-icon menu" />*/}
                     </h2>
                     {openSections.includes(index) && (
                         <div className="section-content">

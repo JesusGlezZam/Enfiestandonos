@@ -144,7 +144,6 @@ h2.welcome {
 }
 
 
-
 /* Consultas de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
 
@@ -311,4 +310,11 @@ h2.welcome {
     font-size: .9em;
     }
     
+}
+
+@media (min-width: 1920px) {
+  .custom-carousel-image {
+    height: 280px;
+    width: 100%; /* Ajusta según sea necesario */
+  }
 }

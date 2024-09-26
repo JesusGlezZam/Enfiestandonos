@@ -308,3 +308,14 @@ Muestra las paginas de espacios para tu evento / Jardin/infantiles/salon/etc ***
     font-size: 14px;
   }
 }
+
+@media (min-width: 1920px) {
+  .jardin-image,
+  .infantil-image,
+  .salon-image,
+  .hacienda-image,
+  .terraza-image  {
+    height: 280px;
+    width: 100%; /* Ajusta según sea necesario */
+  }
+}

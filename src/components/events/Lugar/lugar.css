@@ -93,11 +93,13 @@ body {
 }
 
 .master-container {
-  padding: 40px; /* Ajusta el padding según sea necesario */
+ /* padding: 40px; /* Ajusta el padding según sea necesario */
   margin: 20px auto; /* Ajusta el margen según sea necesario */
   border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de caja */
   border: 2px solid #A0522D;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .master-container h1{
   font-size: 2em;
@@ -112,6 +114,7 @@ body {
 .master-container h3{
   font-weight: lighter;
   font-size: 1.6em;
+  text-align:left;
 }
 
 /*.master-container  p{

@@ -40,10 +40,10 @@ const MenuWithSections = ({ data }) => {
             className="section-title"
             style={{ cursor: 'pointer' }}
           >
-           <span className="with-sections-alonge">
-            {section.seccion || section.section}
+            <div className="with-sections-alonge">
+              {section.seccion || section.section}
+            </div>
             <GiForkKnifeSpoon className={`icon-menu-along ${openSections.includes(index) ? 'icon-expanded-along' : 'icon-collapsed-along'}`} />
-          </span>
           </h2>
           {openSections.includes(index) && (
             <div className="section-content-along">

@@ -16,7 +16,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
   
-  .section-title {
+  .section-title-contact {
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     font-size: 1.5rem; /* Tamaño de fuente */
     color: #333; /* Color del texto */
@@ -26,7 +26,7 @@
     margin-bottom: 15px; /* Espaciado inferior */
   }
   
-  .section-title span {
+  .section-title-contact span {
     font-size: 1.5rem; /* Tamaño del símbolo */
     transition: transform 0.3s; /* Transición suave */
   }

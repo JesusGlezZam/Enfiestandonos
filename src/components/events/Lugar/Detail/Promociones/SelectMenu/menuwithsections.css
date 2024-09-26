@@ -80,6 +80,7 @@
 
 .capitalize-first-letter {
   text-transform: lowercase; /* Convierte todo el texto a minúsculas */
+  text-align: center;
 }
 
 .capitalize-first-letter::first-letter {
